@@ -287,7 +287,7 @@
 		<div class="row">
 			<div class="form-group col-lg-6">
                 <label for="Departamento">Departamento <span style="color:red;">*</span></label>
-                <select name="deptonac" onchange="javascript:RecargarCiudadesnac(this.value);" class="form-control" style="text-transform:uppercase;">
+                <select name="depto" onchange="javascript:RecargarCiudadesnac(this.value);" class="form-control" style="text-transform:uppercase;">
  					<option value="0">Seleccione Departamento</option>
 					<?php
  					
@@ -305,8 +305,8 @@
             </div>
 			<div class="form-group col-lg-6">
                 <label for="Municipio">Municipio <span style="color:red;">*</span></label>
-                <div id="reloadMunicipionac">
- 					<select name="codubinac" id="id_estado" class="form-control" style="text-transform:uppercase;">
+                <div id="reloadMunicipio">
+ 					<select name="codubi" id="id_estado" class="form-control" style="text-transform:uppercase;">
 						<option value="0">Seleccione municipio</option>
  					</select>
  				</div>
@@ -314,7 +314,8 @@
 		</div>
 		<div class="row">
             <div class="form-group col-lg-12 center">
-                <label for="Fecha de nacimiento">Fecha de Nacimiento <span style="color:red;">*</span></label>
+              
+			  <label for="Fecha de nacimiento">Fecha de Nacimiento <span style="color:red;">*</span></label>
 				<input name="fecnac" type="date" class="form-control" max="2014-12-01" min="1900-01-01">
             </div>
 		</div>
@@ -345,6 +346,22 @@
 					?>
 				</select>
             </div>
+		</div>
+		<div class="row">
+		<div class="form-group col-lg-6">
+                <label for="Relaciones sexuales">Establece Relaciones Sexuales de Pareja Con</label>
+                <select name="relsexper" class="form-control" style="text-transform:uppercase;">
+					<option value = 0> Seleccione una opción </option>
+					<?php 
+						for ($i=0; $i < count($relsexper1); $i++){
+					?>
+					<option value ="<?php echo $relsexper1[$i]['codval'] ?>" ><?php echo $relsexper1[$i]['nomval'] ?></option>
+					<?php 
+						} 
+					?>
+				</select>
+            </div>
+		
 		</div>
 		<div class="row">
             <div class="form-group col-lg-6">

@@ -3,20 +3,20 @@
 	class mdatospersona {
 		
 		function mdatospersona() {}
-		function insper($numficha,$docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia, $ges, $hijosacargo) {
-			$sql = "INSERT INTO tbdatospersona ( numficha, numdocper, tipdocper, lugexpdocper, pnomper, snomper, papeper, sapeper, genper, dirper, zonper, verper, secper, barfinper, telper, telsegper, lugnacper, fecnacper, estcivper, etniaper, geslanper, hijosacargo ) VALUES ('".$numficha."','".$docper."','".$tipdoc1."','".$lugexpdoc1."','".$pnom."', 
+		function insper($numficha,$docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia, $ges, $hijosacargo, $relsexper) {
+			$sql = "INSERT INTO tbdatospersona ( numficha, numdocper, tipdocper, lugexpdocper, pnomper, snomper, papeper, sapeper, genper, dirper, zonper, verper, secper, barfinper, telper, telsegper, lugnacper, fecnacper, estcivper, etniaper, geslanper, hijosacargo, relsexper ) VALUES ('".$numficha."','".$docper."','".$tipdoc1."','".$lugexpdoc1."','".$pnom."', 
 			'".$snom."','".$pape."','".$sape."','".$gen."','".$dir."','".$zon."','".$ver."','".$sec."','".$barfin."',
-			'".$tel."','".$telseg."','".$lugnac1."','".$fecnac."','".$estciv."','".$etnia."','".$ges."','".$hijosacargo."');";
+			'".$tel."','".$telseg."','".$lugnac1."','".$fecnac."','".$estciv."','".$etnia."','".$ges."','".$hijosacargo."','".$relsexper."');";
 			$this -> cons($sql);
 			
 
 		}
-		function updper($idpersona, $numficha, $docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia, $ges, $hijosacargo) {
+		function updper($idpersona, $numficha, $docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia, $ges, $hijosacargo, $relsexper) {
 			$sql = "UPDATE tbdatospersona SET numdocper ='".$docper."',tipdocper ='".$tipdoc1."',lugexpdocper = '".$lugexpdoc1."',pnomper = '".$pnom."',
 			snomper = '".$snom."',papeper = '".$pape."',sapeper = '".$sape."',genper = '".$gen."',dirper = '".$dir."',
 			zonper = '".$zon."',verper = '".$ver."',secper = '".$sec."',barfinper = '".$barfin."',telper = '".$tel."',
 			telsegper = '".$telseg."',lugnacper = '".$lugnac1."',fecnacper = '".$fecnac."',estcivper = '".$estciv."',etniaper = '".$etnia."',
-			geslanper = '".$ges."',hijosacargo = '".$hijosacargo."' WHERE idpersona = '".$idpersona."';";
+			geslanper = '".$ges."',hijosacargo = '".$hijosacargo."', relsexper='".$relsexper."' WHERE idpersona = '".$idpersona."';";
 			$this -> cons($sql);
 		}
 		function delper($codp) {

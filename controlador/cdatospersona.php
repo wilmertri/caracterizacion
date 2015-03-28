@@ -27,6 +27,7 @@
 	$etnia1 = isset($_POST["etnia"]) ? $_POST["etnia"]:NULL;
 	$ges = isset($_POST["ges"]) ? $_POST["ges"]:NULL;
 	$hijosacargo = isset($_POST["hijosacargo"]) ? $_POST["hijosacargo"]:NULL;
+	$relsexper = isset($_POST["relsexper"]) ? $_POST["relsexper"]:NULL;
 	$actu = isset($_POST["actu"]) ? $_POST["actu"]:NULL;
 	$pr = isset($_GET["pr"]) ? $_GET["pr"]:NULL;
 	
@@ -42,6 +43,7 @@
 	$etnia = $ins->valor(10);
 	$gestlact = $ins->valor(11);
 	$hijosacargo1 = $ins->valor(17);
+	$relsexper1 = $ins->valor(18);
 	
 	/*echo $docper." ".$tipdoc1." ".$lugexpdoc." ".$lugexpdoc1." ".$pnom." ".$snom." ".$pape." ".$sape." ".$gen." ".$dir." ".$zon;
 	echo " ";
@@ -57,15 +59,15 @@
 	
 	// Actualizar datos
 	
-	if($docper && $tipdoc1 && $lugexpdoc1 && $pnom && $pape && $gen && $dir && $zon && $barfin && $ver && $sec  && $tel && $lugnac1 && $fecnac && $estciv && $etnia1 &&$hijosacargo && $actu) 
+	if($docper && $tipdoc1 && $lugexpdoc1 && $pnom && $pape && $gen && $dir && $zon && $barfin && $ver && $sec  && $tel && $lugnac1 && $fecnac && $estciv && $etnia1 &&$hijosacargo && $relsexper && $actu) 
 	{
-		$ins -> updper($docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia1, $ges, $hijosacargo);
+		$ins -> updper($docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia1, $ges, $hijosacargo, $relsexper);
 	}
 	
 	// Insertar datos
-	if($numficha &&$docper  && $tipdoc1 && $lugexpdoc1 && $pnom && $pape && $gen && $dir && $zon && $barfin || $ver || $sec &&  $tel && $lugnac1 && $fecnac && $estciv && $etnia1 && $hijosacargo && !$actu) 
+	if($numficha &&$docper  && $tipdoc1 && $lugexpdoc1 && $pnom && $pape && $gen && $dir && $zon && $barfin || $ver || $sec &&  $tel && $lugnac1 && $fecnac && $estciv && $etnia1 && $hijosacargo && $relsexper && !$actu) 
 	{
 		$idpersona = $idpersona;
-		$ins -> insper($numficha, $docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia1, $ges, $hijosacargo);
+		$ins -> insper($numficha, $docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia1, $ges, $hijosacargo, $relsexper);
 	}
 ?>
