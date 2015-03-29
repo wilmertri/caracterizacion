@@ -209,8 +209,26 @@
           if ($variable==50) {
               include("vista/vusuario.php");
           }
+          if ($variable==55) {
+              include("vista/vtbsalud.php");
+          }
           if ($variable==70) {
               include("vista/vdatosper.php");
+          }
+           if ($variable==75) {
+              include("vista/vdatosvivienda.php");
+          }
+          if ($variable==85) {
+              //Luis Miguel
+          }
+          if ($variable==90) {
+              //Jorge
+          }
+          if ($variable==95) {
+              //Andrea
+          }
+          if ($variable==100) {
+              //Jhon Edison
           }
       ?>  
     </div>                                                
