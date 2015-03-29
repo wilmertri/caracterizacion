@@ -6,21 +6,21 @@
     <form name="form1" action="" method="post">
         <div class="row">
             <div class="form-group col-lg-6">
-                <label for="Numero de documento">Número de documento</label>
+                <label for="documento">documento</label>
                 <input name="documento" type="text" class="form-control">
             </div>
             <div class="form-group col-lg-6">
-                <label for="Nombre del usuario">Nombre completo</label>
+                <label for="usuario">usuario</label>
                 <input name="nombre" type="text" class="form-control">
             </div>
         </div>
         <div class="row">
             <div class="form-group col-lg-6">
-                <label for="Correo electronico">Correo electronico</label>
+                <label for="email">email</label>
                 <input name="email" type="text" class="form-control">
             </div>
             <div class="form-group col-lg-6">
-                <label for="Contraseña">Contraseña</label>
+                <label for="password">password</label>
                 <input name="password" type="password" class="form-control">
             </div>
         </div>
