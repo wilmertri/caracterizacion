@@ -27,7 +27,7 @@
 		<a href="#" class="btn btn-success dropdown-toggle" data-toggle="dropdown">DATOS DE LA VIVIENDA <span class="caret"></span></a>
 		<ul class="dropdown-menu">
 			<li><a href="home.php?var=&pr=<?php echo $pr;?>">MOSTRAR DATOS</a></li>
-			<li><a href="home.php?var=&pr=<?php echo $pr;?>">INGRESAR DATOS</a></li>
+			<li><a href="home.php?var=75&id=<?php echo $pr;?>">INGRESAR DATOS</a></li>
 		</ul>
 	</div>
 	<div class="dropdown esp">

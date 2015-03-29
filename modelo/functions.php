@@ -1,6 +1,4 @@
 <?php
-	require "controlador/conexion.php";
-	class Functions {
 		function functions()
 		{
 
@@ -13,5 +11,5 @@
 			$datos = $conexionBD->ejeCon($sql,0);
 			return $datos;
 		}
-	} 
+
  ?>
