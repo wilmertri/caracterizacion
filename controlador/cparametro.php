@@ -39,9 +39,9 @@
 	}
 	
 	//Actualizar Valor
-	if($codval && $nomval && $codpar && $actu)
+	if($codval && $nomval && $actu)
 	{
-		$ins->updval($codval, $nomval, $codpar);
+		$ins->updval($codval, $nomval);
 	}
 	
 	//Insertar Valor

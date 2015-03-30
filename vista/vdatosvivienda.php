@@ -2,7 +2,7 @@
 	include("controlador/cdatosvivienda.php");  
 ?>
 <div class="forms1">
-	<h1>Datos de la vivienda</h1>
+	<h1>Ingresar datos de la vivienda</h1>
 	<form name="form1" action="" method="POST">
 		<div class="row">
 			<div class="form-group col-lg-6">
@@ -21,7 +21,24 @@
 				</select>		
 			</div>
 			<div class="form-group col-lg-6">
-				<label for="" class="">Tipo de pisos</label>
+				<label for="" class="">Material predominante de las paredes</label>
+				<select name="matpar" class="form-control" id="">
+					<option value="">Seleccione tipo de paredes</option>
+					<?php
+
+						for ($i=0; $i <count($tipoparedes) ; $i++) 
+						{  
+					?>
+					<option value="<?php echo $tipoparedes[$i]['codval']; ?>"><?php echo $tipoparedes[$i]['nomval']; ?></option>
+					<?php 
+						} 
+					?>
+				</select>		
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-lg-6">
+				<label for="" class="">Material predominante de los pisos</label>
 				<select name="matpis" class="form-control" id="">
 					<option value="">Seleccione tipo de pisos</option>
 					<?php
@@ -30,6 +47,53 @@
 						{  
 					?>
 					<option value="<?php echo $tipopisos[$i]['codval']; ?>"><?php echo $tipopisos[$i]['nomval']; ?></option>
+					<?php 
+						} 
+					?>
+				</select>		
+			</div>
+			<div class="form-group col-lg-6">
+				<label for="" class="">Material predominante de los techos</label>
+				<select name="mattec" class="form-control" id="">
+					<option value="">Seleccione tipo de techo</option>
+					<?php
+
+						for ($i=0; $i <count($tipotechos) ; $i++) 
+						{  
+					?>
+					<option value="<?php echo $tipotechos[$i]['codval']; ?>"><?php echo $tipotechos[$i]['nomval']; ?></option>
+					<?php 
+						} 
+					?>
+				</select>		
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-lg-6">
+				<label for="" class="texto_justificado">En los ÚLTIMOS 2 AÑOS esta zona se ha visto afectada por alguno de los siguientes riesgos:</label>
+				<select name="zonrie" class="form-control" id="">
+					<option value="">Seleccione tipo de riesgo</option>
+					<?php
+
+						for ($i=0; $i <count($tiporiesgos) ; $i++) 
+						{  
+					?>
+					<option value="<?php echo $tiporiesgos[$i]['codval']; ?>"><?php echo $tiporiesgos[$i]['nomval']; ?></option>
+					<?php 
+						} 
+					?>
+				</select>		
+			</div>
+			<div class="form-group col-lg-6">
+				<label for="" class="texto_justificado">De acuerdo con las siguientes condiciones de ocupación de la vivienda, su relación con ella es:</label>
+				<select name="relviv" class="form-control" id="">
+					<option value="">Seleccione tipo de relación</option>
+					<?php
+
+						for ($i=0; $i <count($tiporelacion) ; $i++) 
+						{  
+					?>
+					<option value="<?php echo $tiporelacion[$i]['codval']; ?>"><?php echo $tiporelacion[$i]['nomval']; ?></option>
 					<?php 
 						} 
 					?>

@@ -117,7 +117,10 @@ div.separate-rows div.row {
 .esp{
   padding: 5px;
 }
-
+.texto_justificado
+{
+  text-align: justify;
+}
 
 /*
 div.container {

@@ -12,7 +12,10 @@
 
 		}
 
-
+		function get_valor($codval)
+		{
+			return mostrar_nombre_valores($codval);
+		}
 		
 		function get_tipo_vivienda()
 		{
@@ -24,12 +27,32 @@
 			return seleccionar_valores_de_parametro(17);
 		}
 
+		function get_tipo_paredes()
+		{
+			return seleccionar_valores_de_parametro(18);
+		}
+
+		function get_tipo_riesgos()
+		{
+			return seleccionar_valores_de_parametro(19);
+		}
+
+		function get_tipo_techos()
+		{
+			return seleccionar_valores_de_parametro(20);
+		}
+
+		function get_tipo_relacion_viv()
+		{
+			return seleccionar_valores_de_parametro(21);
+		}
+
 		/*
 			Función para la actualización de los datos de la vivienda de la persona
 		*/
-		function actu_datos_vivienda($tipovivienda, $tipoparedes, $tipopisos, $tipotechos, $zonariesgo, $idpersona)
+		function actu_datos_vivienda($tipovivienda, $tipoparedes, $tipopisos, $tipotechos, $zonariesgo, $tiporelacion, $idpersona)
 		{
-			$sql = "UPDATE tbdatospersona SET tipvivper='$tipovivienda', tipparviv='$tipoparedes', tippisviv='$tipopisos', tiptecviv='$tipotechos', zonrieviv='$zonariesgo' WHERE idpersona = '$idpersona'";
+			$sql = "UPDATE tbdatospersona SET tipvivper='$tipovivienda', tipparviv='$tipoparedes', tippisviv='$tipopisos', tiptecviv='$tipotechos', zonrieviv='$zonariesgo', tiprelviv='$tiporelacion' WHERE idpersona = '$idpersona'";
 			$this->cons($sql);
 		}
 

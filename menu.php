@@ -45,6 +45,7 @@
 						</a>
 						<ul class="dropdown-menu">
 							<li><a href="home.php?var=40">Insertar Parametro</a></li>
+							<li><a href="home.php?var=43">Insertar Valor</a></li>
 						</ul>
 					</li>
 			</ul>

@@ -12,4 +12,13 @@
 			return $datos;
 		}
 
+		function mostrar_nombre_valores($codval)
+		{
+			$sql = "SELECT nomval FROM tbvalor WHERE codval = $codval";
+			$conexionBD = new conexion();
+			$conexionBD->conectarBD();
+			$datos = $conexionBD->ejeCon($sql,0);
+			return $datos;
+		}
+
  ?>

@@ -206,6 +206,9 @@
           if ($variable==42) {
               include("vista/vactuvalor.php");   
           }
+          if ($variable==43) {
+              include("vista/vvalor.php");   
+          }
           if ($variable==50) {
               include("vista/vusuario.php");
           }
@@ -215,8 +218,11 @@
           if ($variable==70) {
               include("vista/vdatosper.php");
           }
-           if ($variable==75) {
+          if ($variable==75) {
               include("vista/vdatosvivienda.php");
+          }
+          if ($variable==76) {
+              include("vista/vverdatosvivienda.php");
           }
           if ($variable==85) {
               //Luis Miguel

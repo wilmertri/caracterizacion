@@ -42,7 +42,7 @@
 			return $datos;
 		}
 		function selval(){
-			$sql = "SELECT codval, nomval FROM tbvalor;";
+			$sql = "SELECT val.codval, val.nomval, par.nompar FROM tbvalor AS val INNER JOIN tbparametro AS par ON val.codpar = par.codpar;";
 			$conexionBD = new conexion();
 			$conexionBD->conectarBD();
 			$datos = $conexionBD->ejeCon($sql,0);
@@ -70,8 +70,8 @@
 			return $datos;
 		}
 		
-		function updval($codval, $nomval, $codpar){
-			$sql = "UPDATE tbvalor SET codval='".$codval."' , nomval='".$nomval."' , codpar='".$codpar."' WHERE codval='".$codval."';";
+		function updval($codval, $nomval){
+			$sql = "UPDATE tbvalor SET nomval='".$nomval."' WHERE codval='".$codval."';";
 			$this->cons($sql);
 		}
 	}
