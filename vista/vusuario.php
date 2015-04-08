@@ -1,3 +1,8 @@
+        /*  
+        *   @author: Luis M Morales B
+        *   @Version: V1
+        */
+
 <?php
 	include("controlador/cusuario.php");
 ?>
