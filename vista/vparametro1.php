@@ -5,24 +5,24 @@
 <div class="forms">
     <form name="form1" action="home.php?var=40" method="post">
         <div class="row">
-			<div class="form-group">
+            <div class="form-group">
                 <label for="Nombre del Parametro">Codigo</label>
                 <input name="codpar" type="text" value = "<?php echo $dat5[0]['codpar'] ?>" class="form-control" disabled>
-				<input type="hidden" name="actu" value="actu" />
-				<input type="hidden" name="codpar" value="<?php echo $dat5[0]['codpar'] ?>" />
+                <input type="hidden" name="actu" value="actu" />
+                <input type="hidden" name="codpar" value="<?php echo $dat5[0]['codpar'] ?>" />
             </div>
             <div class="form-group">
                 <label for="Nombre del Parametro">Nombre del Parametro</label>
                 <input name="nompar" type="text" value = "<?php echo $dat5[0]['nompar'] ?>"  class="form-control">
             </div>
-			<div class="form-group">
+            <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Actualizar">
             </div>
         </div>
     </form>
-	</div>
+</div>
 <div class="tbcenter">
-	<form id="form2" name="form2" method="GET" action="" onSubmit="return confirm('¿Desea eliminar?')">
+	<form id="form2" name="form2" method="GET" action="" onSubmit="return confirm('ï¿½Desea eliminar?')">
 		<table width="700px" class="table table-striped">
         <tr>
 			<th>Codigo<input name="pac" type="hidden" id="pac" value="104" /></th>

@@ -5,16 +5,16 @@
 <script language="javascript">
 
 	function mostrar(val){
-				if (document.getElementById){ //se obtiene el id
-					var el = document.getElementById('mosgen'); //se define la variable "el" igual a nuestro div
-					el.style.display = 'none';
-					if (val=='4'){
-						el.style.display = 'block';
-					}else{
-						el.style.display = 'none';
-					}
-				}
-			};
+                if (document.getElementById){ //se obtiene el id
+                        var el = document.getElementById('mosgen'); //se define la variable "el" igual a nuestro div
+                        el.style.display = 'none';
+                        if (val=='4'){
+                                el.style.display = 'block';
+                        }else{
+                                el.style.display = 'none';
+                        }
+                }
+        };
 </script>
 <h2>Insertar Datos del familiar</h2>
 <div class="forms1">
