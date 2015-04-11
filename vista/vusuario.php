@@ -1,9 +1,10 @@
-        /*  
-        *   @author: Luis M Morales B
-        *   @Version: V1
-        */
 
 <?php
+        /*  
+        *   @author: Luis M Morales B
+        *   @Version: V2 10/04/15
+        */
+
 	include("controlador/cusuario.php");
 ?>
 <h1>Insertar Usuario </h1>

@@ -1,7 +1,8 @@
 <?php
 	/*
 		@author: Luis M Morales B
-		@Version: V1 07/04/15
+		@Version: V2 10/04/15
+		check los (#) son para?, 56
 	*/
 	include ("controlador/conexion.php");
 	include ("functions.php");
@@ -11,7 +12,7 @@
 		{
 
 		}
-// duda.  
+  
 		function get_valor($codval)
 		{
 			return mostrar_nombre_valores($codval);
@@ -50,15 +51,15 @@
 		/*
 			Función para la actualización de los datos de la vivienda de la persona
 		*/
-		function actu_datos_vivienda($tipovivienda, $tipoparedes, $tipopisos, $tipotechos, $zonariesgo, $tiporelacion, $idpersona)
+		function actu_datos_usuario($docusu, $usuusu, $emausu, $pasusu)
 		{
-			$sql = "UPDATE tbdatospersona SET tipvivper='$tipovivienda', tipparviv='$tipoparedes', tippisviv='$tipopisos', tiptecviv='$tipotechos', zonrieviv='$zonariesgo', tiprelviv='$tiporelacion' WHERE idpersona = '$idpersona'";
+			$sql = "UPDATE tbdatosusuario SET docusu='$documento', usuusu='$usuario', emausu='$email', pasusu='$password' WHERE idusurio = '$documento'";
 			$this->cons($sql);
 		}
 
-		function ver_datos_vivienda($idpersona)
+		function ver_datos_usuario($idusuario)
 		{
-			$sql = "SELECT tipvivper, tipparviv, tippisviv, tiptecviv, zonrieviv FROM tbdatospersona WHERE idpersona = $idpersona";
+			$sql = "SELECT docusu, usuusu, emausu, pasusu FROM tbdatosusuario WHERE idusuario = $idusuario";
 			$conexionBD = new conexion();
 			$conexionBD->conectarBD();
 			$datos = $conexionBD->ejeCon($sql,0);
