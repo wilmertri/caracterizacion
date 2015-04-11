@@ -102,6 +102,24 @@
 		</div>
 		<div class="row">
 			<div class="form-group col-lg-6">
+				<label for="">Incluyendo sala-comedor, ¿de cuántos cuartos en total dispone este hogar?</label>
+				<input type="number" name="numhabviv" class="form-control">
+			</div>
+			<div class="form-group col-lg-6">
+				<label for="">¿En cuántos de esos cuartos duermen las personas de este hogar?</label>
+				<input type="number" name="numhabhab" class="form-control">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-lg-6">
+				
+			</div>
+			<div class="form-group col-lg-6">
+				
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-lg-6">
 				<input type="submit" class="btn btn-primary">
 			</div>	
 		</div>
