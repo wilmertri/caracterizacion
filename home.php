@@ -230,8 +230,10 @@
           if ($variable==90) {
               //Jorge
           }
-          if ($variable==95) {
+          if ($variable==95) 
+		  {
               //Andrea
+			  include("vista/vdespyaban.php");
           }
           if ($variable==100) {
               //Jhon Edison

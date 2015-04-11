@@ -1,6 +1,6 @@
 <?php
 	include ("modelo/mdespyaban.php");
-	$ins = new mdespyaban();
+	$ins = new Mdespyaban();
 	
 	$lugexpul 		= isset($_POST["depto"]) ? $_POST["depto"]:NULL;
 	$munucipio 		= isset($_POST["codubi"]) ? $_POST["codubi"]:NULL;
@@ -26,23 +26,13 @@
 	$actu 			= isset($_POST["actu"]) ? $_POST["actu"]:NULL;
 	$pr 			= isset($_GET["pr"]) ? $_GET["pr"]:NULL;
 
-	$dato		= $ins	->selper();
-	$dato1 		= $ins	->selper1($pr);
-	$acarm		= $ins	->valor	();
-	$ingalim    = $ins  ->valor ();
-	$facper		= $ins	->valor	();
-	$solicit 	= $ins	->valor	();
-	$razinclu 	= $ins	->valor	();
-	$preddesp 	= $ins	->valor	();
-	$tipobien 	= $ins	->valor	();
-	$relbien	= $ins	->valor	();
-	$tipfam 	= $ins	->valor	();
-	$irupd 		= $ins	->valor	();
-	$ubireu 	= $ins	->valor	();
-	$razre 		= $ins	->valor	();
-	$meprot		= $ins	->valor	();
-	$medpro 	= $ins	->valor	();
-	$recinde 	= $ins	->valor	();
+	
+	$factores_permanencia = $ins -> get_factores_permanencia();
+	
+	$respuesta_cerrada		= $ins -> get_respuesta_cerrada();
+	$respuesta_cerrada_dos	= $ins -> get_respuesta_cerrada_dos();
+	
+	
 	
 	if ($actu) {
 		if ($actorarmado ==0) {

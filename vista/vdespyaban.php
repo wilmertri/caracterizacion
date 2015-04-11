@@ -17,6 +17,20 @@
 			}
  		});
  	}
+	
+	function RecargarCiudadesReubi(value){
+		var parametros = {
+			"valor" : value
+		};
+		$.ajax({
+			data: parametros,
+			url: 'vista/miscript4.php',
+			type: 'post',
+			success: function (response) {
+	 			$("#reloadMunicipioreub").html(response);
+			}
+ 		});
+ 	}
 </script>
 <h2>Insertar Datos de Despojo y Abandono de Tierras</h2>
 
@@ -30,7 +44,7 @@
 		<div class="row">
 			<div class="form-group col-lg-6 col-md-6">
                 <label for="Departamento">Departamento <span style="color:red;">*</span></label>
-                <select name="depto" onchange="javascript:RecargarCiudades(this.value);" class="form-control" style="text-transform:uppercase;">
+                <select name="depto" onchange="javascript:RecargarCiudadesexp(this.value);" class="form-control">
  					<option value="0">Seleccione Departamento</option>
 					<?php
  					
@@ -48,7 +62,7 @@
             </div>
 			<div class="form-group col-lg-6 col-md-6">
                 <label for="Municipio">Municipio <span style="color:red;">*</span></label>
-                <div id="reloadMunicipio">
+                <div id="reloadMunicipioexp">
  					<select name="codubi" id="id_estado" class="form-control" style="text-transform:uppercase;">
 						<option value="0">Seleccione municipio</option>
  					</select>
@@ -61,18 +75,17 @@
 					<input name="fechadeexpulsion" type="date" class="form-control">
             </div>
 			<div class="form-group col-lg-6 col-md-6">
-				<label for="Actor armado">Actor armado</label>
+				<label for="Actor armado">Después del hecho victimizante, ¿Algún actor armado le ha impedido salir de un territorio?</label>
 				<select name="actorarmado" onchange="javascript:mostrar(this.value);" class="form-control">
 						<option value=0> Seleccione una opción </option>>
 						
-				   
 						<?php 
 						//Select
 						//$gen = $ins->selpar();
-						for ($i=0; $i < count($acarm); $i++){
+						for ($i=0; $i < count($respuesta_cerrada); $i++){
 						?>
 				
-						<option value="<?php echo $acarm[$i]['codval'] ?>" ><?php echo $acarm[$i]['nomval'] ?></option>
+						<option value="<?php echo $respuesta_cerrada[$i]['codval'] ?>" ><?php echo $respuesta_cerrada[$i]['nomval'] ?></option>
 				
 						<?php } ?>
 				</select>
@@ -80,24 +93,23 @@
 		</div>
 		<div class="row">
 			<div class="form-group col-lg-6 col-md-6">
-				<label for="Ingreso alimentos">Ingreso alimentos</label>
+				<label for="Ingreso alimentos">Después del hecho victimizante, ¿algún actor armado ha impedido el ingreso de alimentos o bienes básicos a la zona donde ha estado habitando?</label>
 				<select name="ingresoalimentos" onchange="javascript:mostrar(this.value);" class="form-control">
 						<option value=0> Seleccione una opción </option>>
 						
-				   
 						<?php 
 						//Select
 						//$gen = $ins->selpar();
-						for ($i=0; $i < count($ingalim); $i++){
+						for ($i=0; $i < count($respuesta_cerrada); $i++){
 						?>
 				
-						<option value="<?php echo $ingalim[$i]['codval'] ?>" ><?php echo $ingalim[$i]['nomval'] ?></option>
+						<option value="<?php echo $respuesta_cerrada[$i]['codval'] ?>" ><?php echo $respuesta_cerrada[$i]['nomval'] ?></option>
 				
 						<?php } ?>
 				</select>
 			</div>
 			<div class="form-group col-lg-6 col-md-6">
-                <label for="Tiempo de permanencia">Tiempo Permanencia Municipio <span style="color:red;">*</span></label>
+                <label for="Tiempo de permanencia">Tiempo permanencia en el municipio <span style="color:red;">*</span></label>
                 <input name="tieper" type="text" class="form-control" pattern="[0-9]{1,2}" placeholder="">
             </div>
 		</div>
@@ -107,9 +119,9 @@
                 <select name="factpermanencia" class="form-control" style="text-transform:uppercase;">
 				<option value=0> Seleccione una opción </option>
 					<?php 
-						for ($i=0; $i < count($facper); $i++){
+						for ($i=0; $i < count($factores_permanencia); $i++){
 					?>
-					<option value ="<?php echo $facper[$i]['codeps'] ?>" ><?php echo $facper[$i]['nomeps'] ?></option>
+					<option value ="<?php echo $factores_permanencia[$i]['idfactor'] ?>" ><?php echo $factores_permanencia[$i]['nomfact'] ?></option>
 					<?php 
 						} 
 					?>
@@ -171,7 +183,7 @@
 		</div>
 		<div class="row">	
 			<div class="form-group col-lg-6 col-md-6">
-				<label for="Perdida de bienes">Perdida de bienes</label>
+				<label for="Perdida de bienes">¿Cuántos bienes inmuebles han perdido?</label>
 				<input name="perdidadebienes" type="number" class="form-control">
             </div>
 			<div class="form-group col-lg-6 col-md-6">
@@ -247,23 +259,42 @@
 					</select>
 				</div>
 				<div class="form-group col-lg-6 col-md-6">
-					<label for="Ubicacion reubicacion">Ubicacion reubicacion</label>
-					<select name="ubicacionreubicacion" onchange="javascript:mostrar(this.value);" class="form-control">
-								<option value=0> Seleccione una opción </option>>
-								
-						   
-								<?php 
-								//Select
-								//$gen = $ins->selpar();
-								for ($i=0; $i < count($ubireu); $i++){
-								?>
-						
-								<option value="<?php echo $ubireu[$i]['codval'] ?>" ><?php echo $ubireu[$i]['nomval'] ?></option>
-						
-								<?php } ?>
-					</select>
+
 				</div>
 			</div>
+			<div class="row">
+				<div class="form-group col-lg-12 center">
+					<label for="Lugar de expedicion">Si seleccionó reubicación a que lugar se trasladaría</label> 
+				</div> 
+			</div>
+			<div class="row">
+				<div class="form-group col-lg-6 col-md-6">
+					<label for="Departamento">Departamento <span style="color:red;">*</span></label>
+					<select name="depto" onchange="javascript:RecargarCiudades(this.value);" class="form-control" style="text-transform:uppercase;">
+						<option value="0">Seleccione Departamento</option>
+						<?php
+						
+						$sql = "SELECT codubi, nomubi FROM vieubica ORDER BY nomubi";
+						echo $sql;
+						$conexionBD = new conexion_sqlserver();
+						$conexionBD->conectarBD();
+						$data = $conexionBD->ejecutarConsulta($sql,0); 
+						for($i=0;$i<count($data);$i++)
+						{	
+						?>
+							<option value="<?php echo $data[$i]['codubi'] ?>"><?php echo $data[$i]['nomubi'] ?></option>
+						<?php }?>
+					</select>
+				</div>
+				<div class="form-group col-lg-6 col-md-6">
+					<label for="Municipio">Municipio <span style="color:red;">*</span></label>
+					<div id="reloadMunicipioreub">
+						<select name="codubi" id="id_estado" class="form-control" style="text-transform:uppercase;">
+							<option value="0">Seleccione municipio</option>
+						</select>
+					</div>
+				</div>
+			</div> 
 			<div class="row">
 			<div class="form-group col-lg-6 col-md-6">
 				<label for="Razon de retorno">Razon de retorno</label>
@@ -283,7 +314,7 @@
 				</select>
 			</div>
 			<div class="form-group col-lg-6 col-md-6">
-				<label for="Medidas de proteccion">Medidas de proteccion</label>
+				<label for="Medidas de proteccion">Han solicitado medidas de protección?</label>
 				<select name="medidasdeproteccion" onchange="javascript:mostrar(this.value);" class="form-control">
 							<option value=0> Seleccione una opción </option>>
 							
@@ -291,10 +322,10 @@
 							<?php 
 							//Select
 							//$gen = $ins->selpar();
-							for ($i=0; $i < count($meprot); $i++){
+							for ($i=0; $i < count($respuesta_cerrada_dos); $i++){
 							?>
 					
-							<option value="<?php echo $meprot[$i]['codval'] ?>" ><?php echo $meprot[$i]['nomval'] ?></option>
+							<option value="<?php echo $respuesta_cerrada_dos[$i]['codval'] ?>" ><?php echo $respuesta_cerrada_dos[$i]['nomval'] ?></option>
 					
 							<?php } ?>
 				</select>
@@ -310,16 +341,16 @@
 							<?php 
 							//Select
 							//$gen = $ins->selpar();
-							for ($i=0; $i < count($medpro); $i++){
+							for ($i=0; $i < count($respuesta_cerrada_dos); $i++){
 							?>
 						
-							<option value="<?php echo $medpro[$i]['codval'] ?>" ><?php echo $medpro[$i]['nomval'] ?></option>
+							<option value="<?php echo $respuesta_cerrada_dos[$i]['codval'] ?>" ><?php echo $respuesta_cerrada_dos[$i]['nomval'] ?></option>
 						
 							<?php } ?>
 				</select>
 			</div>
 			<div class="form-group col-lg-6 col-md-6">
-				<label for="Ha recibido indemnizacion">Ha recibido indemnizacion</label>
+				<label for="Ha recibido indemnizacion">Ha recibido indemnización por parte de la Unidad de Víctimas</label>
 				<select name="harecibidoindemnizacion" onchange="javascript:mostrar(this.value);" class="form-control">
 							<option value=0> Seleccione una opción </option>>
 							
@@ -327,20 +358,25 @@
 							<?php 
 							//Select
 							//$gen = $ins->selpar();
-							for ($i=0; $i < count($recinde); $i++){
+							for ($i=0; $i < count($respuesta_cerrada_dos); $i++){
 							?>
 						
-							<option value="<?php echo $recinde[$i]['codval'] ?>" ><?php echo $recinde[$i]['nomval'] ?></option>
+							<option value="<?php echo $respuesta_cerrada_dos[$i]['codval'] ?>" ><?php echo $respuesta_cerrada_dos[$i]['nomval'] ?></option>
 						
 							<?php } ?>
 				</select>
 			</div>
 		</div>
 		<div class="row">	
-			<div class="form-group col-lg-12 col-md-12 center">
+			<div class="form-group col-lg-6 col-md-6 center">
 				<label for="Observaciones">Observaciones</label>
 				<input name="observaciones" type="text" class="form-control">
             </div>
+			<div  class="row">
+			<div class="form-group col-lg-6 col-md-6 center">
+				<input type="submit" class="btn btn-primary">
+			</div>	
+			</div>
 		</div>		
 </div>		
        
