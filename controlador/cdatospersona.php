@@ -36,8 +36,8 @@
 	
 	$ver1 = $ins->selver();
 	$zona = $ins->selzona();
-	
-	$tipdoc = $ins->valor(1);
+	$tipdoc 	= $ins->get_documento();
+	//$tipdoc = $ins->valor(1);
 	$genper = $ins->valor(2);
 	$estcivper = $ins->valor(3);
 	$etnia = $ins->valor(10);

@@ -1,8 +1,17 @@
 <?php
 	include("controlador/conexion.php");
+	include ("functions.php");
 	class mdatospersona {
 		
 		function mdatospersona() {}
+		function get_valor($codval)
+		{
+			return mostrar_nombre_valores($codval);
+		}
+		function get_documento()
+		{
+			return seleccionar_valores_de_parametro(1);
+		}
 		function insper($numficha,$docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia, $ges, $hijosacargo, $relsexper) {
 			$sql = "INSERT INTO tbdatospersona ( numficha, numdocper, tipdocper, lugexpdocper, pnomper, snomper, papeper, sapeper, genper, dirper, zonper, verper, secper, barfinper, telper, telsegper, lugnacper, fecnacper, estcivper, etniaper, geslanper, hijosacargo, relsexper ) VALUES ('".$numficha."','".$docper."','".$tipdoc1."','".$lugexpdoc1."','".$pnom."', 
 			'".$snom."','".$pape."','".$sape."','".$gen."','".$dir."','".$zon."','".$ver."','".$sec."','".$barfin."',
