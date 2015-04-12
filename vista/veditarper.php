@@ -1,61 +1,182 @@
 <?php
 	include ("controlador/cdatospersona.php");
 ?>
-
+<script language="javascript" src="js/jquery-1.9.1.js"></script><!-- llamamos al JQuery-->
+<script language="javascript">
+	function RecargarCiudades(value){
+		var parametros = {
+			"valor" : value
+		};
+		$.ajax({
+			data: parametros,
+			url: 'vista/miscript.php',
+			type: 'post',
+			success: function (response) {
+	 			$("#reloadMunicipio").html(response);
+			}
+ 		});
+ 	}
+	
+	function RecargarCiudadesnac(value){
+		var parametros = {
+			"valor" : value
+		};
+		$.ajax({
+			data: parametros,
+			url: 'vista/miscript2.php',
+			type: 'post',
+			success: function (response) {
+	 			$("#reloadMunicipionac").html(response);
+			}
+ 		});
+ 	}
+	
+	function RecargarCiudadesexp(value){
+		var parametros = {
+			"valor" : value
+		};
+		$.ajax({
+			data: parametros,
+			url: 'vista/miscript3.php',
+			type: 'post',
+			success: function (response) {
+	 			$("#reloadMunicipioexp").html(response);
+			}
+ 		});
+ 	}
+	
+	function mostrar(val){
+				if (document.getElementById){ //se obtiene el id
+					var el = document.getElementById('mosgen'); //se define la variable "el" igual a nuestro div
+					el.style.display = 'none';
+					if (val=='4'){
+						el.style.display = 'block';
+					}else{
+						el.style.display = 'none';
+					}
+				}
+			}
+	function mostrardis(val){
+				if (document.getElementById){ //se obtiene el id
+					var el = document.getElementById('mosdis'); //se define la variable "el" igual a nuestro div
+					el.style.display = 'none';
+					if (val >='33' && val <= '36'){
+						el.style.display = 'block';
+					}else{
+						if (val=='45'){
+							el.style.display = 'none';
+						}
+					}
+				}
+			}
+	function mostrarseg(val){
+				if (document.getElementById){ //se obtiene el id
+					var el = document.getElementById('mosseg'); //se define la variable "el" igual a nuestro div
+					el.style.display = 'none';
+					if (val =='15'){
+						el.style.display = 'block';
+					}else{
+							el.style.display = 'none';
+						}
+					}
+			}		
+	function mostrartrab(val){
+				if (document.getElementById){ //se obtiene el id
+					var el = document.getElementById('mostrab'); //se define la variable "el" igual a nuestro div
+					var e = document.getElementById('mostrab1');
+					el.style.display = 'none';
+					e.style.display = 'none';
+					if (val=='52'){
+						el.style.display = 'block';
+						e.style.display = 'block';
+					}else{
+						el.style.display = 'none';
+						e.style.display = 'none';
+					}
+				}
+			}
+</script>
 <h1>Editar Datos de la Persona</h1>
 
+<?php
+	$actudato = $ins	->selper1($pr);
+?>
+
 <div class="forms1">
-    <form name="form1" action="home.php?pr=<?php echo $dato1[0]['numdocper'] ?>var=4" method="post">
+    <form name="form1" action="home.php?pr=<?php echo $actudato[0]['idpersona'] ?>var=4" method="post">
         <div class="row">
-			 <div class="form-group col-xs-6">
-				<label for="Numero de documento">Numero de Documento: </label> 
-				<input name="docper" type="text" value="<?php echo $dato1[0]['numdocper'] ?>" class="form-control" disabled>
+			<div class="form-group col-lg-6">
+                <label for="Required"><i>(<span style="color:red;">*</span>)Campos obligatorios</i></label>
+            </div>
+			 <div class="form-group col-lg-6">
+				<label for="Numero Ficha">Numero Ficha</label> 
+				<input name="numficha" type="text" value="<?php echo $actudato[0]['numficha'] ?>" class="form-control" disabled>
 				<input type="hidden" name="actu" value="actu" />
-				<input type="hidden" name="docper" value="<?php echo $dato1[0]['numdocper'] ?>" />
+				<input type="hidden" name="numficha" value="<?php echo $actudato[0]['numficha'] ?>" />
 			</div>
-			<div class="form-group col-xs-6">
-				<label for="Tipo de documento">Tipo de Documento</label> 
-				<?php	
-					$tipdoc2 = $ins->valor2($dato1[0]["tipdocper"]); 
-				?>
-				<input name="tipdoc" type="text" value="<?php echo $tipdoc2[0]['nomval'] ?>" class="form-control"disabled >
+		</div>
+		<div class="row">
+            <div class="form-group col-lg-6">
+                <label for="Primer Nombre">Primer Nombre <span style="color:red;">*</span> </label>
+                <input name="pnom" type="text" value="<?php echo $actudato[0]['pnomper'] ?>"class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: andres" pattern="[A-z ]{2,20}" title="Se necesita un nombre"required autofocus>
+            </div>
+			<div class="form-group col-lg-6">
+                <label for="Segundo Nombre">Segundo Nombre</label>
+                <input name="snom" type="text" value="<?php echo $actudato[0]['snomper'] ?>" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: felipe"  pattern="[A-z ]{2,20}">
             </div>
 		</div>
 		<div class="row">
-            <div class="form-group col-xs-6">
-                <label for="Primer Nombre">Primer Nombre</label>
-				<input name="pnom" type="text" value="<?php echo $dato1[0]['pnomper'] ?>" class="form-control">   
+            <div class="form-group col-lg-6">
+                <label for="Primer Apellido">Primer Apellido <span style="color:red;">*</span></label>
+                <input name="pape" type="text" value="<?php echo $actudato[0]['papeper'] ?>" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: vargas"  pattern="[A-z ]{2,20}" required>
             </div>
-			<div class="form-group col-xs-6">
-               <label for="Segundo Nombre">Segundo Nombre</label>
-               <input name="snom" type="text" value="<?php echo $dato1[0]['snomper'] ?>" class="form-control">
+			<div class="form-group col-lg-6">
+                <label for="Segundo Apellido">Segundo Apellido</label>
+                <input name="sape" type="text" value="<?php echo $actudato[0]['sapeper'] ?>" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: torres"  pattern="[A-z ]{2,20}">
             </div>
+		</div>
+        <div class="row">
+			<div class="form-group col-lg-6">
+                <label for="Tipo de documento">Tipo de Documento <span style="color:red;">*</span></label>
+                <select name="tipdoc" class="form-control" style="text-transform:uppercase;">
+					<option value = "<?php $tipdoc2 = $ins->valor2($actudato[0]["tipdocper"]); ?>"> <?php echo $tipdoc2[0]['nomval'] ?></option>
+					<?php 
+						for ($i=0; $i < count($tipdoc); $i++){
+					?>
+					<option value ="<?php echo $tipdoc[$i]['codval'] ?>" ><?php echo $tipdoc[$i]['nomval'] ?></option>
+					<?php 
+						} 
+					?>
+				</select>
+            </div>
+            <div class="form-group col-lg-6">
+                <label for="Numero de documento">Número de Documento <span style="color:red;">*</span></label>
+                <input name="docper" type="text" value="<?php echo $actudato[0]['numdocper'] ?>"  class="form-control" pattern="[0-9]{6,10}" style="text-transform:uppercase;" placeholder="ej: 1072666555" required>
+            </div>
+		</div>
+		
+		<div class="row">
+            <div class="form-group col-md-12">
+			<label for="Genero">Genero</label>
+				<select name="genero" onchange="javascript:mostrar(this.value);" class="form-control">
+					<option value="<?php $gen2 = $ins->valor2($actudato[0]["genper"]); ?>"> <?php echo $gen2[0]['nomval'] ?></option>
+					
+					<?php 
+					 
+						for ($i=0; $i < count($genper); $i++){
+					?>
+					<option value ="<?php echo $genper[$i]['codval'] ?>" ><?php echo $genper[$i]['nomval'] ?></option>
+					<?php 
+						} 
+					?>
+				</select>
+			</div>
 		</div>
 		<div class="row">
-            <div class="form-group col-xs-6">
-                <label for="Primer Apellido">Primer Apellido</label>
-                <input name="pape" type="text" value="<?php echo $dato1[0]['papeper'] ?>" class="form-control">   
-            </div>
-			<div class="form-group col-xs-6">
-               <label for="Segundo Apellido">Segundo Apellido</label>
-               <input name="sape" type="text" value="<?php echo $dato1[0]['sapeper'] ?>" class="form-control">
-            </div>
-		</div>
-	    <div class="row">
-            <div class="form-group col-xs-6">
-                <label for="Genero">Genero</label>
-				<?php	
-					$gen2 = $ins->valor2($dato1[0]["genper"]); 
-				?>
-				<input name="gen" type="text" value="<?php echo $gen2[0]['nomval'] ?>" class="form-control"disabled >
-            </div>
-			<div class="form-group col-xs-6">
-                <label for="Estado civil">Estado Civil</label>
-                <select name="estciv" class="form-control">
-				<?php	
-					$estciv2 = $ins->valor2($dato1[0]["tipdocper"]); 
-				?>
-				<value ="<?php echo $estciv2[0]['nomval'] ?>" class="form-control" >
+			<div class="form-group col-lg-6">
+                <label for="Estado civil">Estado Civil <span style="color:red;">*</span></label>
+                <select name="estciv" class="form-control" style="text-transform:uppercase;">
+				<option value=<?php	$estciv2 = $ins->valor2($actudato[0]["estcivper"]);?>> <?php echo $estciv2[0]['nomval'] ?> </option>
 					<?php 
 						for ($i=0; $i < count($estcivper); $i++){
 					?>
@@ -63,123 +184,153 @@
 					<?php 
 						} 
 					?>
+					
+				</select>
+            </div>
+			<div class="form-group col-lg-6" id="mosgen">
+                <label for="Gestante o lactante">Gestante o Lactante</label>
+				<select name="ges" class="form-control" style="text-transform:uppercase;">
+					<option value = <?php	$geslan2 = $ins->valor2($actudato[0]["geslanper"]);?>> <?php echo $geslan2[0]['nomval'] ?> </option>
+					<?php 
+						for ($i=0; $i < count($gestlact); $i++){
+					?>
+					<option value ="<?php echo $gestlact[$i]['codval'] ?>" ><?php echo $gestlact[$i]['nomval'] ?></option>
+					<?php 
+						} 
+					?>
+				</select>
+            </div>
+		</div>	
+		<div class="row">
+            <div class="form-group col-lg-6">
+                <label for="Direccion">Dirección <span style="color:red;">*</span></label>
+                <input name="dir" type="text" value="<?php echo $actudato[0]['dirper'] ?>" class="form-control" maxlenght="50" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: cra 4 # 56 - 12 ">
+            </div>
+			<div class="form-group col-lg-6">
+                <label for="Zona">Zona <span style="color:red;">*</span></label>
+                <select name="zon" class="form-control" style="text-transform:uppercase;">
+				<option value=<?php	$zon2 = $ins->selzona2($actudato[0]["zonper"]);?>> <?php echo $zon2[0]['nomzona'] ?></option>
+					<?php 
+						for ($i=0; $i < count($zona); $i++){
+					?>
+					<option value ="<?php echo $zona[$i]['codzona'] ?>" ><?php echo $zona[$i]['nomzona'] ?></option>
+					<?php 
+						} 
+					?>
 				</select>
             </div>
 		</div>
 		<div class="row">
-			<div class="form-group col-xs-6">
-				<label for="Direccion">Direccion</label>
-				<input name="dir" type="text" value="<?php echo $dato1[0]['dirper'] ?>" class="form-control">
-			</div>
-            <div class="form-group col-xs-6">
+            <div class="form-group col-lg-6">
                 <label for="Vereda">Vereda</label>
-				<input name="dir" type="text" value="<?php echo $dato1[0]['verper'] ?>" class="form-control">
+                <select name="ver" class="form-control" style="text-transform:uppercase;">
+				<option value=<?php	$ver2 = $ins->selver2($actudato[0]["verper"]);?>> <?php echo $ver2[0]['nomver'] ?></option>
+					<?php 
+						for ($i=0; $i < count($ver1); $i++){
+					?>
+					<option value ="<?php echo $ver1[$i]['codver'] ?>" ><?php echo $ver1[$i]['nomver'] ?></option>
+					<?php 
+						} 
+					?>
+				</select>
+            </div>
+			<div class="form-group col-lg-6">
+                <label for="Sector">Sector <span style="color:red;">*</span></label>
+                <input name="sec" type="text" value="<?php echo $actudato[0]['secper'] ?>" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: río frío" class="form-control" maxlenght="50">
             </div>
 		</div>
 		<div class="row">
-			<div class="form-group col-xs-6">
-                <label for="Sector">Sector</label>
-                <input name="sec" type="text" value="<?php echo $dato1[0]['secper'] ?>" class="form-control">
-            </div>
-		
-            <div class="form-group col-xs-6">
-                <label for="Barrio o finca">Barrio o finca</label>
-				<input name="barfin" type="text" value="<?php echo $dato1[0]['barfinper'] ?>" class="form-control">
+            <div class="form-group col-lg-12">
+                <label for="Barrio o finca">Barrio o Finca</label>
+				<input name="barfin" type="text" value="<?php echo $actudato[0]['barfinper'] ?>" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: los zipas"  class="form-control" maxlenght="50">
             </div>
 		</div>
 		<div class="row">
-            <div class="form-group col-xs-6">
-                <label for="Telefono">Telefono</label>
-                <input name="tel" type="text" value="<?php echo $dato1[0]['telper'] ?>" class="form-control">
+            <div class="form-group col-lg-6">
+                <label for="Telefono">Teléfono <span style="color:red;">*</span></label>
+                <input name="tel" type="text" value="<?php echo $actudato[0]['telper'] ?>" class="form-control" pattern="[0-9]{6,10}" style="text-transform:uppercase;" placeholder="ejemplo: 8687555" required>
             </div>
-			<div class="form-group col-xs-6">
-                <label for="Telefono2">Telefono2</label>
-                <input name="telseg" type="text" value="<?php echo $dato1[0]['telsegper'] ?>" class="form-control">
-            </div>
-		</div>
-		<div class="row">
-			<div class="form-group col-xs-6">
-				<label for="Ultimo grado cursado">Ultimo grado cursado</label>
-				<input name="ultgra" type="text" class="form-control">
-			</div>
-		
-            <div class="form-group col-xs-6">
-                <label for="Lugar de nacimiento">Lugar de nacimiento</label>
-				<hr>
+			<div class="form-group col-lg-6">
+                <label for="Telefono2">Teléfono 2</label>
+                <input name="telseg" type="text" value="<?php echo $actudato[0]['telsegper'] ?>" class="form-control" pattern="[0-9]{6,10}" style="text-transform:uppercase;" placeholder="ejemplo: 3007878255">
             </div>
 		</div>
 		<div class="row">
-           <div class="form-group col-xs-6">
-                <label for="Fecha de nacimiento">Fecha de nacimiento</label>
-				<input name="fecnac" type="date" value="<?php echo $dato1[0]['fecnacper'] ?>" class="form-control">
+            <div class="form-group col-lg-6">
+			    <label for="Fecha de nacimiento">Fecha de Nacimiento <span style="color:red;">*</span></label>
+				<input name="fecnac" type="date" value="<?php echo $actudato[0]['fecnacper'] ?>" class="form-control" max="2014-12-01" min="1900-01-01">
             </div>
-		
-			<div class="form-group col-xs-6">
-                <label for="Numero de personas a cargo">Numero de personas a cargo</label>
-                <input name="numpercar" type="text" value="<?php echo $dato1[0]['numpercar'] ?>" class="form-control">
-            </div>
-		</div>
-		<div class="row">
-           <div class="form-group col-xs-6">
-                <label for="Opcion capacitacion">Sobre que le gustaria capacitarse</label>
-                <input name="opicap" type="text" value="<?php echo $dato1[0]['opicapper'] ?>" class="form-control">
-            </div>
-		</div>
-		<div class="row">	
-			<div class="form-group col-xs-6">
-                <label for="Trabajo">Trabajo</label>
-                <input name="traper" type="text" value="<?php echo $dato1[0]['traper'] ?>" class="form-control">
+			<div class="form-group col-lg-6">
+                <label for="Etnia">Grupo Poblacional <span style="color:red;">*</span></label>
+                <select name="etnia" class="form-control" style="text-transform:uppercase;">
+					<option value = <?php	$etnia2 = $ins->valor2($actudato[0]["etniaper"]);?>> <?php echo $etnia2[0]['nomval'] ?> </option>
+					<?php 
+						for ($i=0; $i < count($etnia); $i++){
+					?>
+					<option value ="<?php echo $etnia[$i]['codval'] ?>" ><?php echo $etnia[$i]['nomval'] ?></option>
+					<?php 
+						} 
+					?>
+				</select>
             </div>
 		</div>
 		<div class="row">
-            <div class="form-group col-xs-12">
-                <label for="Donde trabaja">Donde trabaja</label>
-                <input name="ubitra" type="text" value="<?php echo $dato1[0]['ubitraper'] ?>" class="form-control">
+			<div class="form-group col-lg-6">
+                <label for="Hijos a Cargo">Hijos a Cargo</label>
+                <select name="hijosacargo" class="form-control" style="text-transform:uppercase;">
+					<option value = <?php	$hijos2 = $ins->valor2($actudato[0]["hijosdepper"]);?>> <?php echo $hijos2[0]['nomval'] ?></option>
+					<?php 
+						for ($i=0; $i < count($hijosacargo1); $i++){
+					?>
+					<option value ="<?php echo $hijosacargo1[$i]['codval'] ?>" ><?php echo $hijosacargo1[$i]['nomval'] ?></option>
+					<?php 
+						} 
+					?>
+				</select>
             </div>
-		</div>
-		<div class="row">	
-            <div class="form-group col-xs-6">
-                <label for="Ingreso mensual">Ingreso mensual</label>
-				<input name="ingmenper" type="text" value="<?php echo $dato1[0]['ingmenper'] ?>" class="form-control">
-            </div>
-			<div class="form-group col-xs-6">
-                <label for="Otras fuentes de ingreso">Otras fuentes de ingreso</label>
-                <input name="otrfueing" type="text" value="<?php echo $dato1[0]['ingmenper'] ?>" class="form-control">
-            </div>
-		</div>
-		<div class="row">
-            <div class="form-group col-xs-12">
-                <label for="Lugar de expulsion">Lugar de expulsion</label>
-            </div>
-		</div>
-		<div class="row">
-            <div class="form-group col-xs-6">
-                <label for="Fecha de expulsion">Fecha de expulsion</label>
-                <input name="fecexpul" type="date" value="<?php echo $dato1[0]['fecexpulper'] ?>" class="form-control">
-            </div>
-			<div class="form-group col-xs-6">
-                <label for="Hechos victimizantes">Hechos victimizantes</label>
-                <input name="hecvic" type="text" value="<?php echo $dato1[0]['hecvicper'] ?>" class="form-control">
+			<div class="form-group col-lg-6">
+                <label for="Relaciones sexuales">Establece Relaciones Sexuales de Pareja Con</label>
+                <select name="relsexper" class="form-control" style="text-transform:uppercase;">
+					<option value =<?php	$relsex2 = $ins->valor2($actudato[0]["relsexper"]);?>> <?php echo $relsex2[0]['nomval'] ?></option>
+					<?php 
+						for ($i=0; $i < count($relsexper1); $i++){
+					?>
+					<option value ="<?php echo $relsexper1[$i]['codval'] ?>" ><?php echo $relsexper1[$i]['nomval'] ?></option>
+					<?php 
+						} 
+					?>
+				</select>
             </div>
 		</div>
 		<div class="row">
-            <div class="form-group col-xs-6">
-                <label for="Factores">Factores por los que vive en el municipio</label>
-                <input name="fecexpul" type="text" value="<?php echo $dato1[0]['facvivmun'] ?>" class="form-control">
+			<div class="form-group col-lg-6">
+                <label for="Libreta Militar">Libreta Militar</label>
+                <select name="libmilper" class="form-control" style="text-transform:uppercase;">
+					<option value = 0> Seleccione una opción </option>
+					<?php 
+						for ($i=0; $i < count($libmilper); $i++){
+					?>
+					<option value ="<?php echo $libmilper[$i]['codval'] ?>" ><?php echo $libmilper[$i]['nomval'] ?></option>
+					<?php 
+						} 
+					?>
+				</select>
             </div>
-			<div class="form-group col-xs-6">
-                <label for="Tiempo de permanencia">Tiempo de permanencia</label>
-                <input name="tieper" type="text" value="<?php echo $dato1[0]['tiepermun'] ?>" class="form-control">
+			<div class="form-group col-lg-6">
+                <label for="Libreta Militar">Libreta Militar</label>
+                <select name="libmilper" class="form-control" style="text-transform:uppercase;">
+					<option value = 0> Seleccione una opción </option>
+					<?php 
+						for ($i=0; $i < count($libmilper); $i++){
+					?>
+					<option value ="<?php echo $libmilper[$i]['codval'] ?>" ><?php echo $libmilper[$i]['nomval'] ?></option>
+					<?php 
+						} 
+					?>
+				</select>
             </div>
 		</div>
-		<div class="row">
-			<div class="form-group col-xs-12">
-				<label for="Discapacidad">Discapacidad</label>
-				<hr>
-				<label for="Descripcion de discapacidad">Descripcion</label>
-				<input name="desdis" type="text" class="form-control">
-			</div>
-		</div>		
+			
 			<div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Actualizar">
 				<a href="home.php" class="btn btn-primary" >Salir</a>

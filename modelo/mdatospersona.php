@@ -12,6 +12,38 @@
 		{
 			return seleccionar_valores_de_parametro(1);
 		}
+		function get_genero()
+		{
+			return seleccionar_valores_de_parametro(2);
+		}
+		function get_estciv()
+		{
+			return seleccionar_valores_de_parametro(3);
+		}
+		function get_etnia()
+		{
+			return seleccionar_valores_de_parametro(10);
+		}
+		function get_estado_embarazo()
+		{
+			return seleccionar_valores_de_parametro(11);
+		}
+		/*function get_documento()
+		{
+			return seleccionar_valores_de_parametro(1);
+		}
+		function get_documento()
+		{
+			return seleccionar_valores_de_parametro(1);
+		}
+		function get_documento()
+		{
+			return seleccionar_valores_de_parametro(1);
+		}
+		function get_documento()
+		{
+			return seleccionar_valores_de_parametro(1);
+		}*/
 		function insper($numficha,$docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia, $ges, $hijosacargo, $relsexper) {
 			$sql = "INSERT INTO tbdatospersona ( numficha, numdocper, tipdocper, lugexpdocper, pnomper, snomper, papeper, sapeper, genper, dirper, zonper, verper, secper, barfinper, telper, telsegper, lugnacper, fecnacper, estcivper, etniaper, geslanper, hijosacargo, relsexper ) VALUES ('".$numficha."','".$docper."','".$tipdoc1."','".$lugexpdoc1."','".$pnom."', 
 			'".$snom."','".$pape."','".$sape."','".$gen."','".$dir."','".$zon."','".$ver."','".$sec."','".$barfin."',
@@ -91,6 +123,19 @@
 			$conexionBD = new conexion();
 			$conexionBD -> conectarBD();
 			$datos = $conexionBD -> ejeCon($sql, 0);
+			return $datos;
+		}
+		
+		function get_calcular_edad($fecnac)
+		{
+			return calcular_edad($fecnac);
+		}
+		function ver_edad($fecnac)
+		{
+			$sql = "SELECT fecnacper FROM tbdatospersona WHERE fecnacper ='". $fecnac."';";
+			$conexionBD = new conexion();
+			$conexionBD->conectarBD();
+			$datos = $conexionBD->ejeCon($sql,0);
 			return $datos;
 		}
 	}

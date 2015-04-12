@@ -37,13 +37,21 @@
 	$ver1 = $ins->selver();
 	$zona = $ins->selzona();
 	$tipdoc 	= $ins->get_documento();
+	$genper 	= $ins->get_genero();
+	$estcivper 	= $ins->get_estciv();
+	$etnia 	= $ins->get_etnia();
+	$gestlact 	= $ins->get_estado_embarazo();
 	//$tipdoc = $ins->valor(1);
-	$genper = $ins->valor(2);
-	$estcivper = $ins->valor(3);
-	$etnia = $ins->valor(10);
+	//$genper = $ins->valor(2);
+	//$estcivper = $ins->valor(3);
+	//$etnia = $ins->valor(10);
 	$gestlact = $ins->valor(11);
 	$hijosacargo1 = $ins->valor(17);
 	$relsexper1 = $ins->valor(18);
+	
+	$edad 	= $ins->ver_edad($pr);
+	$fecnac1 	= $ins->get_calcular_edad($edad[0]['fecnacper']);
+	
 	
 	/*echo $docper." ".$tipdoc1." ".$lugexpdoc." ".$lugexpdoc1." ".$pnom." ".$snom." ".$pape." ".$sape." ".$gen." ".$dir." ".$zon;
 	echo " ";
@@ -52,8 +60,8 @@
 	echo $estciv;
 	echo " ";
 	echo $etnia1." ".$ges;
-	echo " ";
-	*/
+	echo " ";*/
+	
 
 	//$tipdocinfo = $ins -> seldoc();
 	

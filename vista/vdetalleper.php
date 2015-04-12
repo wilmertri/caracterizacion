@@ -1,7 +1,6 @@
 <?php
 	include ("controlador/cdatospersona.php");
 ?>
-	
 <h1>Detalle Datos de la Persona</h1>
 <table class="table">
 	<tr>
@@ -90,6 +89,11 @@
 		?>
 		<td> <?php echo $hijosacargo2[0]['nomval'] ?></td>
 	</tr>
+	<tr>
+		<td>Edad</td>
+		
+		<td> <?= $fecnac1[0]['fecnacper'] ?></td>
+	</tr>
 </table>
 <div>
 <div class="row">
@@ -98,21 +102,5 @@
 			<a href="home.php?pr=<?php echo $dato1[0]['idpersona'] ?>&var=5" class="btn btn-primary">Editar</a>
 			<a href="home.php" class="btn btn-primary" >Salir</a>
 	</div>
-	<div class="col-md-6">
-			<a href="home.php?var=18&pr=<?php echo $dato1[0]['numdocper'] ?>" class="btn btn-primary">Negocios</a>
-			<a href="home.php?var=10&pr=<?php echo $dato1[0]['numdocper'] ?>" class="btn btn-primary">Capacitaciones</a>
-			<a href="home.php?var=14&pr=<?php echo $dato1[0]['numdocper'] ?>" class="btn btn-primary">Experiencia</a>
-	</div>
-</div>
-<br>
-<div class="row">
-	<div class="col-md-6">			
-			<a href="home.php?var=36&pr=<?php echo $dato1[0]['numdocper'] ?>" class="btn btn-primary">Discapacidades</a>
-			<a href="home.php?var=16&pr=<?php echo $dato1[0]['numdocper'] ?>" class="btn btn-primary">Ingresos externos</a>
-    </div>
-    <div class="col-md-6">			
-			<a href="home.php?var=6&pr=<?php echo $dato1[0]['numdocper'] ?>" class="btn btn-primary">Familiares</a>
-			
-    </div>
 </div>
 </div>

@@ -111,6 +111,20 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="form-group col-md-12 center">
+                <label for="Servicios basicos">Servicios Basicos</label>
+				<div class="checkbox">
+					<?php 
+						for ($i=0; $i < count($servbas); $i++){
+					?>
+					<label class="checkbox-inline"><input name="serbas[]" type="checkbox" id="inlineCheckbox1" value="<?php echo $servbas[$i]['codservbas'] ?>"> <?php echo $servbas[$i]['desservbas'] ?></label>
+					<?php 
+						} 
+					?>
+				</div>
+			</div>
+		</div>	
+		<div class="row">
 			<div class="form-group col-lg-6">
 				
 			</div>
