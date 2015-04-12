@@ -1,5 +1,6 @@
 <?php
 	include ("controlador/cdespyaban.php");
+	include("vista/conexion_sqlserver.php");
 ?>
 <script language="javascript" src="js/jquery-1.9.1.js"></script><!-- llamamos al JQuery-->
 <script language="javascript">
