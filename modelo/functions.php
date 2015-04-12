@@ -42,7 +42,6 @@
 		{
 			$dias = explode("-", $fecha, 3);
 			$dias = mktime(0,0,0,$dias[1],$dias[2],$dias[0]);
-			echo "Dias: " . $dias;
 			$edad = (int)((time()-$dias)/31556926 );
 			return $edad;
 		}

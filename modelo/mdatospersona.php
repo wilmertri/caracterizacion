@@ -130,13 +130,6 @@
 		{
 			return calcular_edad($fecnac);
 		}
-		function ver_edad($fecnac)
-		{
-			$sql = "SELECT fecnacper FROM tbdatospersona WHERE fecnacper ='". $fecnac."';";
-			$conexionBD = new conexion();
-			$conexionBD->conectarBD();
-			$datos = $conexionBD->ejeCon($sql,0);
-			return $datos;
-		}
+
 	}
 ?>

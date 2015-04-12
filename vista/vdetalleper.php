@@ -92,7 +92,7 @@
 	<tr>
 		<td>Edad</td>
 		
-		<td> <?= $fecnac1[0]['fecnacper'] ?></td>
+		<td> <?= $edad ?></td>
 	</tr>
 </table>
 <div>

@@ -31,15 +31,15 @@
 	$actu = isset($_POST["actu"]) ? $_POST["actu"]:NULL;
 	$pr = isset($_GET["pr"]) ? $_GET["pr"]:NULL;
 	
-	$dato = $ins->selper();
-	$dato1 = $ins->selper1($pr);
+	$dato 		= $ins->selper();
+	$dato1 		= $ins->selper1($pr);
 	
-	$ver1 = $ins->selver();
-	$zona = $ins->selzona();
+	$ver1 		= $ins->selver();
+	$zona 		= $ins->selzona();
 	$tipdoc 	= $ins->get_documento();
 	$genper 	= $ins->get_genero();
 	$estcivper 	= $ins->get_estciv();
-	$etnia 	= $ins->get_etnia();
+	$etnia 		= $ins->get_etnia();
 	$gestlact 	= $ins->get_estado_embarazo();
 	//$tipdoc = $ins->valor(1);
 	//$genper = $ins->valor(2);
@@ -49,8 +49,10 @@
 	$hijosacargo1 = $ins->valor(17);
 	$relsexper1 = $ins->valor(18);
 	
-	$edad 	= $ins->ver_edad($pr);
-	$fecnac1 	= $ins->get_calcular_edad($edad[0]['fecnacper']);
+	if ($dato1) 
+	{
+		$edad = $ins->get_calcular_edad($dato1[0]['fecnacper']);
+	}
 	
 	
 	/*echo $docper." ".$tipdoc1." ".$lugexpdoc." ".$lugexpdoc1." ".$pnom." ".$snom." ".$pape." ".$sape." ".$gen." ".$dir." ".$zon;
