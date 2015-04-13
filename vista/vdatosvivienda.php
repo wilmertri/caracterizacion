@@ -8,7 +8,7 @@
 			<div class="form-group col-lg-6">
 				<label for="" class="">Tipo de vivienda</label>
 				<select name="tipviv" class="form-control" id="">
-					<option value="">Seleccione tipo de vivienda</option>
+					<option value="<?= $datosvivienda[0]['tipvivper'] ?>">Seleccione tipo de vivienda</option>
 					<?php
 
 						for ($i=0; $i <count($tipovivienda1) ; $i++) 
@@ -23,7 +23,7 @@
 			<div class="form-group col-lg-6">
 				<label for="" class="">Material predominante de las paredes</label>
 				<select name="matpar" class="form-control" id="">
-					<option value="">Seleccione tipo de paredes</option>
+					<option value="<?= $datosvivienda[0]['tipparviv'] ?>">Seleccione tipo de paredes</option>
 					<?php
 
 						for ($i=0; $i <count($tipoparedes) ; $i++) 
@@ -40,7 +40,7 @@
 			<div class="form-group col-lg-6">
 				<label for="" class="">Material predominante de los pisos</label>
 				<select name="matpis" class="form-control" id="">
-					<option value="">Seleccione tipo de pisos</option>
+					<option value="<?= $datosvivienda[0]['tippisviv'] ?>">Seleccione tipo de pisos</option>
 					<?php
 
 						for ($i=0; $i <count($tipopisos) ; $i++) 
@@ -55,7 +55,7 @@
 			<div class="form-group col-lg-6">
 				<label for="" class="">Material predominante de los techos</label>
 				<select name="mattec" class="form-control" id="">
-					<option value="">Seleccione tipo de techo</option>
+					<option value="<?= $datosvivienda[0]['tiptecviv'] ?>">Seleccione tipo de techo</option>
 					<?php
 
 						for ($i=0; $i <count($tipotechos) ; $i++) 
@@ -72,7 +72,7 @@
 			<div class="form-group col-lg-6">
 				<label for="" class="texto_justificado">En los ÚLTIMOS 2 AÑOS esta zona se ha visto afectada por alguno de los siguientes riesgos:</label>
 				<select name="zonrie" class="form-control" id="">
-					<option value="">Seleccione tipo de riesgo</option>
+					<option value="<?= $datosvivienda[0]['zonrieviv'] ?>">Seleccione tipo de riesgo</option>
 					<?php
 
 						for ($i=0; $i <count($tiporiesgos) ; $i++) 
@@ -87,7 +87,7 @@
 			<div class="form-group col-lg-6">
 				<label for="" class="texto_justificado">De acuerdo con las siguientes condiciones de ocupación de la vivienda, su relación con ella es:</label>
 				<select name="relviv" class="form-control" id="">
-					<option value="">Seleccione tipo de relación</option>
+					<option value="<?= $datosvivienda[0]['tiprelviv'] ?>">Seleccione tipo de relación</option>
 					<?php
 
 						for ($i=0; $i <count($tiporelacion) ; $i++) 
@@ -103,11 +103,32 @@
 		<div class="row">
 			<div class="form-group col-lg-6">
 				<label for="">Incluyendo sala-comedor, ¿de cuántos cuartos en total dispone este hogar?</label>
-				<input type="number" name="numhabviv" class="form-control">
+				<input type="number" name="numhabviv" class="form-control" value="<?= $datosvivienda[0]['numhabviv'] ?>">
 			</div>
 			<div class="form-group col-lg-6">
 				<label for="">¿En cuántos de esos cuartos duermen las personas de este hogar?</label>
-				<input type="number" name="numhabhab" class="form-control">
+				<input type="number" name="numhabhab" class="form-control" value="<?= $datosvivienda[0]['numhabhab'] ?>">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-lg-6">
+				<label for="">Regularmente, ¿cuántas personas duermen en esos cuartos?</label>
+				<input type="number" name="numperhabviv" class="form-control" value="<?= $datosvivienda[0]['numperhabviv'] ?>">
+			</div>
+			<div class="form-group col-lg-6">
+				<br><label for="">Estrato de la vivienda</label><br>
+				<select name="estrato" class="form-control" id="">
+					<option value="<?= $datosvivienda[0]['estper'] ?>">Seleccione el estrato de la vivienda</option>
+					<?php
+
+						for ($i=0; $i <count($estratovivienda) ; $i++) 
+						{  
+					?>
+					<option value="<?php echo $estratovivienda[$i]['codval']; ?>"><?php echo $estratovivienda[$i]['nomval']; ?></option>
+					<?php 
+						} 
+					?>
+				</select>	
 			</div>
 		</div>
 		<div class="row">
@@ -115,9 +136,9 @@
                 <label for="Servicios basicos">Servicios Basicos</label>
 				<div class="checkbox">
 					<?php 
-						for ($i=0; $i < count($servbas); $i++){
+						for ($i=0; $i < count($serviciosbasicos); $i++){
 					?>
-					<label class="checkbox-inline"><input name="serbas[]" type="checkbox" id="inlineCheckbox1" value="<?php echo $servbas[$i]['codservbas'] ?>"> <?php echo $servbas[$i]['desservbas'] ?></label>
+					<label class="checkbox-inline"><input name="servibas[]" type="checkbox" id="inlineCheckbox1" value="<?php echo $serviciosbasicos[$i]['codservbas'] ?>"> <?php echo $serviciosbasicos[$i]['desservbas'] ?></label>
 					<?php 
 						} 
 					?>

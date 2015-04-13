@@ -4,8 +4,14 @@
 	
 	$id				= isset($_GET['id']) ? $_GET['id']:NULL;
 
-	$datosvivienda 	= $ins->ver_datos_vivienda($id);
+	$datosvivienda 		= $ins->ver_datos_vivienda($id);
+	$idserviciosbasicos = $ins->get_servicios_basicos_id($id);
 
+	for ($i=0; $i <count($idserviciosbasicos) ; $i++) 
+	{ 
+		$serviciosbasicos[] = $ins->get_nombre_servicios_basicos($idserviciosbasicos[$i]['numservbas']);	
+	}
+	
 
 	if ($datosvivienda[0]['tipvivper']) 
 	{
@@ -47,6 +53,50 @@
 		$TipoTechos = "Sin registro";
 	}
 	
-	
+	if ($datosvivienda[0]['zonrieviv']) 
+	{
+		$verZonaRiesgo		= $ins->get_valor($datosvivienda[0]['zonrieviv']);
+		$TipoRiesgo 		= $verZonaRiesgo[0]['nomval'];	
+	}
+	else
+	{
+		$TipoRiesgo = "Sin registro";
+	}
 
- 
+	if ($datosvivienda[0]['numhabviv']) 
+	{
+		$CuartosTotales		= $datosvivienda[0]['numhabviv'];
+	}
+	else
+	{
+		$CuartosTotales = "Sin registro";
+	}
+
+	if ($datosvivienda[0]['numhabhab']) 
+	{
+		$CuartosDondeDuermen	= $datosvivienda[0]['numhabhab'];
+	}
+	else
+	{
+		$CuartosDondeDuermen = "Sin registro";
+	}
+
+	if ($datosvivienda[0]['numperhabviv']) 
+	{
+		$CantidadPersonasDuermen	= $datosvivienda[0]['numperhabviv'];
+	}
+	else
+	{
+		$CantidadPersonasDuermen = "Sin registro";
+	}   
+
+	if ($datosvivienda[0]['estper']) 
+	{
+		$verEstrato			= $ins->get_valor($datosvivienda[0]['estper']);
+		$Estrato 			= $verEstrato[0]['nomval'];	
+	}
+	else
+	{
+		$Estrato = "Sin registro";
+	}
+	 
