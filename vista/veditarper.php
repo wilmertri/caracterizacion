@@ -1,5 +1,6 @@
 <?php
 	include ("controlador/cdatospersona.php");
+	include("vista/conexion_sqlserver.php");
 ?>
 <script language="javascript" src="js/jquery-1.9.1.js"></script><!-- llamamos al JQuery-->
 <script language="javascript">
@@ -98,48 +99,44 @@
 </script>
 <h1>Editar Datos de la Persona</h1>
 
-<?php
-	$actudato = $ins	->selper1($pr);
-?>
-
 <div class="forms1">
-    <form name="form1" action="home.php?pr=<?php echo $actudato[0]['idpersona'] ?>var=4" method="post">
+    <form name="form1" action="home.php?pr=<?php echo $dato1[0]['idpersona'] ?>var=4" method="post">
         <div class="row">
 			<div class="form-group col-lg-6">
                 <label for="Required"><i>(<span style="color:red;">*</span>)Campos obligatorios</i></label>
             </div>
 			 <div class="form-group col-lg-6">
 				<label for="Numero Ficha">Numero Ficha</label> 
-				<input name="numficha" type="text" value="<?php echo $actudato[0]['numficha'] ?>" class="form-control" disabled>
+				<input name="numficha" type="text" value="<?php echo $dato1[0]['numficha'] ?>" class="form-control" disabled>
 				<input type="hidden" name="actu" value="actu" />
-				<input type="hidden" name="numficha" value="<?php echo $actudato[0]['numficha'] ?>" />
+				<input type="hidden" name="idpersona" value="<?php echo $dato1[0]['idpersona'] ?>" />
 			</div>
 		</div>
 		<div class="row">
             <div class="form-group col-lg-6">
                 <label for="Primer Nombre">Primer Nombre <span style="color:red;">*</span> </label>
-                <input name="pnom" type="text" value="<?php echo $actudato[0]['pnomper'] ?>"class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: andres" pattern="[A-z ]{2,20}" title="Se necesita un nombre"required autofocus>
+                <input name="pnom" type="text" value="<?php echo $dato1[0]['pnomper'] ?>"class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: andres" pattern="[A-z ]{2,20}" title="Se necesita un nombre"required autofocus>
             </div>
 			<div class="form-group col-lg-6">
                 <label for="Segundo Nombre">Segundo Nombre</label>
-                <input name="snom" type="text" value="<?php echo $actudato[0]['snomper'] ?>" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: felipe"  pattern="[A-z ]{2,20}">
+                <input name="snom" type="text" value="<?php echo $dato1[0]['snomper'] ?>" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: felipe"  pattern="[A-z ]{2,20}">
             </div>
 		</div>
 		<div class="row">
             <div class="form-group col-lg-6">
                 <label for="Primer Apellido">Primer Apellido <span style="color:red;">*</span></label>
-                <input name="pape" type="text" value="<?php echo $actudato[0]['papeper'] ?>" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: vargas"  pattern="[A-z ]{2,20}" required>
+                <input name="pape" type="text" value="<?php echo $dato1[0]['papeper'] ?>" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: vargas"  pattern="[A-z ]{2,20}" required>
             </div>
 			<div class="form-group col-lg-6">
                 <label for="Segundo Apellido">Segundo Apellido</label>
-                <input name="sape" type="text" value="<?php echo $actudato[0]['sapeper'] ?>" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: torres"  pattern="[A-z ]{2,20}">
+                <input name="sape" type="text" value="<?php echo $dato1[0]['sapeper'] ?>" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: torres"  pattern="[A-z ]{2,20}">
             </div>
 		</div>
         <div class="row">
 			<div class="form-group col-lg-6">
                 <label for="Tipo de documento">Tipo de Documento <span style="color:red;">*</span></label>
                 <select name="tipdoc" class="form-control" style="text-transform:uppercase;">
-					<option value = "<?= $dato1[0]['tipdocper'] ?>">Seleccione el tipo</option>
+					<option value = "<?= $dato1[0]['tipdocper'] ?>">Seleccione una opción</option>
 					<?php 
 						for ($i=0; $i < count($tipdoc); $i++){
 					?>
@@ -151,15 +148,47 @@
             </div>
             <div class="form-group col-lg-6">
                 <label for="Numero de documento">Número de Documento <span style="color:red;">*</span></label>
-                <input name="docper" type="text" value="<?php echo $actudato[0]['numdocper'] ?>"  class="form-control" pattern="[0-9]{6,10}" style="text-transform:uppercase;" placeholder="ej: 1072666555" required>
+                <input name="docper" type="text" value="<?php echo $dato1[0]['numdocper'] ?>"  class="form-control" pattern="[0-9]{6,10}" style="text-transform:uppercase;" placeholder="ej: 1072666555" required>
             </div>
 		</div>
-		
+		<div class="row">
+			<div class="form-group col-lg-12 center">
+                <label for="Lugar de expedicion">Lugar de Expedición</label> 
+            </div>
+		</div>
+		<div class="row">
+			<div class="form-group col-lg-6">
+                <label for="Departamento">Departamento <span style="color:red;">*</span></label>
+                <select name="depto" onchange="javascript:RecargarCiudades(this.value);" class="form-control" style="text-transform:uppercase;">
+ 					<option value="0">Seleccione Departamento</option>
+					<?php
+ 					
+					$sql = "SELECT codubi, nomubi FROM vieubica ORDER BY nomubi";
+ 					echo $sql;
+ 					$conexionBD = new conexion_sqlserver();
+ 					$conexionBD->conectarBD();
+ 					$data = $conexionBD->ejecutarConsulta($sql,0); 
+ 					for($i=0;$i<count($data);$i++)
+ 					{	
+					?>
+						<option value="<?php echo $data[$i]['codubi'] ?>"><?php echo $data[$i]['nomubi'] ?></option>
+					<?php } ?>
+ 				</select>
+            </div>
+			<div class="form-group col-lg-6">
+                <label for="Municipio">Municipio <span style="color:red;">*</span></label>
+                <div id="reloadMunicipio">
+ 					<select name="codubi" id="id_estado" class="form-control" style="text-transform:uppercase;">
+						<option value="<?= $dato1[0]['lugexpdocper'] ?>">Seleccione municipio</option>
+ 					</select>
+ 				</div>
+            </div>
+		</div>
 		<div class="row">
             <div class="form-group col-md-12">
 			<label for="Genero">Genero</label>
 				<select name="genero" onchange="javascript:mostrar(this.value);" class="form-control">
-					<option value="<?php $gen2 = $ins->valor2($actudato[0]["genper"]); ?>"> <?php echo $gen2[0]['nomval'] ?></option>
+					<option value="<?= $dato1[0]['genper'] ?>">Seleccione una opción</option>
 					
 					<?php 
 					 
@@ -176,7 +205,7 @@
 			<div class="form-group col-lg-6">
                 <label for="Estado civil">Estado Civil <span style="color:red;">*</span></label>
                 <select name="estciv" class="form-control" style="text-transform:uppercase;">
-				<option value=<?php	$estciv2 = $ins->valor2($actudato[0]["estcivper"]);?>> <?php echo $estciv2[0]['nomval'] ?> </option>
+				<option value="<?= $dato1[0]['estcivper'] ?>">Seleccione una opción</option>
 					<?php 
 						for ($i=0; $i < count($estcivper); $i++){
 					?>
@@ -190,7 +219,7 @@
 			<div class="form-group col-lg-6" id="mosgen">
                 <label for="Gestante o lactante">Gestante o Lactante</label>
 				<select name="ges" class="form-control" style="text-transform:uppercase;">
-					<option value = <?php	$geslan2 = $ins->valor2($actudato[0]["geslanper"]);?>> <?php echo $geslan2[0]['nomval'] ?> </option>
+					<option value ="<?= $dato1[0]['geslanper'] ?>">Seleccione una opción</option>
 					<?php 
 						for ($i=0; $i < count($gestlact); $i++){
 					?>
@@ -204,12 +233,12 @@
 		<div class="row">
             <div class="form-group col-lg-6">
                 <label for="Direccion">Dirección <span style="color:red;">*</span></label>
-                <input name="dir" type="text" value="<?php echo $actudato[0]['dirper'] ?>" class="form-control" maxlenght="50" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: cra 4 # 56 - 12 ">
+                <input name="dir" type="text" value="<?php echo $dato1[0]['dirper'] ?>" class="form-control" maxlenght="50" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: cra 4 # 56 - 12 ">
             </div>
 			<div class="form-group col-lg-6">
                 <label for="Zona">Zona <span style="color:red;">*</span></label>
                 <select name="zon" class="form-control" style="text-transform:uppercase;">
-				<option value=<?php	$zon2 = $ins->selzona2($actudato[0]["zonper"]);?>> <?php echo $zon2[0]['nomzona'] ?></option>
+				<option value="<?= $dato1[0]['zonper'] ?>">Seleccione una opción</option>
 					<?php 
 						for ($i=0; $i < count($zona); $i++){
 					?>
@@ -224,7 +253,7 @@
             <div class="form-group col-lg-6">
                 <label for="Vereda">Vereda</label>
                 <select name="ver" class="form-control" style="text-transform:uppercase;">
-				<option value=<?php	$ver2 = $ins->selver2($actudato[0]["verper"]);?>> <?php echo $ver2[0]['nomver'] ?></option>
+				<option value="<?= $dato1[0]['verper'] ?>">Seleccione una opción </option>
 					<?php 
 						for ($i=0; $i < count($ver1); $i++){
 					?>
@@ -236,34 +265,67 @@
             </div>
 			<div class="form-group col-lg-6">
                 <label for="Sector">Sector <span style="color:red;">*</span></label>
-                <input name="sec" type="text" value="<?php echo $actudato[0]['secper'] ?>" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: río frío" class="form-control" maxlenght="50">
+                <input name="sec" type="text" value="<?php echo $dato1[0]['secper'] ?>" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: río frío" class="form-control" maxlenght="50">
             </div>
 		</div>
 		<div class="row">
             <div class="form-group col-lg-12">
                 <label for="Barrio o finca">Barrio o Finca</label>
-				<input name="barfin" type="text" value="<?php echo $actudato[0]['barfinper'] ?>" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: los zipas"  class="form-control" maxlenght="50">
+				<input name="barfin" type="text" value="<?php echo $dato1[0]['barfinper'] ?>" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: los zipas"  class="form-control" maxlenght="50">
             </div>
 		</div>
 		<div class="row">
             <div class="form-group col-lg-6">
                 <label for="Telefono">Teléfono <span style="color:red;">*</span></label>
-                <input name="tel" type="text" value="<?php echo $actudato[0]['telper'] ?>" class="form-control" pattern="[0-9]{6,10}" style="text-transform:uppercase;" placeholder="ejemplo: 8687555" required>
+                <input name="tel" type="text" value="<?php echo $dato1[0]['telper'] ?>" class="form-control" pattern="[0-9]{6,10}" style="text-transform:uppercase;" placeholder="ejemplo: 8687555" required>
             </div>
 			<div class="form-group col-lg-6">
                 <label for="Telefono2">Teléfono 2</label>
-                <input name="telseg" type="text" value="<?php echo $actudato[0]['telsegper'] ?>" class="form-control" pattern="[0-9]{6,10}" style="text-transform:uppercase;" placeholder="ejemplo: 3007878255">
+                <input name="telseg" type="text" value="<?php echo $dato1[0]['telsegper'] ?>" class="form-control" pattern="[0-9]{6,10}" style="text-transform:uppercase;" placeholder="ejemplo: 3007878255">
+            </div>
+		</div>
+		<div class="row">
+            <div class="form-group col-lg-12 center">
+                <label for="Lugar de nacimiento">Lugar de Nacimiento</label>
+            </div>
+		</div>
+		<div class="row">
+			<div class="form-group col-lg-6">
+                <label for="Departamento">Departamento <span style="color:red;">*</span></label>
+                <select name="deptonac" onchange="javascript:RecargarCiudadesnac(this.value);" class="form-control" style="text-transform:uppercase;">
+ 					<option value="0">Seleccione Departamento</option>
+					<?php
+ 					
+					$sql = "SELECT codubi, nomubi FROM vieubica ORDER BY nomubi";
+ 					echo $sql;
+ 					$conexionBD = new conexion_sqlserver();
+ 					$conexionBD->conectarBD();
+ 					$data = $conexionBD->ejecutarConsulta($sql,0); 
+ 					for($i=0;$i<count($data);$i++)
+ 					{	
+					?>
+						<option value="<?php echo $data[$i]['codubi'] ?>"><?php echo $data[$i]['nomubi'] ?></option>
+					<?php } ?>
+ 				</select>
+            </div>
+			<div class="form-group col-lg-6">
+                <label for="Municipio">Municipio <span style="color:red;">*</span></label>
+                <div id="reloadMunicipionac">
+ 					<select name="codubinac" id="id_estado" class="form-control" style="text-transform:uppercase;">
+						<option value="<?= $dato1[0]['lugnacper'] ?>">Seleccione municipio</option>
+ 					</select>
+ 				</div>
             </div>
 		</div>
 		<div class="row">
             <div class="form-group col-lg-6">
 			    <label for="Fecha de nacimiento">Fecha de Nacimiento <span style="color:red;">*</span></label>
-				<input name="fecnac" type="date" value="<?php echo $actudato[0]['fecnacper'] ?>" class="form-control" max="2014-12-01" min="1900-01-01">
+				<input name="fecnac" type="date" value="<?php echo $dato1[0]['fecnacper'] ?>" class="form-control" max="2014-12-01" min="1900-01-01">
             </div>
 			<div class="form-group col-lg-6">
                 <label for="Etnia">Grupo Poblacional <span style="color:red;">*</span></label>
                 <select name="etnia" class="form-control" style="text-transform:uppercase;">
-					<option value = <?php	$etnia2 = $ins->valor2($actudato[0]["etniaper"]);?>> <?php echo $etnia2[0]['nomval'] ?> </option>
+					<option value ="<?= $dato1[0]['etniaper'] ?>">Seleccione una opción</option>
 					<?php 
 						for ($i=0; $i < count($etnia); $i++){
 					?>
@@ -278,7 +340,7 @@
 			<div class="form-group col-lg-6">
                 <label for="Hijos a Cargo">Hijos a Cargo</label>
                 <select name="hijosacargo" class="form-control" style="text-transform:uppercase;">
-					<option value = <?php	$hijos2 = $ins->valor2($actudato[0]["hijosdepper"]);?>> <?php echo $hijos2[0]['nomval'] ?></option>
+					<option value ="<?= $dato1[0]['hijosdepper'] ?>">Seleccione una opción</option>
 					<?php 
 						for ($i=0; $i < count($hijosacargo1); $i++){
 					?>
@@ -291,7 +353,7 @@
 			<div class="form-group col-lg-6">
                 <label for="Relaciones sexuales">Establece Relaciones Sexuales de Pareja Con</label>
                 <select name="relsexper" class="form-control" style="text-transform:uppercase;">
-					<option value =<?php	$relsex2 = $ins->valor2($actudato[0]["relsexper"]);?>> <?php echo $relsex2[0]['nomval'] ?></option>
+					<option value ="<?= $dato1[0]['relsexper'] ?>">Seleccione una opción</option>
 					<?php 
 						for ($i=0; $i < count($relsexper1); $i++){
 					?>

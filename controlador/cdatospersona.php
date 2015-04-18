@@ -6,7 +6,6 @@
 	$numficha = isset($_POST["numficha"]) ? $_POST["numficha"]:NULL;
 	$docper = isset($_POST["docper"]) ? $_POST["docper"]:NULL;
 	$tipdoc1 = isset($_POST["tipdoc"]) ? $_POST["tipdoc"]:NULL;
-	$lugexpdoc = isset($_POST["depto"]) ? $_POST["depto"]:NULL;
 	$lugexpdoc1 = isset($_POST["codubi"]) ? $_POST["codubi"]:NULL;
 	$pnom = isset($_POST["pnom"]) ? $_POST["pnom"]:NULL;
 	$snom = isset($_POST["snom"]) ? $_POST["snom"]:NULL;
@@ -20,7 +19,6 @@
 	$barfin = isset($_POST["barfin"]) ? $_POST["barfin"]:NULL;
 	$tel = isset($_POST["tel"]) ? $_POST["tel"]:NULL;
 	$telseg = isset($_POST["telseg"]) ? $_POST["telseg"]:NULL;
-	$lugnac = isset($_POST["deptonac"]) ? $_POST["deptonac"]:NULL;
 	$lugnac1 = isset($_POST["codubinac"]) ? $_POST["codubinac"]:NULL;
 	$fecnac = isset($_POST["fecnac"]) ? $_POST["fecnac"]:NULL;
 	$estciv = isset($_POST["estciv"]) ? $_POST["estciv"]:NULL;
@@ -34,7 +32,7 @@
 	$dato 		= $ins->selper();
 	$dato1 		= $ins->selper1($pr);
 
-	echo "Tipdoc: " . $dato1[0]['tipdocper'];
+	//echo "Tipdoc: " . $dato1[0]['tipdocper'];
 	
 	$ver1 		= $ins->selver();
 	$zona 		= $ins->selzona();
@@ -71,13 +69,13 @@
 	
 	// Actualizar datos
 	
-	if($docper && $tipdoc1 && $lugexpdoc1 && $pnom && $pape && $gen && $dir && $zon && $barfin && $ver && $sec  && $tel && $lugnac1 && $fecnac && $estciv && $etnia1 &&$hijosacargo && $relsexper && $actu) 
+	if($docper && $tipdoc1 && $lugexpdoc1 && $pnom && $pape && $gen && $dir && $zon && $barfin && $tel && $lugnac1 && $fecnac && $estciv && $etnia1 && $hijosacargo && $relsexper && $actu) 
 	{
 		$ins -> updper($docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia1, $ges, $hijosacargo, $relsexper);
 	}
 	
 	// Insertar datos
-	if($numficha &&$docper  && $tipdoc1 && $lugexpdoc1 && $pnom && $pape && $gen && $dir && $zon && $barfin || $ver || $sec &&  $tel && $lugnac1 && $fecnac && $estciv && $etnia1 && $hijosacargo && $relsexper && !$actu) 
+	if($numficha &&$docper  && $tipdoc1 && $lugexpdoc1 && $pnom && $pape && $gen && $dir && $zon && $barfin &&  $tel && $lugnac1 && $fecnac && $estciv && $etnia1 && $hijosacargo && $relsexper && !$actu) 
 	{
 		$idpersona = $idpersona;
 		$ins -> insper($numficha, $docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia1, $ges, $hijosacargo, $relsexper);
