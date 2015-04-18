@@ -33,6 +33,8 @@
 	
 	$dato 		= $ins->selper();
 	$dato1 		= $ins->selper1($pr);
+
+	echo "Tipdoc: " . $dato1[0]['tipdocper'];
 	
 	$ver1 		= $ins->selver();
 	$zona 		= $ins->selzona();

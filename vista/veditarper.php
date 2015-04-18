@@ -139,7 +139,7 @@
 			<div class="form-group col-lg-6">
                 <label for="Tipo de documento">Tipo de Documento <span style="color:red;">*</span></label>
                 <select name="tipdoc" class="form-control" style="text-transform:uppercase;">
-					<option value = "<?php $tipdoc2 = $ins->valor2($actudato[0]["tipdocper"]); ?>"> <?php echo $tipdoc2[0]['nomval'] ?></option>
+					<option value = "<?= $dato1[0]['tipdocper'] ?>">Seleccione el tipo</option>
 					<?php 
 						for ($i=0; $i < count($tipdoc); $i++){
 					?>
