@@ -44,10 +44,17 @@
 			<th>Servicios basicos</th>
 			<td>
 				<?php
-					for ($i=0; $i <count($serviciosbasicos) ; $i++) 
+					if ($idserviciosbasicos) 
+					{						
+						for ($i=0; $i <count($serviciosbasicos) ; $i++) 
+						{
+							echo $serviciosbasicos[$i][0]["desservbas"]."<br>";
+					  	}  
+					}
+					else
 					{
-						echo $serviciosbasicos[$i][0]["desservbas"]."<br>";
-				  	}  
+						echo "Sin registro";
+					}
 				?>
 			</td>
 		</tr>
