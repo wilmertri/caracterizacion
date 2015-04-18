@@ -107,7 +107,7 @@
             </div>
 			 <div class="form-group col-lg-6">
 				<label for="Numero Ficha">Numero Ficha</label> 
-				<input name="numficha" type="text" value="<?php echo $dato1[0]['numficha'] ?>" class="form-control" disabled>
+				<input name="numficha" type="text" value="<?php echo $dato1[0]['numficha'] ?>" class="form-control">
 				<input type="hidden" name="actu" value="actu" />
 				<input type="hidden" name="idpersona" value="<?php echo $dato1[0]['idpersona'] ?>" />
 			</div>
@@ -392,10 +392,17 @@
 				</select>
             </div>
 		</div>
-			
-			<div class="form-group">
+		<div class="row">
+            <div class="form-group col-lg-6">
+                <label for="Required"><i>(<span style="color:red;">*</span>)Campos obligatorios</i></label>
+            </div>
+		</div>
+		<div class="row">	
+			<div class="form-group col-lg-12 center">
+				<a href="javascript:history.back();" class="btn btn-success">Volver</a>
                 <input type="submit" class="btn btn-primary" value="Actualizar">
 				<a href="home.php" class="btn btn-primary" >Salir</a>
             </div>
+		</div>
     </form>
 </div>
