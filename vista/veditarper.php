@@ -187,7 +187,7 @@
 		<div class="row">
             <div class="form-group col-md-12">
 			<label for="Genero">Genero</label>
-				<select name="genero" onchange="javascript:mostrar(this.value);" class="form-control">
+				<select name="gen" onchange="javascript:mostrar(this.value);" class="form-control">
 					<option value="<?= $dato1[0]['genper'] ?>">Seleccione una opción</option>
 					
 					<?php 

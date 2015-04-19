@@ -2,7 +2,7 @@
 		/*
 		*	@author: Wilmer Fabian Triana
 		*	@Version: V1
-                *       @Fecha: 29-03-2015
+        *   @Fecha: 29-03-2015
 		*/
                 class Funciones_generales {
                     function functions()

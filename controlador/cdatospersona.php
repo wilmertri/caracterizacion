@@ -33,7 +33,7 @@
 	$dato1 		= $ins->selper1($pr);
 
 	//echo "Tipdoc: " . $dato1[0]['tipdocper'];
-	echo "lugexp: " . $dato1[0]['lugexpdocper'];
+	//echo "lugexp: " . $dato1[0]['lugexpdocper'];
 	
 	
 	
@@ -74,7 +74,7 @@
 	
 	if($idpersona && $docper && /*$tipdoc1 && $lugexpdoc1 && $pnom && $pape && $gen && $dir && $zon && $barfin && $tel && $lugnac1 && $fecnac && $estciv && $etnia1 && $hijosacargo && $relsexper && */$actu) 
 	{
-		$ins -> updper($idpersona, $numficha, $docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia, $ges, $hijosacargo, $relsexper);
+		$ins -> updper($idpersona, $numficha, $docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia1, $ges, $hijosacargo, $relsexper);
 	}
 	
 	// Insertar datos
