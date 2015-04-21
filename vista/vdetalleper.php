@@ -1,100 +1,89 @@
 <?php
-	include ("controlador/cdatospersona.php");
+	include ("controlador/cdetalleper.php");
 ?>
 <h1>Detalle Datos de la Persona</h1>
-<table class="table">
-	<tr>
-		<th>Número de Ficha:</th>
-		<td><?php echo $dato1[0]['numficha'] ?></td>
-	</tr>
-	<tr>
-		<th>Primer Nombre:</th>
-		<td><?php echo $dato1[0]['pnomper'] ?></td>
-		<th>Segundo Nombre:</th>
-		<td><?php echo $dato1[0]['snomper'] ?></td>
-	</tr>
-	<tr>
-		<th>Primer Apellido:</th>
-		<td><?php echo $dato1[0]['papeper'] ?></td>
-		<th>Segundo Apellido:</th>
-		<td><?php echo $dato1[0]['sapeper'] ?></td>
-	</tr>
-	<tr>
-		<th>Tipo Documento:</th>
-		<?php	
-			$tipdoc2 = $ins->valor2($dato1[0]["tipdocper"]); 
-		?>
-		<td><?php echo $tipdoc2[0]['nomval'] ?></td>
-		<th>Numero de documento:</th>
-		<td><?php echo $dato1[0]['numdocper'] ?></td>	
-	</tr>	
-	<tr>
-		<th>Genero:</th>
-		<?php	
-			$gen2 = $ins->valor2($dato1[0]["genper"]); 
-		?>
-		<td><?php echo $gen2[0]['nomval'] ?></td>
-		<th>Estado Civil:</th>
-		<?php	
-			$estciv2 = $ins->valor2($dato1[0]["estcivper"]); 
-		?>
-		<td><?php echo $estciv2[0]['nomval'] ?></td>
-	</tr>
-	<tr>
-		<th>Gestante o Lactante: </th>
-		<?php	
-			$ges2 = $ins->valor2($dato1[0]["geslanper"]); 
-		?>
-		<td> <?php echo $ges2[0]['nomval'] ?></td>
-		<th>Direccion:</th>
-		<td><?php echo $dato1[0]['dirper'] ?></td>
-	</tr>
-	<tr>
-		<th> Zona:</th>
-		<?php	
-			$zona2 = $ins->selzona2($dato1[0]["zonper"]); 
-		?>
-		<td><?php echo $zona2[0]['nomzona'] ?></td>
-		<th>Vereda:</th>
-		<?php	
-			$ver2 = $ins->selver2($dato1[0]["verper"]); 
-		?>
-		<td><?php echo $ver2[0]['nomver'] ?></td>
-	</tr>
-	<tr>
-		<th>Sector:</th>
-		<td><?php echo $dato1[0]['secper'] ?></td>
-		<th>Barrio o Finca: </th>
-		<td><?php echo $dato1[0]['barfinper'] ?></td>
-	</tr>
-	<tr>
-		<th>Telefono:</th>
-		<td><?php echo $dato1[0]['telper'] ?></td>
-		<th>Telefono 2: </th>
-		<td><?php echo $dato1[0]['telsegper'] ?></td>
-	</tr>
-	<tr>
-		<th>Fecha de Nacimiento: </th>
-		<td><?php echo $dato1[0]['fecnacper'] ?></td>
-		<th>Grupo Poblacional:</th>
-		<?php	
-			$etnia2 = $ins->valor2($dato1[0]["etniaper"]); 
-		?>
-		<td> <?php echo $etnia2[0]['nomval'] ?></td>
-	</tr>
-	<tr>
-		<th>Hijos a Cargo:</th>
-		<?php	
-			$hijosacargo2 = $ins->valor2($dato1[0]["hijosacargo"]); 
-		?>
-		<td> <?php echo $hijosacargo2[0]['nomval'] ?></td>
-	</tr>
-	<tr>
-		<th>Edad</th>
-		
-		<td> <?= $edad ?></td>
-	</tr>
-</table>
+	<table class="table">
+		<tr>
+			<th>Número de Ficha:</th>
+			<td><?= $Ficha ?></td>
+		</tr>
+		<tr>
+			<th>Tipo Documento:</th>
+			<td><?= $TipDoc ?></td>
+			<th>Numero de documento:</th>
+			<td><?= $Doc ?></td>
+		</tr>
+		<tr>
+			<th>Lugar de Expedición:</th>
+			<td><?= $ExpDoc ?></td>
+			<th>Genero:</th>
+			<td><?= $Genero ?></td>
+		</tr>
+		<tr>
+			<th>Primer Nombre:</th>
+			<td><?= $PrimerNom ?></td>
+			<th>Segundo Nombre:</th>
+			<td><?= $SegundoNom ?></td>
+		</tr>
+		<tr>
+			<th>Primer Apellido:</th>
+			<td><?= $PrimerApe ?></td>
+			<th>Segundo Apellido:</th>
+			<td><?= $SegundoApe ?></td>
+		</tr>
+		<tr>
+			<th>Estado Civil:</th>
+			<td><?= $EstadoCiv ?></td>
+			<th>Gestante o Lactante:</th>
+			<td><?= $Gestante ?></td>
+		</tr>
+		<tr>
+			<th>Direccion:</th>
+			<td><?= $Direccion ?></td>
+			<th>Zona:</th>
+			<td><?= $Zona ?></td>
+		</tr>
+		<tr>
+			<th>Vereda:</th>
+			<td><?= $Vereda ?></td>
+			<th>Sector:</th>
+			<td><?= $Sector ?></td>
+		</tr>
+		<tr>
+			<th>Barrio o Finca:</th>
+			<td><?= $BarrioFinca ?></td>
+			<th>Telefono:</th>
+			<td><?= $Telefono ?></td>
+		</tr>
+		<tr>
+			<th>Telefono 2:</th>
+			<td><?= $SegundoTel ?></td>
+			<th>Lugar de Nacimiento:</th>
+			<td><?= $LugarNac ?></td>
+		</tr>
+		<tr>
+			<th>Fecha de Nacimiento:</th>
+			<td><?= $FechaNac ?></td>
+			<th>Edad:</th>
+			<td><?= $edad ?> Años</td>
+		</tr>
+		<tr>
+			<th>Grupo Poblacional:</th>
+			<td><?= $Etnia ?></td>
+			<th>Hijos a Cargo:</th>
+			<td><?= $HijosCargo ?></td>
+		</tr>
+		<tr>
+			<th>Relaciones Sexuales:</th>
+			<td><?= $Relaciones ?></td>
+			<th>Libreta Militar:</th>
+			<td><?= $Libreta ?></td>
+		</tr>
+		<tr>
+			<th>Tramite Libreta Militar:</th>
+			<td><?= $TramiteLibreta ?></td>
+		</tr>
+	</table>
 <div>
 <div class="row">
     <div class="col-md-12">

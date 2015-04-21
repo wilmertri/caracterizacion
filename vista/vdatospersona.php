@@ -334,7 +334,7 @@
 		</div>
 		<div class="row">
 			<div class="form-group col-lg-6">
-                <label for="Hijos a Cargo">Hijos a Cargo</label>
+                <label for="Hijos a Cargo">Hijos a Cargo <span style="color:red;">*</span></label>
                 <select name="hijosacargo" class="form-control" style="text-transform:uppercase;">
 					<option value = 0> Seleccione una opción </option>
 					<?php 
@@ -347,7 +347,7 @@
 				</select>
             </div>
 			<div class="form-group col-lg-6">
-                <label for="Relaciones sexuales">Establece Relaciones Sexuales de Pareja Con</label>
+                <label for="Relaciones sexuales">Establece Relaciones Sexuales de Pareja Con <span style="color:red;">*</span></label>
                 <select name="relsexper" class="form-control" style="text-transform:uppercase;">
 					<option value = 0> Seleccione una opción </option>
 					<?php 
@@ -363,25 +363,25 @@
 		<div class="row">
 			<div class="form-group col-lg-6">
                 <label for="Libreta Militar">Libreta Militar</label>
-                <select name="libmilper" class="form-control" style="text-transform:uppercase;">
+                <select name="libretmil" class="form-control" style="text-transform:uppercase;">
 					<option value = 0> Seleccione una opción </option>
 					<?php 
-						for ($i=0; $i < count($libmilper); $i++){
+						for ($i=0; $i < count($libretmil1); $i++){
 					?>
-					<option value ="<?php echo $libmilper[$i]['codval'] ?>" ><?php echo $libmilper[$i]['nomval'] ?></option>
+					<option value ="<?php echo $libretmil1[$i]['codval'] ?>" ><?php echo $libretmil1[$i]['nomval'] ?></option>
 					<?php 
 						} 
 					?>
 				</select>
             </div>
 			<div class="form-group col-lg-6">
-                <label for="Libreta Militar">Libreta Militar</label>
-                <select name="libmilper" class="form-control" style="text-transform:uppercase;">
+                <label for="Libreta Militar Exención">La Posesión de la Libreta Se Debe a la Exención del Servicio Militar por su Condición de Victima del Conflicto </label>
+                <select name="tramlibretmil" class="form-control" style="text-transform:uppercase;">
 					<option value = 0> Seleccione una opción </option>
 					<?php 
-						for ($i=0; $i < count($libmilper); $i++){
+						for ($i=0; $i < count($tramlibretmil1); $i++){
 					?>
-					<option value ="<?php echo $libmilper[$i]['codval'] ?>" ><?php echo $libmilper[$i]['nomval'] ?></option>
+					<option value ="<?php echo $tramlibretmil1[$i]['codval'] ?>" ><?php echo $tramlibretmil1[$i]['nomval'] ?></option>
 					<?php 
 						} 
 					?>
@@ -395,8 +395,8 @@
 		</div>
 		<div class="row">
             <div class="form-group col-lg-12 center">
-                <input type="submit" class="btn btn-primary" value="Enviar">
-				<a href="home.php" class="btn btn-primary" >Salir</a>
+                <input type="submit" class="btn btn-success" value="Enviar">
+				<a href="home.php" class="btn btn-success" >Salir</a>
             </div>
 		</div>
     </form>

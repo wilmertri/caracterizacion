@@ -26,6 +26,8 @@
 	$ges = isset($_POST["ges"]) ? $_POST["ges"]:NULL;
 	$hijosacargo = isset($_POST["hijosacargo"]) ? $_POST["hijosacargo"]:NULL;
 	$relsexper = isset($_POST["relsexper"]) ? $_POST["relsexper"]:NULL;
+	$libretmil = isset($_POST["libretmil"]) ? $_POST["libretmil"]:NULL;
+	$tramlibretmil = isset($_POST["tramlibretmil"]) ? $_POST["tramlibretmil"]:NULL;
 	$actu = isset($_POST["actu"]) ? $_POST["actu"]:NULL;
 	$pr = isset($_GET["pr"]) ? $_GET["pr"]:NULL;
 	
@@ -37,20 +39,18 @@
 	
 	
 	
-	$ver1 		= $ins->selver();
-	$zona 		= $ins->selzona();
-	$tipdoc 	= $ins->get_documento();
-	$genper 	= $ins->get_genero();
-	$estcivper 	= $ins->get_estciv();
-	$etnia 		= $ins->get_etnia();
-	$gestlact 	= $ins->get_estado_embarazo();
-	//$tipdoc = $ins->valor(1);
-	//$genper = $ins->valor(2);
-	//$estcivper = $ins->valor(3);
-	//$etnia = $ins->valor(10);
-	$gestlact = $ins->valor(11);
-	$hijosacargo1 = $ins->valor(17);
-	$relsexper1 = $ins->valor(18);
+	$ver1 			= $ins->selver();
+	$zona 			= $ins->selzona();
+	$tipdoc 		= $ins->get_documento();
+	$genper 		= $ins->get_genero();
+	$estcivper 		= $ins->get_estciv();
+	$etnia 			= $ins->get_etnia();
+	$gestlact 		= $ins->get_estado_embarazo();
+	$hijosacargo1 	= $ins->get_hijos_a_cargo();
+	$relsexper1 	= $ins->get_relaciones();
+	$libretmil1 	= $ins->get_libreta_militar();
+	$tramlibretmil1 = $ins->get_exencion();
+	
 	
 	if ($dato1) 
 	{
@@ -74,13 +74,13 @@
 	
 	if($idpersona && $docper && /*$tipdoc1 && $lugexpdoc1 && $pnom && $pape && $gen && $dir && $zon && $barfin && $tel && $lugnac1 && $fecnac && $estciv && $etnia1 && $hijosacargo && $relsexper && */$actu) 
 	{
-		$ins -> updper($idpersona, $numficha, $docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia1, $ges, $hijosacargo, $relsexper);
+		$ins -> updper($idpersona, $numficha, $docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia1, $ges, $hijosacargo, $relsexper, $libretmil, $tramlibretmil);
 	}
 	
 	// Insertar datos
 	if($numficha &&$docper  && $tipdoc1 && $lugexpdoc1 && $pnom && $pape && $gen && $dir && $zon && $barfin &&  $tel && $lugnac1 && $fecnac && $estciv && $etnia1 && $hijosacargo && $relsexper && !$actu) 
 	{
 		//$idpersona = $idpersona;
-		$ins -> insper($numficha, $docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia1, $ges, $hijosacargo, $relsexper);
+		$ins -> insper($numficha, $docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia1, $ges, $hijosacargo, $relsexper, $libretmil, $tramlibretmil);
 	}
 ?>
