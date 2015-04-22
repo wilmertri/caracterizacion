@@ -37,7 +37,7 @@
 
 	if ($dato1[0]['lugexpdocper']) 
 	{
-		$verExpDoc		= $ins->get_valor($dato1[0]['lugexpdocper']);
+		$verExpDoc		= $ins->ubi($dato1[0]['lugexpdocper']);
 		$ExpDoc 		= $verExpDoc[0]['nomubi'];	
 	}
 	else
@@ -157,7 +157,7 @@
 
 	if ($dato1[0]['lugnacper']) 
 	{
-		$verLugarNac		= $ins->get_valor($dato1[0]['lugexpdocper']);
+		$verLugarNac		= $ins->ubi($dato1[0]['lugnacper']);
 		$LugarNac 		= $verLugarNac[0]['nomubi'];	
 	}
 	else

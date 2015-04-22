@@ -94,6 +94,10 @@
 			$sql = "SELECT codzona,nomzona FROM tbzona WHERE codzona = '".$zona."';";
 			return $this->SeleccionDatos($sql);
 		}
+		function ubi($ubicacion) {
+			$sql = "SELECT codubi,nomubi FROM tbubicacion WHERE codubi = '".$ubicacion."';";
+			return $this->SeleccionDatos($sql);
+		}
 		
 		function get_calcular_edad($fecnac)
 		{
