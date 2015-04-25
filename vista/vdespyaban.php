@@ -116,7 +116,7 @@
 		</div>
 		<div class="row">
             <div class="form-group col-lg-6 col-md-6">
-                <label for="factores de permanencia">Factores de permanencia</label>
+                <label for="factores de permanencia">Factores de permanencia en el municipio</label>
                 <select name="factpermanencia" class="form-control" style="text-transform:uppercase;">
 				<option value=0> Seleccione una opción </option>
 					<?php 
@@ -129,7 +129,7 @@
 				</select>
             </div>
 			<div class="form-group col-lg-6 col-md-6">
-				<label for="Solicitud RUPD/RUV">Solicitud RUPD/RUV</label>
+				<label for="Solicitud RUPD/RUV">Quien solicito la inclucion en el RUPD/RUV:</label>
 				<select name="solicitud" onchange="javascript:mostrar(this.value);" class="form-control">
 						<option value=0> Seleccione una opción </option>>
 						
@@ -137,10 +137,10 @@
 						<?php 
 						//Select
 						//$gen = $ins->selpar();
-						for ($i=0; $i < count($solicit); $i++){
+						for ($i=0; $i < count($solicitud_); $i++){
 						?>
 				
-						<option value="<?php echo $solicit[$i]['codval'] ?>" ><?php echo $solicit[$i]['nomval'] ?></option>
+						<option value="<?php echo $solicitud_[$i]['codval'] ?>" ><?php echo $solicitud_[$i]['nomval'] ?></option>
 				
 						<?php } ?>
 				</select>
@@ -148,7 +148,7 @@
 		</div>
 		<div class="row">
 			<div class="form-group col-lg-6 col-md-6">
-					<label for="Razon inclusion RUPD/RUV">Razon inclusion RUPD/RUV</label>
+					<label for="Razon inclusion RUPD/RUV">¿… fue incluido en el RUPD / RUV por:</label>
 					<select name="razoninclusion" onchange="javascript:mostrar(this.value);" class="form-control">
 							<option value=0> Seleccione una opción </option>>
 							
@@ -156,16 +156,16 @@
 							<?php 
 							//Select
 							//$gen = $ins->selpar();
-							for ($i=0; $i < count($razinclu); $i++){
+							for ($i=0; $i < count($razon_inclusion); $i++){
 							?>
 					
-							<option value="<?php echo $razinclu[$i]['codval'] ?>" ><?php echo $razinclu[$i]['nomval'] ?></option>
+							<option value="<?php echo $razon_inclusion[$i]['codval'] ?>" ><?php echo $razon_inclusion[$i]['nomval'] ?></option>
 					
 							<?php } ?>
 					</select>
 			</div>
 			<div class="form-group col-lg-6 col-md-6">
-				<label for="Uso predio despues del despojo">Uso predio despues del despojo</label>
+				<label for="Uso predio despues del despojo">Usted o algún miembro del hogar tenía un predio que debido a la violencia causada por un grupo armado tuvo que:</label>
 				<select name="usoprediodespues" onchange="javascript:mostrar(this.value);" class="form-control">
 							<option value=0> Seleccione una opción </option>>
 							

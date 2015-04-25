@@ -5,7 +5,7 @@
 	*/
 	include ("controlador/conexion.php");
 	include ("functions.php");
-	class Mdespyaban {
+	class Mdespyaban extends Funciones_generales {
 		
 		
 		function Mdespyaban()
@@ -16,17 +16,17 @@
 		
 		function get_valor($codval)
 		{
-			return mostrar_nombre_valores($codval);
+			return $this->mostrar_nombre_valores($codval);
 		}
 		
 		function get_respuesta_cerrada()
 		{
-			return seleccionar_valores_de_parametro(22);
+			return $this->seleccionar_valores_de_parametro(24);
 		}
 		
 		function get_respuesta_cerrada_dos()
 		{
-			return seleccionar_valores_de_parametro(23);
+			return $this->seleccionar_valores_de_parametro(25);
 		}
 		
 		function get_factores_permanencia()
@@ -37,4 +37,16 @@
 			$datos = $conexionBD->ejeCon($sql,0);
 			return $datos;
 		}
+		
+		function get_solicitud()
+		{
+			return $this->seleccionar_valores_de_parametro(22);
+		}
+		
+		function get_razon_inclusion()
+		{
+			return $this->seleccionar_valores_de_parametro(22);
+		}
+		
+		
 	}
