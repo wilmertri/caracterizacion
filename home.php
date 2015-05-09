@@ -237,6 +237,10 @@
           }
           if ($variable==100) {
               //Jhon Edison
+			  include("vista/veducacion.php");
+          }
+		  if ($variable==101) {
+              include("vista/vdatosacademicos.php");
           }
       ?>  
     </div>                                                
