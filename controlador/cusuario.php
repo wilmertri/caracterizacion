@@ -9,10 +9,10 @@
 
 		$ins= new mtbusuario(); 
 		
-		$documento 	= isset($_POST["documento"]) ? $_POST["documento"]:null; 
-		$nombre		= isset($_POST["usuario"]) ? $_POST["usuario"]:null;
-		$password	= isset($_POST["password"]) ? $_POST["password"]:null;
-		$email		= isset($_POST["email"]) ? $_POST["email"]:null; // estase cambian nombres de doc, usua, pass y mail por los vigentes
+		$documento 	= isset($_POST["Documento"]) ? $_POST["Documento"]:null; 
+		$nombre		= isset($_POST["Usuario"]) ? $_POST["Usuario"]:null;
+		$password	= isset($_POST["Clave"]) ? $_POST["Clave"]:null;
+		$email		= isset($_POST["Email"]) ? $_POST["Email"]:null; // estase cambian nombres de doc, usua, pass y mail por los vigentes
 		$actu= 	isset($_POST["actu"]) ? $_POST["actu"]:null; // esta variable es para que me llame actualizar datos si no esta me llama insertar
 		$pr= isset($_GET["pr"]) ? $_GET["pr"]:null;
 		
