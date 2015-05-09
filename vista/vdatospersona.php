@@ -70,32 +70,8 @@
 					}
 				}
 			}
-	function mostrarseg(val){
-				if (document.getElementById){ //se obtiene el id
-					var el = document.getElementById('mosseg'); //se define la variable "el" igual a nuestro div
-					el.style.display = 'none';
-					if (val =='15'){
-						el.style.display = 'block';
-					}else{
-							el.style.display = 'none';
-						}
-					}
-			}		
-	function mostrartrab(val){
-				if (document.getElementById){ //se obtiene el id
-					var el = document.getElementById('mostrab'); //se define la variable "el" igual a nuestro div
-					var e = document.getElementById('mostrab1');
-					el.style.display = 'none';
-					e.style.display = 'none';
-					if (val=='52'){
-						el.style.display = 'block';
-						e.style.display = 'block';
-					}else{
-						el.style.display = 'none';
-						e.style.display = 'none';
-					}
-				}
-			}
+		
+	
 </script>
 <h1>Ingresar Datos del Jefe ó Representante del hogar</h1>
 <div class="forms1">

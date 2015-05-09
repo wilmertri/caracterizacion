@@ -92,7 +92,7 @@
 	<tr>
 		<td>Edad</td>
 		
-		<td> <?= $edad ?></td>
+		<td> <?= $edad ?> Años</td>
 	</tr>
 </table>
 <div>
