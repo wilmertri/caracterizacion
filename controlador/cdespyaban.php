@@ -33,6 +33,10 @@
 	$respuesta_cerrada_dos	= $ins -> get_respuesta_cerrada_dos();
 	$solicitud_ 			= $ins -> get_solicitud();
 	$razon_inclusion		= $ins -> get_razon_inclusion();
+	$predio_perdido_por     = $ins -> get_predio_perdido_por();
+	$tipo_inmueble			= $ins -> get_tipo_inmueble();
+	$relacion_con_el_bien	= $ins -> get_relacion_con_el_bien(); 
+	$tipo_de_familia		= $ins -> get_tipo_de_familia();
 	
 	
 	if ($actu) {

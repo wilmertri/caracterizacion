@@ -48,5 +48,25 @@
 			return $this->seleccionar_valores_de_parametro(22);
 		}
 		
+		function get_predio_perdido_por()
+		{
+			return $this->seleccionar_valores_de_parametro(22);
+		}
+		
+		function get_tipo_inmueble()
+		{
+			return $this->seleccionar_valores_de_parametro(22);
+		}
+		
+		function get_relacion_con_el_bien()
+		{
+			return $this->seleccionar_valores_de_parametro(22);
+		}
+		
+		function get_tipo_de_familia()
+		{
+			return $this->seleccionar_valores_de_parametro(22);
+		}
+		
 		
 	}
