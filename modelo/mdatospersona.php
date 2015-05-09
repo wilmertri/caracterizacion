@@ -30,7 +30,7 @@
 		}
 		function get_hijos_a_cargo()
 		{
-			return $this->seleccionar_valores_de_parametro(27);
+			return $this->seleccionar_valores_de_parametro(24);
 		}
 		function get_relaciones()
 		{
@@ -42,7 +42,7 @@
 		}
 		function get_exencion()
 		{
-			return $this->seleccionar_valores_de_parametro(30);
+			return $this->seleccionar_valores_de_parametro(25);
 		}
 
 		function insper($numficha,$docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia, $ges, $hijosacargo, $relsexper, $libretmil, $tramlibretmil) {
