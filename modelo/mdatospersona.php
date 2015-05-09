@@ -38,7 +38,7 @@
 		}
 		function get_libreta_militar()
 		{
-			return $this->seleccionar_valores_de_parametro(29);
+			return $this->seleccionar_valores_de_parametro(27);
 		}
 		function get_exencion()
 		{
