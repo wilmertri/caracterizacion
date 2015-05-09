@@ -2,7 +2,7 @@
 	include ("controlador/cdetalleper.php");
 ?>
 <h1>Detalle Datos de la Persona</h1>
-<<<<<<< HEAD
+
 <table class="table">
 	<tr>
 		<td>Número de Ficha:</td>
@@ -96,7 +96,6 @@
 		<td> <?= $edad ?> Años</td>
 	</tr>
 </table>
-=======
 	<table class="table">
 		<tr>
 			<th>Número de Ficha:</th>
@@ -179,7 +178,6 @@
 			<td><?= $TramiteLibreta ?></td>
 		</tr>
 	</table>
->>>>>>> origin/master
 <div>
 <div class="row">
     <div class="col-md-12">
