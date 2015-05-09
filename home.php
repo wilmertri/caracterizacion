@@ -93,16 +93,16 @@
     <div class="plantilla1">    
       <?php
           if ($variable==2) {
-              include("vista/vdatospersona.php");
+              include("vista/datospersona/vdatospersona.php");
           }
           if ($variable==3) {
               include("vista/vlistadatosper.php");
           }
           if ($variable==4) {
-              include("vista/vdetalleper.php");
+              include("vista/datospersona/vdetalleper.php");
           }
           if ($variable==5) {
-              include("vista/veditarper.php");
+              include("vista/datospersona/veditarper.php");
           }
           if ($variable==6) {
               include("vista/vdatosfam.php");
