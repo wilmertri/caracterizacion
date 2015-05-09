@@ -28,34 +28,34 @@
 		{
 			return $this->seleccionar_valores_de_parametro(11);
 		}
-		/*function get_documento()
+		function get_hijos_a_cargo()
 		{
-			return seleccionar_valores_de_parametro(1);
+			return $this->seleccionar_valores_de_parametro(27);
 		}
-		function get_documento()
+		function get_relaciones()
 		{
-			return seleccionar_valores_de_parametro(1);
+			return $this->seleccionar_valores_de_parametro(28);
 		}
-		function get_documento()
+		function get_libreta_militar()
 		{
-			return seleccionar_valores_de_parametro(1);
+			return $this->seleccionar_valores_de_parametro(29);
 		}
-		function get_documento()
+		function get_exencion()
 		{
-			return seleccionar_valores_de_parametro(1);
-		}*/
+			return $this->seleccionar_valores_de_parametro(30);
+		}
 
-		function insper($numficha,$docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia, $ges, $hijosacargo, $relsexper) {
-			$sql = "INSERT INTO tbdatospersona ( numficha, numdocper, tipdocper, lugexpdocper, pnomper, snomper, papeper, sapeper, genper, dirper, zonper, verper, secper, barfinper, telper, telsegper, lugnacper, fecnacper, estcivper, etniaper, geslanper, hijosacargo, relsexper ) VALUES ('".$numficha."','".$docper."','".$tipdoc1."','".$lugexpdoc1."','".$pnom."', 
+		function insper($numficha,$docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia, $ges, $hijosacargo, $relsexper, $libretmil, $tramlibretmil) {
+			$sql = "INSERT INTO tbdatospersona ( numficha, numdocper, tipdocper, lugexpdocper, pnomper, snomper, papeper, sapeper, genper, dirper, zonper, verper, secper, barfinper, telper, telsegper, lugnacper, fecnacper, estcivper, etniaper, geslanper, hijosacargo, relsexper, libretmil, tramlibretmil ) VALUES ('".$numficha."','".$docper."','".$tipdoc1."','".$lugexpdoc1."','".$pnom."', 
 			'".$snom."','".$pape."','".$sape."','".$gen."','".$dir."','".$zon."','".$ver."','".$sec."','".$barfin."',
-			'".$tel."','".$telseg."','".$lugnac1."','".$fecnac."','".$estciv."','".$etnia."','".$ges."','".$hijosacargo."','".$relsexper."');";
+			'".$tel."','".$telseg."','".$lugnac1."','".$fecnac."','".$estciv."','".$etnia."','".$ges."','".$hijosacargo."','".$relsexper."','".$libretmil."','".$tramlibretmil."');";
 			$this->cons($sql);
 		}
-		function updper($idpersona, $numficha, $docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia, $ges, $hijosacargo, $relsexper) {
+		function updper($idpersona, $numficha, $docper, $tipdoc1, $lugexpdoc1, $pnom, $snom, $pape, $sape, $gen, $dir, $zon, $ver, $sec, $barfin, $tel, $telseg, $lugnac1, $fecnac, $estciv, $etnia, $ges, $hijosacargo, $relsexper, $libretmil, $tramlibretmil) {
 			$sql = "UPDATE tbdatospersona SET numficha ='".$numficha."',numdocper ='".$docper."',tipdocper ='".$tipdoc1."',lugexpdocper = '".$lugexpdoc1."',pnomper = '".$pnom."',
 			snomper = '".$snom."',papeper = '".$pape."',sapeper = '".$sape."',genper = '".$gen."',dirper = '".$dir."',
 			zonper = '".$zon."',verper = '".$ver."',secper = '".$sec."',barfinper = '".$barfin."',telper = '".$tel."', telsegper = '".$telseg."',lugnacper = '".$lugnac1."',fecnacper = '".$fecnac."',estcivper = '".$estciv."',etniaper = '".$etnia."',
-			geslanper = '".$ges."',hijosacargo = '".$hijosacargo."', relsexper='".$relsexper."' WHERE idpersona = '".$idpersona."';";
+			geslanper = '".$ges."',hijosacargo = '".$hijosacargo."', relsexper='".$relsexper."',libretmil = '".$libretmil."', tramlibretmil='".$tramlibretmil."' WHERE idpersona = '".$idpersona."';";
 			$this -> cons($sql);
 		}
 		function delper($codp) {
@@ -92,6 +92,10 @@
 		}
 		function selzona2($zona) {
 			$sql = "SELECT codzona,nomzona FROM tbzona WHERE codzona = '".$zona."';";
+			return $this->SeleccionDatos($sql);
+		}
+		function ubi($ubicacion) {
+			$sql = "SELECT codubi,nomubi FROM tbubicacion WHERE codubi = '".$ubicacion."';";
 			return $this->SeleccionDatos($sql);
 		}
 		

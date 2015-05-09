@@ -31,7 +31,8 @@
 	
 	$respuesta_cerrada		= $ins -> get_respuesta_cerrada();
 	$respuesta_cerrada_dos	= $ins -> get_respuesta_cerrada_dos();
-	
+	$solicitud_ 			= $ins -> get_solicitud();
+	$razon_inclusion		= $ins -> get_razon_inclusion();
 	
 	
 	if ($actu) {

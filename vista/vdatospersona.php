@@ -108,7 +108,7 @@
         <div class="row">
 			<div class="form-group col-lg-6">
                 <label for="Tipo de documento">Tipo de Documento <span style="color:red;">*</span></label>
-                <select name="tipdoc" class="form-control" style="text-transform:uppercase;">
+                <select name="tipdoc" class="form-control" style="text-transform:uppercase;" required>
 					<option value = 0> Seleccione una opción </option>
 					<?php 
 						for ($i=0; $i < count($tipdoc); $i++){
@@ -132,7 +132,7 @@
 		<div class="row">
 			<div class="form-group col-lg-6">
                 <label for="Departamento">Departamento <span style="color:red;">*</span></label>
-                <select name="depto" onchange="javascript:RecargarCiudades(this.value);" class="form-control" style="text-transform:uppercase;">
+                <select name="depto" onchange="javascript:RecargarCiudades(this.value);" class="form-control" style="text-transform:uppercase;" required>
  					<option value="0">Seleccione Departamento</option>
 					<?php
  					
@@ -151,7 +151,7 @@
 			<div class="form-group col-lg-6">
                 <label for="Municipio">Municipio <span style="color:red;">*</span></label>
                 <div id="reloadMunicipio">
- 					<select name="codubi" id="id_estado" class="form-control" style="text-transform:uppercase;">
+ 					<select name="codubi" id="id_estado" class="form-control" style="text-transform:uppercase;" required>
 						<option value="0">Seleccione municipio</option>
  					</select>
  				</div>
@@ -160,7 +160,7 @@
 		<div class="row">
             <div class="form-group col-lg-12">
                 <label for="Genero">Género <span style="color:red;">*</span></label>
-                <select name="gen" onchange="javascript:mostrar(this.value);" class="form-control" style="text-transform:uppercase;">
+                <select name="gen" onchange="javascript:mostrar(this.value);" class="form-control" style="text-transform:uppercase;" required>
 					<option value=0> Seleccione una opción </option>
 					<?php 
 						for ($i=0; $i < count($genper); $i++){
@@ -175,7 +175,7 @@
 		<div class="row">
 			<div class="form-group col-lg-6">
                 <label for="Estado civil">Estado Civil <span style="color:red;">*</span></label>
-                <select name="estciv" class="form-control" style="text-transform:uppercase;">
+                <select name="estciv" class="form-control" style="text-transform:uppercase;" required>
 				<option value=0> Seleccione una opción </option>
 					<?php 
 						for ($i=0; $i < count($estcivper); $i++){
@@ -203,11 +203,11 @@
 		<div class="row">
             <div class="form-group col-lg-6">
                 <label for="Direccion">Dirección <span style="color:red;">*</span></label>
-                <input name="dir" type="text" class="form-control" maxlenght="50" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: cra 4 # 56 - 12 ">
+                <input name="dir" type="text" class="form-control" maxlenght="50" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: cra 4 # 56 - 12 " required>
             </div>
 			<div class="form-group col-lg-6">
                 <label for="Zona">Zona <span style="color:red;">*</span></label>
-                <select name="zon" class="form-control" style="text-transform:uppercase;">
+                <select name="zon" class="form-control" style="text-transform:uppercase;" required>
 				<option value=0> Seleccione una opción </option>
 					<?php 
 						for ($i=0; $i < count($zona); $i++){
@@ -221,7 +221,7 @@
 		</div>
 		<div class="row">
             <div class="form-group col-lg-6">
-                <label for="Vereda">Vereda</label>
+                <label for="Vereda">Vereda <span style="color:red;">*</span></label>
                 <select name="ver" class="form-control" style="text-transform:uppercase;">
 				<option value=0> Seleccione una opción </option>
 					<?php 
@@ -234,7 +234,7 @@
 				</select>
             </div>
 			<div class="form-group col-lg-6">
-                <label for="Sector">Sector <span style="color:red;">*</span></label>
+                <label for="Sector">Sector </label>
                 <input name="sec" type="text" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="ej: río frío" class="form-control" maxlenght="50">
             </div>
 		</div>
@@ -292,7 +292,7 @@
             <div class="form-group col-lg-6">
               
 			  <label for="Fecha de nacimiento">Fecha de Nacimiento <span style="color:red;">*</span></label>
-				<input name="fecnac" type="date" class="form-control" max="2014-12-01" min="1900-01-01">
+				<input name="fecnac" type="date" class="form-control" max="2014-12-01" min="1900-01-01" required>
             </div>
 			<div class="form-group col-lg-6">
                 <label for="Etnia">Grupo Poblacional <span style="color:red;">*</span></label>
@@ -310,7 +310,7 @@
 		</div>
 		<div class="row">
 			<div class="form-group col-lg-6">
-                <label for="Hijos a Cargo">Hijos a Cargo</label>
+                <label for="Hijos a Cargo">Hijos a Cargo <span style="color:red;">*</span> </label>
                 <select name="hijosacargo" class="form-control" style="text-transform:uppercase;">
 					<option value = 0> Seleccione una opción </option>
 					<?php 
@@ -323,7 +323,7 @@
 				</select>
             </div>
 			<div class="form-group col-lg-6">
-                <label for="Relaciones sexuales">Establece Relaciones Sexuales de Pareja Con</label>
+                <label for="Relaciones sexuales">Establece Relaciones Sexuales de Pareja Con <span style="color:red;">*</span></label>
                 <select name="relsexper" class="form-control" style="text-transform:uppercase;">
 					<option value = 0> Seleccione una opción </option>
 					<?php 
@@ -339,25 +339,25 @@
 		<div class="row">
 			<div class="form-group col-lg-6">
                 <label for="Libreta Militar">Libreta Militar</label>
-                <select name="libmilper" class="form-control" style="text-transform:uppercase;">
+                <select name="libretmil" class="form-control" style="text-transform:uppercase;">
 					<option value = 0> Seleccione una opción </option>
 					<?php 
-						for ($i=0; $i < count($libmilper); $i++){
+						for ($i=0; $i < count($libretmil1); $i++){
 					?>
-					<option value ="<?php echo $libmilper[$i]['codval'] ?>" ><?php echo $libmilper[$i]['nomval'] ?></option>
+					<option value ="<?php echo $libretmil1[$i]['codval'] ?>" ><?php echo $libretmil1[$i]['nomval'] ?></option>
 					<?php 
 						} 
 					?>
 				</select>
             </div>
 			<div class="form-group col-lg-6">
-                <label for="Libreta Militar">Libreta Militar</label>
-                <select name="libmilper" class="form-control" style="text-transform:uppercase;">
+                <label for="Libreta Militar Exención">La Posesión de la Libreta Se Debe a la Exención del Servicio Militar por su Condición de Victima del Conflicto </label>
+                <select name="tramlibretmil" class="form-control" style="text-transform:uppercase;">
 					<option value = 0> Seleccione una opción </option>
 					<?php 
-						for ($i=0; $i < count($libmilper); $i++){
+						for ($i=0; $i < count($tramlibretmil1); $i++){
 					?>
-					<option value ="<?php echo $libmilper[$i]['codval'] ?>" ><?php echo $libmilper[$i]['nomval'] ?></option>
+					<option value ="<?php echo $tramlibretmil1[$i]['codval'] ?>" ><?php echo $tramlibretmil1[$i]['nomval'] ?></option>
 					<?php 
 						} 
 					?>
@@ -371,8 +371,8 @@
 		</div>
 		<div class="row">
             <div class="form-group col-lg-12 center">
-                <input type="submit" class="btn btn-primary" value="Enviar">
-				<a href="home.php" class="btn btn-primary" >Salir</a>
+                <input type="submit" class="btn btn-success" value="Enviar">
+				<a href="home.php" class="btn btn-success" >Salir</a>
             </div>
 		</div>
     </form>
