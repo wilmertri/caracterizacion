@@ -30,6 +30,16 @@
                 <input name="password" type="password" class="form-control">
             </div>
         </div>
+        <div class="row">
+            <div class="form-group col-lg-6">
+                <label for="">Perfil:</label>
+                <select name="perfil" id="" class="form-control">
+                    <option value="">Seleccione</option>
+                    <option value="1">Administrador</option>
+                    <option value="2">Digitador</option>
+                </select>
+            </div>
+        </div>
         <div class="row">    
             <div class="form-group col-lg-6">
                 <input type="submit" class="btn btn-primary" value="Insertar">
