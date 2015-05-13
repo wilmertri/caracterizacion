@@ -1,8 +1,8 @@
 <?php
 		/*  
         *   @author: Luis M Morales B
-        *   @Version: V1 10/04/15
-        check: 30, 33
+        *   @Version: V2 12/05/15
+        check: 30, 33 pte de pruebas
         */
 
 	include("modelo/mdatosusuario.php");
@@ -16,7 +16,7 @@
 	$id				= isset($_GET['id']) ? $_GET['id']:NULL;
 
 
-	$documento	 	= $ins->get_usuario();
+	$documento	 	= $ins->get_documentos();
 	$usuario		= $ins->get_usuario();
 	$email			= $ins->get_email();
 	$password		= $ins->get_password();

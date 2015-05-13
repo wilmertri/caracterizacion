@@ -2,7 +2,7 @@
 
 		/*  
         *   @author: Luis M Morales B
-        *   @Version: V1 10/04/15
+        *   @Version: V2 12/05/15
         Check 17, 24			
         */
 
@@ -62,7 +62,7 @@
 			<div class="form-group col-lg-6">
 				<label for="" class="">password</label>
 				<select name="pasusu" class="form-control" id="">
-					<option value="">ingrese su password</option>
+					<option value="">ingrese su contraseña</option>
 					<?php
 
 						for ($i=0; $i <count($password) ; $i++) 
