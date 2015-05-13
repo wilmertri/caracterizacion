@@ -129,22 +129,22 @@
               include("vista/vtbeps1.php");
           }
           if ($variable==14) {
-              include("vista/vexplaboral.php");
+              include("vista/actividadeconomica/vexplaboral.php");
           }
           if ($variable==15) {
-              include("vista/vexplaboral1.php");
+              include("vista/actividadeconomica/vexplaboral1.php");
           }
           if ($variable==16) {
-              include("vista/vingresoext.php");
+              include("vista/actividadeconomica/vingresoext.php");
           }
           if ($variable==17) {
-              include("vista/vingresoext1.php");
+              include("vista/actividadeconomica/vingresoext1.php");
           }
           if ($variable==18) {
-              include("vista/vtbnegocio.php");
+              include("vista/actividadeconomica/vtbnegocio.php");
           }
           if ($variable==19) {
-              include("vista/vtbnegocio1.php");
+              include("vista/actividadeconomica/vtbnegocio1.php");
           }
           if ($variable==20) {
               include("vista/vservibas.php");
@@ -153,10 +153,10 @@
               include("vista/vservibas1.php");
           }
           if ($variable==22) {
-              include("vista/vtipoingreso.php");
+              include("vista/actividadeconomica/vtipoingreso.php");
           }
           if ($variable==23) {
-              include("vista/vtipoingreso1.php");
+              include("vista/actividadeconomica/vtipoingreso1.php");
           }
           if ($variable==24) {
               include("vista/vtbvereda.php");
@@ -229,6 +229,10 @@
           }
           if ($variable==90) {
               //Jorge
+			  include("vista/actividadeconomica/vactividadeconomica.php");
+          }
+		   if ($variable==91) {
+			  include("vista/actividadeconomica/vdatosactividadeconomica.php");
           }
           if ($variable==95) 
   		    {
