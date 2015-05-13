@@ -233,13 +233,15 @@
           if ($variable==95) 
   		    {
                 //Andrea
-  			       include("vista/vdespyaban.php");
+  			      include("vista/vdespyaban.php");
           }
-          if ($variable==100) {
+          if ($variable==100) 
+          {
               //Jhon Edison
-			  include("vista/veducacion.php");
+			        include("vista/veducacion.php");
           }
-		  if ($variable==101) {
+		      if ($variable==101) 
+          {
               include("vista/vdatosacademicos.php");
           }
       ?>  
