@@ -47,8 +47,8 @@
 	<div class="dropdown esp">
 		<a href="#" class="btn btn-success dropdown-toggle" data-toggle="dropdown">COMPOSICIÓN FAMILIAR <span class="caret"></span></a>
 		<ul class="dropdown-menu">
-			<li><a href="home.php?var=&pr=<?php echo $pr;?>">MOSTRAR DATOS</a></li>
-			<li><a href="home.php?var=&pr=<?php echo $pr;?>">INGRESAR DATOS</a></li>
+			<li><a href="home.php?var=8&pr=<?php echo $pr;?>">MOSTRAR DATOS</a></li>
+			<li><a href="home.php?var=6&pr=<?php echo $pr;?>">INGRESAR DATOS</a></li>
 		</ul>
 	</div>
 </div>

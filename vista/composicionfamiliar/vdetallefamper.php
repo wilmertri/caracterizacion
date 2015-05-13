@@ -1,10 +1,9 @@
 <?php
 	include ("controlador/cdatosfam.php");
 ?>
-	<div class="forms1">
-	
-		<h1>Detalle Datos de los Familires </h1>
-		<table class="table" cellspacing="0" width="100%">
+<div class="forms1">	
+	<h1>Detalle Datos de los Familires </h1>
+	<table class="table" cellspacing="0" width="100%">
 		<tr>
 			<td>Documento:</td>
 			<td><?php echo $dato1[0]['numdocfam']; ?></td>
@@ -77,3 +76,4 @@
 			<td align = "center"><a href ="home.php?var=36&famper=1&pr=<?php echo $dato1[0]["numdocfam"]; ?>" class="btn btn-primary">Discapacidad</a></td>
 		</tr>
 	</table>
+</div>	

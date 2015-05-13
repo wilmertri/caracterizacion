@@ -105,13 +105,13 @@
               include("vista/datospersona/veditarper.php");
           }
           if ($variable==6) {
-              include("vista/vdatosfam.php");
+              include("vista/composicionfamiliar/vdatosfam.php");
           }
           if ($variable==7) {
-              include("vista/vdatosfam1.php");
+              include("vista/composicionfamiliar/vdatosfam1.php");
           }
           if ($variable==8) {
-              include("vista/vdetallefamper.php");
+              include("vista/composicionfamiliar/vdetallefamper.php");
           }
           if ($variable==9) {
               include("vista/veditarfamper.php");
@@ -210,13 +210,13 @@
               include("vista/vvalor.php");   
           }
           if ($variable==50) {
-              include("vista/vusuario.php");
+              include("vista/usuario/vusuario.php");
           }
           if ($variable==55) {
               include("vista/vtbsalud.php");
           }
           if ($variable==70) {
-              include("vista/vdatosper.php");
+              include("vista/vmenudatosper.php");
           }
           if ($variable==75) {
               include("vista/vdatosvivienda.php");
