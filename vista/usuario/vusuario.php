@@ -1,8 +1,8 @@
-
 <?php
         /*  
         *   @author: Luis M Morales B
-        *   @Version: V2 10/04/15
+        *   @Version: V3 12/05/15
+        recuperada abruptamente
         */
 
 	include("controlador/cusuario.php");
