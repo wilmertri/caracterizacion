@@ -33,8 +33,8 @@
 	<div class="dropdown esp">
 		<a href="#" class="btn btn-success dropdown-toggle" data-toggle="dropdown">ACTIVIDAD ECONÓMICA <span class="caret"></span></a>
 		<ul class="dropdown-menu">
-			<li><a href="home.php?var=&pr=<?php echo $pr;?>">MOSTRAR DATOS</a></li>
-			<li><a href="home.php?var=&pr=<?php echo $pr;?>">INGRESAR DATOS</a></li>
+			<li><a href="home.php?var=91&id=<?php echo $pr;?>">MOSTRAR DATOS</a></li>
+			<li><a href="home.php?var=90&id=<?php echo $pr;?>">INGRESAR DATOS</a></li>
 		</ul>
 	</div>
 	<div class="dropdown esp">

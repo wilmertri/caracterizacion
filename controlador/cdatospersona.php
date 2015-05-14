@@ -35,15 +35,11 @@
 	$dato1 		= $ins->selper1($pr);
 
 
-	echo "Tipdoc: " . $dato1[0]['tipdocper'];
-	echo "lugexp: " . $dato1[0]['lugexpdocper'];
-	//Var_dump($dato1);
-
 	//echo "Tipdoc: " . $dato1[0]['tipdocper'];
 	//echo "lugexp: " . $dato1[0]['lugexpdocper'];
-	
-
-	
+	//Var_dump($dato1);
+	//echo "Tipdoc: " . $dato1[0]['tipdocper'];
+	//echo "lugexp: " . $dato1[0]['lugexpdocper'];
 	
 	$ver1 			= $ins->selver();
 	$zona 			= $ins->selzona();
