@@ -46,7 +46,7 @@
 		 */
 		function actu_datos_actividad($numpercar, $ocuperact, $trabper, $ingmenper, $idpersona)
 		{
-			$sql = "UPDATE tbdatospersona SET numpercar='$numpercar', ocuperact='$ocuperact', actperact='$trabper', ingmenper='$ingmenper' WHERE idpersona = '$idpersona'";
+			$sql = "UPDATE tbdatospersona SET numpercar='$numpercar', ocuperact='$ocuperact', trabajoper='$trabper', ingmenper='$ingmenper' WHERE idpersona = '$idpersona'";
 			$this->cons($sql);
 		}
 
@@ -56,7 +56,7 @@
 
         function ver_datos_actividad($idpersona)
 		{
-			$sql = "SELECT numpercar, ocuperact, actperact, ingmenper FROM tbdatospersona WHERE idpersona = $idpersona";			
+			$sql = "SELECT numpercar, ocuperact, trabajoper, ingmenper FROM tbdatospersona WHERE idpersona = $idpersona";			
             return $this->SeleccionDatos($sql);
 		}
 		

@@ -28,7 +28,7 @@
 		<div class="row">	
 			<div class="form-group col-lg-6">
                 <label for="En que trabaja">En que trabaja</label>
-                <input name="trabper" type="text" class="form-control" placeholder="" pattern="[A-z ]{2,20}" >
+                <input name="trabper" type="text" class="form-control" pattern="[A-z ]{2,20}" >
             </div>
 			<div class="form-group col-lg-6">
                 <label for="Ingresos Mensuales">Ingresos Mensuales</label>
