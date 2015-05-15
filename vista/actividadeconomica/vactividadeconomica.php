@@ -10,7 +10,7 @@
                 <input name="numpercar" type="number" class="form-control" pattern="[0-9]{1,3}" min="0" max="30" value="<?= $datosactividad[0]['numpercar'] ?>"> <!--esta variable viene de la tabla vdatospersona-->
             </div>
 			<div class="form-group col-lg-6">
-                <label for="Ocupación Actual">Ocupación Actual</label>
+                <label for="Ocupación Actual">Ocupación Actual <span style="color:red;">*</span> </label>
 				<select name="ocuperact" class="form-control" id="">
 					<option value="<?= $datosactividad[0]['ocuperact'] ?>">Seleccione una opción</option>
 					<?php

@@ -1,9 +1,11 @@
 <?php
 	include("controlador/conexion.php");
-	class mexplaboral {
+	include ("functions.php");
+	class mexplaboral extends Funciones_generales{
+		
 		function mexplaboral() {}
-		function insexpper($labexp, $desexp, $ingexp, $per) {
-			$sql = "INSERT INTO tbexplaboral (numdocper, labexp, desexp, ingexp) VALUES ('".$per."','".$labexp."','".$desexp."','".$ingexp."');";
+		function insexpper($labexp, $desexp, $ingexp, $idpersona) {
+			$sql = "INSERT INTO tbexplaboral (idpersona, labexp, desexp, ingexp) VALUES ('".$idpersona."','".$labexp."','".$desexp."','".$ingexp."');";
 			$this -> cons($sql);
 		}
 		function updexpper($codexp, $labexp, $desexp, $ingexp) {
@@ -14,31 +16,22 @@
 			$sql = "DELETE FROM tbexplaboral WHERE codexplab = '".$codexp."';";
 			$this -> cons($sql);
 		}
-		function cons ($c) {
+		/*function cons ($c) {
 			$conexionBD = new conexion();
 			$conexionBD -> conectarBD();
 			$conexionBD -> ejeCon($c, 1);
-		}
+		}*/
 		function selexpper() {
 			$sql = "SELECT * FROM tbexplaboral;";
-			$conexionBD = new conexion();
-			$conexionBD -> conectarBD();
-			$datos = $conexionBD -> ejeCon($sql, 0);
-			return $datos;
+			return $this->SeleccionDatos($sql);
 		}
 		function selexpper1($codexp) {
 			$sql = "SELECT * FROM tbexplaboral WHERE codexplab= '".$codexp."';";
-			$conexionBD = new conexion();
-			$conexionBD -> conectarBD();
-			$datos = $conexionBD -> ejeCon($sql, 0);
-			return $datos;
+			return $this->SeleccionDatos($sql);
 		}
-		function selexpper2($numdoc) {
-			$sql = "SELECT * FROM tbexplaboral WHERE numdocper= '".$numdoc."';";
-			$conexionBD = new conexion();
-			$conexionBD -> conectarBD();
-			$datos = $conexionBD -> ejeCon($sql, 0);
-			return $datos;
+		function selexpper2($idpersona) {
+			$sql = "SELECT * FROM tbexplaboral WHERE idpersona= '".$idpersona."';";
+			return $this->SeleccionDatos($sql);
 		}
 	}
 ?>

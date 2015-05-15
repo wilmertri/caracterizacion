@@ -3,7 +3,7 @@
 ?>
 <h1> Actualizar Datos Experiencia Laboral</h1>
 <div class="forms">
-    <form name="form1" action="home.php?var=14&pr=<?php echo $dato1[0]['numdocper'] ?>" method="post">
+    <form name="form1" action="home.php?var=14&id=<?php echo $dato1[0]['idpersona'] ?>" method="post">
         <div class="row">
             <div class="form-group">
                 <label for="Codigo">Codigo</label>
@@ -11,7 +11,6 @@
                 <input type="hidden" name="actu" value="actu" />
 				<input type="hidden" name="codexplab" value="<?php echo $dato2[0]['codexplab'] ?>" />
             </div>
-
 			<div class="form-group">
                 <label for="Nombre labor de la experiencia">Nombre labor de la experiencia </label>
                 <input name="labexp" type="text" value="<?php echo $dato2[0]['labexp'] ?>" class="form-control">
@@ -26,10 +25,9 @@
                 <label for="Ingreso">Ingreso </label>
                 <input name="ingexp" type="text" value="<?php echo $dato2[0]['ingexp'] ?>" class="form-control">
             </div>
-			
 			<div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Actualizar">
-				<a href="home.php" class="btn btn-primary" >Salir</a>
+                <input type="submit" class="btn btn-success" value="Actualizar">
+				<a href="home.php" class="btn btn-success" >Salir</a>
             </div>
         </div>
     </form>
@@ -46,7 +44,7 @@
             <th>Editar</th>
         </tr>
         <?php
-			$dato = $ins -> selexpper2($pr);
+			$dato = $ins -> selexpper2($id);
 			for($i=0;$i<count($dato);$i++) {
 		?>
 		<tr>
@@ -54,7 +52,7 @@
 			<td align = "center"><?php echo $dato[$i]["labexp"]; ?></td>
 			<td align = "left"><?php echo $dato[$i]["desexp"]; ?></td>
 			<td align = "right"><?php echo $dato[$i]["ingexp"]; ?></td>
-			<td><a href="home.php?var=15&pr=<?php echo $dato1[0]['numdocper'] ?>&cod=<?php echo $dato[$i]["codexplab"]; ?>" class="btn btn-primary">Editar</a></td>
+			<td><a href="home.php?var=15&id=<?php echo $dato1[0]['idpersona'] ?>&cod=<?php echo $dato[$i]["codexplab"]; ?>" class="btn btn-success">Editar</a></td>
 		</tr>
 			<?php } ?>		
 		</table>

@@ -21,7 +21,7 @@
 		//$dato1= $ins->seleps1($pr);
 		$datosactividad = $ins->ver_datos_actividad($id);
 		
-		if ($numpercar) 
+		if ($ocuperact) 
 		{
 			$ins->actu_datos_actividad($numpercar, $ocuperact, $trabper, $ingmenper, $id);
 		}
