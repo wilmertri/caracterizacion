@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-05-2015 a las 16:55:21
+-- Tiempo de generación: 16-05-2015 a las 18:14:43
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -328,7 +328,7 @@ CREATE TABLE IF NOT EXISTS `tbopcionnomatricula` (
 CREATE TABLE IF NOT EXISTS `tbparametro` (
 `codpar` int(11) NOT NULL COMMENT 'codigo del parametro',
   `nompar` varchar(50) NOT NULL COMMENT 'nombre del parametro'
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbparametro`
@@ -363,7 +363,14 @@ INSERT INTO `tbparametro` (`codpar`, `nompar`) VALUES
 (26, 'Alimentos diarios'),
 (27, 'Libreta militar'),
 (28, 'Relaciones sexuales'),
-(31, 'Ocupacion');
+(31, 'Ocupacion'),
+(32, 'Inclucion en el RUPD/RUV'),
+(33, 'Justificación de la inclución en el RUPD / RUV'),
+(34, 'Causa de perdida de bien'),
+(35, 'Tipo de bien inmueble que abandonó'),
+(36, 'Relación con el bien que abandonó'),
+(37, 'Ideal de los miembros del hogar'),
+(38, 'Razón por la cual no ha retornado o rehubicado');
 
 -- --------------------------------------------------------
 
@@ -1661,7 +1668,6 @@ CREATE TABLE IF NOT EXISTS `tbusuario` (
   `documento` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `nombre` varchar(80) COLLATE utf8_spanish_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  `email` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `depusu` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
   `carusu` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
   `telusu` varchar(12) COLLATE utf8_spanish_ci DEFAULT NULL,
@@ -1678,7 +1684,7 @@ CREATE TABLE IF NOT EXISTS `tbvalor` (
 `codval` int(11) NOT NULL COMMENT 'codigo del valor',
   `nomval` varchar(100) NOT NULL COMMENT 'nombre del valor',
   `codpar` int(11) NOT NULL COMMENT 'codigo del parametro'
-) ENGINE=InnoDB AUTO_INCREMENT=134 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=173 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbvalor`
@@ -1808,7 +1814,46 @@ INSERT INTO `tbvalor` (`codval`, `nomval`, `codpar`) VALUES
 (130, 'Comerciante', 31),
 (131, 'Actividades del campo', 31),
 (132, 'Desempleado', 31),
-(133, 'Otra', 31);
+(133, 'Otra', 31),
+(134, 'El hecho lo declaró usted', 32),
+(135, 'El hecho fue declarado por otra persona de su hogar', 32),
+(136, 'El hecho fue declarado por otra persona de otro hogar', 32),
+(137, 'No Declaró', 32),
+(138, 'No Sabe', 32),
+(139, 'Desplazamiento forzado', 33),
+(140, 'Homicidio/Masacre', 33),
+(141, 'Amenaza', 33),
+(142, 'Desaparición forzada', 33),
+(143, 'Perdida de Bienes Muebles o Inmuebles', 33),
+(144, 'Acto terrorista', 33),
+(145, 'Secuestro', 33),
+(146, 'Minas Antipersona', 33),
+(147, 'Tortura', 33),
+(148, 'Vinculación de niños, niñas y adolescentes', 33),
+(149, 'Abandono o despojo forzado de tierras', 33),
+(150, 'Delitos contra la libertad y la integridad sexual', 33),
+(151, 'Verse obligado a abandonar', 34),
+(152, 'Vender a un precio inferior', 34),
+(153, 'Ninguna de las anteriores', 34),
+(154, 'Vivienda urbana', 35),
+(155, 'Tierra/Lote CON vivienda', 35),
+(156, 'Tierra/Lote SIN vivienda', 35),
+(157, 'Propietario con documento registrado', 36),
+(158, 'Poseedor', 36),
+(159, 'Arrendatario con contrato escrito', 36),
+(160, 'Arrendatario sin contrato escrito', 36),
+(161, 'Usufructo', 36),
+(162, 'Otro', 36),
+(163, 'Retorno al lugar del desplazamiento', 37),
+(164, 'Reubicación hacia otro muncipio', 37),
+(165, 'Asentamiento definitivo', 37),
+(166, 'No Sabe', 37),
+(167, 'Amenazas al hogar o a un integrante del mismo', 38),
+(168, 'Miedo a volver ser víctima del conflicto', 38),
+(169, 'Temor a recaer emocionalmente por recuerdos del desplazamiento', 38),
+(170, 'En el sitio actual existen mejores condiciones para desarrollar un proyecto de vida sostenible', 38),
+(171, 'Por falta de recursos económicos', 38),
+(172, 'Otra', 38);
 
 -- --------------------------------------------------------
 
@@ -2105,7 +2150,7 @@ MODIFY `idtbopcionnomatricula` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT de la tabla `tbparametro`
 --
 ALTER TABLE `tbparametro`
-MODIFY `codpar` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo del parametro',AUTO_INCREMENT=32;
+MODIFY `codpar` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo del parametro',AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT de la tabla `tbperfac`
 --
@@ -2145,7 +2190,7 @@ MODIFY `idtipoingreso` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT de la tabla `tbvalor`
 --
 ALTER TABLE `tbvalor`
-MODIFY `codval` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo del valor',AUTO_INCREMENT=134;
+MODIFY `codval` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo del valor',AUTO_INCREMENT=173;
 --
 -- AUTO_INCREMENT de la tabla `tbvereda`
 --
