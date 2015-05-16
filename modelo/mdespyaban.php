@@ -78,6 +78,9 @@
 			return $this->seleccionar_valores_de_parametro (22);
 		}
 		
+		function actu_datos_despyaban($lugexpul, $munucipio, $fechexpul, $actorarmado, $ingaliment, $tpermanencia, $fpermanencia, $solicitud, $rinclusion, $usopredio, $perbienes, $tipobi, $relabien, $tipofam, $ideal, $ubicacion, $retorno, $medproteccion, $reciproteccion, $indemnizacion, $observacion, $id)
+		{
+		}
 	
 		
 	}

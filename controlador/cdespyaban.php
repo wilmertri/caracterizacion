@@ -24,7 +24,7 @@
 	$indemnizacion 	= isset($_POST["harecibidoindemnizacion"]) ? $_POST["harecibidoindemnizacion"]:NULL;
 	$observacion 	= isset($_POST["observaciones"]) ? $_POST["observaciones"]:NULL;
 	$actu 			= isset($_POST["actu"]) ? $_POST["actu"]:NULL;
-	$pr 			= isset($_GET["pr"]) ? $_GET["pr"]:NULL;
+	$id 			= isset($_GET["pr"]) ? $_GET["pr"]:NULL;
 
 	
 	$factores_permanencia = $ins -> get_factores_permanencia();
@@ -44,49 +44,45 @@
 	
 	if ($actu) {
 		if ($actorarmado ==0) {
-			$actorarmado = $dato1[0][''];
+			$actorarmado = $dato1[0]['actperact'];
 		}
 		if ($ingaliment ==0) {
-			$ingaliment  = $dato1[0][''];
+			$ingaliment  = $dato1[0]['ingresoalimentos'];
 		}
-		if ($fpermanencia ==0) {
-			$fpermanencia = $dato1[0][''];
-		}
+		
 		if ($solicitud ==0) {
-			$solicitud  = $dato1[0][''];
+			$solicitud  = $dato1[0]['solrupruv'];
 		}
 		if ($rinclusion ==0) {
-			$rinclusion  = $dato1[0][''];
+			$rinclusion  = $dato1[0]['razrupruv'];
 		}
 		if ($usopredio ==0) {
-			$usopredio = $dato1[0][''];
+			$usopredio = $dato1[0]['usopreddes'];
 		}
 		if ($tipobi ==0) {
-			$tipobi = $dato1[0][''];
+			$tipobi = $dato1[0]['usopreddes'];
 		}
 		if ($relabien ==0) {
-			$relabien = $dato1[0][''];
+			$relabien = $dato1[0]['relbienper'];
 		}
 		if ($tipofam ==0) {
-			$tipofam = $dato1[0][''];
+			$tipofam = $dato1[0]['tipfamper'];
 		}
 		if ($ideal ==0) {
-			$ideal = $dato1[0][''];
+			$ideal = $dato1[0]['iderupruv'];
 		}
-		if ($ubicacion ==0) {
-			$ubicacion = $dato1[0][''];
-		}
+		
 		if ($retorno ==0) {
-			$retorno = $dato1[0][''];
+			$retorno = $dato1[0]['raznoret'];
 		}
 		if ($medproteccion ==0) {
-			$medproteccion = $dato1[0][''];
+			$medproteccion = $dato1[0]['medprotper'];
 		}
 		if ($reciproteccion ==0) {
-			$reciproteccion = $dato1[0][''];
+			$reciproteccion = $dato1[0]['recprotper'];
 		}
 		if ($indemnizacion=0) {
-			$indemnizacion = $dato1[0][''];
+			$indemnizacion = $dato1[0]['indunivict'];
 		}
 	}
 	
