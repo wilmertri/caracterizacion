@@ -2,51 +2,37 @@
 
         /*  
         *   @author: Luis M Morales B
-        *   @Version: V1 07/04/15
+        *   @Version: V2 16/05/15
         */
 
 	include("controlador/conexion.php");
-	class mtbusuario
-	{
+	include("functions.php");
+	class mtbusuario extends Funciones_generales
+		{
 	 	function mtbusuario(){} // CRUD - ESTO ES LA C= CREAR
 
-		function insusu($documento,$nombre,$password,$email) // Datos de cada campo
+		function insusu($documento,$usuario,$dependencia,$cargo,$password,$telefono) // Datos de cada campo
 		{			//insper insertar persona y el orden si afecta
-			$sql =  "INSERT INTO tbusuario (documento,nombre,password,email) values ('".$documento."' , '".$nombre."','".$password."' , '".$email."');"; // es una sola linea
+			$sql =  "INSERT INTO tbusuario (documento,usuario,dependencia,cargo,password,telefono) values ('".$documento."' , '".$usuario."','".$dependencia."' , '".$cargo."' , '".$password."' , '".$telefono."');"; 
 			$this -> cons($sql);
 		}
 			
-		function updusu ($documento,$nombre,$password,$email) // CRUD - ESTO ES LA U= actualizar
+		function updusu ($documento,$usuario,$dependencia,$cargo,$password,$telefono) // CRUD - ESTO ES LA U= actualizar
 		{
-			$sql= "UPDATE tbusuario SET nombre='".$nombre."' , password='".$password."', email='".$email."' where documento='".$documento."' ;";	
+			$sql= "UPDATE tbusuario SET documento='".$documento."' , usuario='".$usuario."', dependencia='".$dependencia."', cargo='".$cargo."', telefono='".$telefono."' where documento='".$documento."' ;";	
 			$this-> cons($sql); // aca es importante que este ordenado, para que se guarde en el mismo orden y con el this es la funcion con la que le ordeno que haga o cite lo que nobre antes
 		}
-		function delusu($documento) // CRUD - ESTO ES LA D= eliminar (Create, Read, Update and Delete) 
-		{
-			$sql= "DELETE FROM tbusuario WHERE documento='".$documento."';";
-			$this-> cons($sql);
-		}	
-		function cons($c)
-		{
-			$conexionBD= new conexion();   // llama toda la clase llamada conexion de conexion.php
-			$conexionBD-> conectarBD(); // asi llame la clase debo especificar lo que deseo llamar en este caso conectarBD y ejecon
-			$conexionBD-> ejecon($c,1); // el 1 es para el ingreso de datos datos
-		}	
+		
 		function selusu() 
 		{
 			$sql= "SELECT * FROM tbusuario;"; // para seleccionar todos los datos de la consulta sql se utiliza * , si quiero algo especifico llamo solo los datos ej: nombre etc
-			$conexionBD= new conexion();
-			$conexionBD-> conectarBD();
-			$datos=$conexionBD-> ejecon($sql,0); // ejecon ejecutar la consutla 
-			return $datos;
+			return $this -> SeleccionDatos($sql);
+				
 		}
 		function selusu1($documento) 
 		{
 			$sql= "SELECT * FROM tbusuario WHERE documento='".$documento."' ;"; 
-			$conexionBD= new conexion();
-			$conexionBD-> conectarBD()	;
-			$datos=$conexionBD-> ejecon($sql,0);
-			return $datos;
+			return $this -> SeleccionDatos($sql);
 		}				
 	}		
 ?>				
