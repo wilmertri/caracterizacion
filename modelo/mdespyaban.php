@@ -40,42 +40,42 @@
 		
 		function get_solicitud()
 		{
-			return $this->seleccionar_valores_de_parametro(22);
+			return $this->seleccionar_valores_de_parametro(32);
 		}
 		
 		function get_razon_inclusion()
 		{
-			return $this->seleccionar_valores_de_parametro(22);
+			return $this->seleccionar_valores_de_parametro(33);
 		}
 		
 		function get_predio_perdido_por()
 		{
-			return $this->seleccionar_valores_de_parametro(22);
+			return $this->seleccionar_valores_de_parametro(34);
 		}
 		
 		function get_tipo_inmueble()
 		{
-			return $this->seleccionar_valores_de_parametro(22);
+			return $this->seleccionar_valores_de_parametro(35);
 		}
 		
 		function get_relacion_con_el_bien()
 		{
-			return $this->seleccionar_valores_de_parametro(22);
+			return $this->seleccionar_valores_de_parametro(36);
 		}
 		
 		function get_tipo_de_familia()
 		{
-			return $this->seleccionar_valores_de_parametro(22);
+			return $this->seleccionar_valores_de_parametro(9);
 		}
 		
 		function get_ideal_rupd ()
 		{
-			return $this->seleccionar_valores_de_parametro (22);
+			return $this->seleccionar_valores_de_parametro (37);
 		}
 		
 		function get_razon_retorno ()
 		{
-			return $this->seleccionar_valores_de_parametro (22);
+			return $this->seleccionar_valores_de_parametro (38);
 		}
 		
 		function actu_datos_despyaban($lugexpul, $munucipio, $fechexpul, $actorarmado, $ingaliment, $tpermanencia, $fpermanencia, $solicitud, $rinclusion, $usopredio, $perbienes, $tipobi, $relabien, $tipofam, $ideal, $ubicacion, $retorno, $medproteccion, $reciproteccion, $indemnizacion, $observacion, $id)
