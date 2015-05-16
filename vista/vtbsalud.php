@@ -4,6 +4,12 @@
 <div class="forms1">
 	<h1>Ingresar Datos Salud </h1>
 	<form name="form1" method="POST" action="">
+		 <div class="form-group col-lg-6">
+				<label for="Numero Ficha">Numero id persona</label> 
+				<input type="hidden" name="idpersona" value="<?php echo $dato1[0]['idpersona'] ?>" />
+				<input type="hidden" name="actu" value="actu" />
+				
+			</div>
 		<!-- Esta afiliado a algún Sistema de Salud. -->
 		<div class="row">
 			<div class="form-group col-lg-6">
@@ -93,6 +99,21 @@
 						{
 					?>
 					<option value ="<?php echo $conodoper[$i]['codval'] ?>" ><?php echo $conodoper[$i]['nomval']; ?></option>
+					<?php 
+						} 
+					?>
+				</select>
+            </div>
+            <!-- La discapacidad fue causada por el conflicto armado? -->
+        	<div class="form-group col-md-6">
+                <label for="">La discapacidad fue causada por el conflicto armado?</label>
+                <select name="disconfarm" class="form-control">
+					<option value="">Seleccione una Opcion</option>
+					<?php 
+						for ($i=0; $i < count($disconfarm); $i++)
+						{
+					?>
+					<option value ="<?php echo $disconfarm[$i]['codval'] ?>" ><?php echo $disconfarm[$i]['nomval']; ?></option>
 					<?php 
 						} 
 					?>

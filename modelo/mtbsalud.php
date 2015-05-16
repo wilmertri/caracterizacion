@@ -37,6 +37,11 @@
 			return $this->seleccionar_valores_de_parametro(25);
 		}
 
+		function get_conflicto_armado()
+		{
+			return $this->seleccionar_valores_de_parametro(25);
+		}
+
 		function get_atencion_salud()
 		{
 			return $this->seleccionar_valores_de_parametro(25);
@@ -61,15 +66,19 @@
 		/*
 			Función para la actualización de los datos Salud
 		*/
-		function actu_datos_salud($sissal ,$eps, $negser, $atevicper, $esqvacper, $conodoper, $dsc1, $dsc2, $disconfarm, $reh1, $reh2, $comdiaper)
+		function actu_datos_salud($idpersona, $sissal, $eps, $negser, $atevicper, $esqvacper, $conodoper, $disconfarm, 
+			$comdiaper)
 		{
-			$sql = "UPDATE tbdatospersona SET tipvivper='$tipovivienda', tipparviv='$tipoparedes', tippisviv='$tipopisos', tiptecviv='$tipotechos', zonrieviv='$zonariesgo', tiprelviv='$tiporelacion' WHERE idpersona = '$idpersona'";
+			$sql = "UPDATE tbdatospersona SET afiliacionsalud='$sissal', epsper='$eps', negserper='$negser', atesalposvicper='$atevicper', esqvacper='$esqvacper', conodoper='$conodoper', disconfarm='$disconfarm', comdiaper='$comdiaper'
+						WHERE idpersona = '$idpersona'";
 			$this->cons($sql);
+
+			/* */ 
 		}
 
 		function ver_datos_salud($idpersona)
 		{
-			$sql = "SELECT tipvivper, tipparviv, tippisviv, tiptecviv, zonrieviv FROM tbdatospersona WHERE idpersona = $idpersona";
+			$sql = "SELECT afiliacionsalud, epsper, negserper, atesalposvicper, esqvacper FROM tbdatospersona WHERE idpersona = $idpersona";
 			$conexionBD = new conexion();
 			$conexionBD->conectarBD();
 			$datos = $conexionBD->ejeCon($sql,0);
