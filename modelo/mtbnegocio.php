@@ -1,9 +1,10 @@
 <?php
 	include("controlador/conexion.php");
-	class mtbnegocio {
+	include ("functions.php");
+	class mtbnegocio extends Funciones_generales{
 		function mtbnegocio() {}
-		function insneg($labneg, $tipneg, $durneg, $dirneg, $per) {
-			$sql = "INSERT INTO tbnegocio (numdocper, labneg, tipneg, durneg, dirneg) VALUES ('".$per."','".$labneg."','".$tipneg."','".$durneg."','".$dirneg."');";
+		function insneg($labneg, $tipneg, $durneg, $dirneg, $idpersona) {
+			$sql = "INSERT INTO tbnegocio (idpersona, labneg, tipneg, durneg, dirneg) VALUES ('".$idpersona."','".$labneg."','".$tipneg."','".$durneg."','".$dirneg."');";
 			$this -> cons($sql);
 		}
 		function updneg($codnegper, $labneg, $tipneg, $durneg, $dirneg) {
@@ -14,31 +15,17 @@
 			$sql = "DELETE FROM tbnegocio WHERE codnegper = '".$codnegper."';";
 			$this -> cons($sql);
 		}
-		function cons ($c) {
-			$conexionBD = new conexion();
-			$conexionBD -> conectarBD();
-			$conexionBD -> ejeCon($c, 1);
-		}
 		function selneg() {
 			$sql = "SELECT * FROM tbnegocio;";
-			$conexionBD = new conexion();
-			$conexionBD -> conectarBD();
-			$datos = $conexionBD -> ejeCon($sql, 0);
-			return $datos;
+			return $this->SeleccionDatos($sql);
 		}
-		function selneg1($numdoc) {
-			$sql = "SELECT * FROM tbnegocio WHERE numdocper = '".$numdoc."';";
-			$conexionBD = new conexion();
-			$conexionBD -> conectarBD();
-			$datos = $conexionBD -> ejeCon($sql, 0);
-			return $datos;
+		function selneg1($idpersona) {
+			$sql = "SELECT * FROM tbnegocio WHERE idpersona = '".$idpersona."';";
+			return $this->SeleccionDatos($sql);
 		}
 		function selneg2($codneg) {
 			$sql = "SELECT * FROM tbnegocio WHERE codnegper = '".$codneg."';";
-			$conexionBD = new conexion();
-			$conexionBD -> conectarBD();
-			$datos = $conexionBD -> ejeCon($sql, 0);
-			return $datos;
+			return $this->SeleccionDatos($sql);
 		}
 	}
 ?>
