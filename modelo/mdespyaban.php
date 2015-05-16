@@ -68,5 +68,16 @@
 			return $this->seleccionar_valores_de_parametro(22);
 		}
 		
+		function get_ideal_rupd ()
+		{
+			return $this->seleccionar_valores_de_parametro (22);
+		}
+		
+		function get_razon_retorno ()
+		{
+			return $this->seleccionar_valores_de_parametro (22);
+		}
+		
+	
 		
 	}

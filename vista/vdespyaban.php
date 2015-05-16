@@ -252,7 +252,7 @@
 		</div>
 		<div class="row">
 			<div class="form-group col-lg-6 col-md-6">
-					<label for="Ideal RUPD">Ideal RUPD</label>
+					<label for="Ideal RUPD">Para todos los miembros del hogar incluidos en el RUPD/RUV Su ideal es?</label>
 					<select name="ideal" onchange="javascript:mostrar(this.value);" class="form-control">
 								<option value=0> Seleccione una opción </option>>
 								
@@ -260,10 +260,10 @@
 								<?php 
 								//Select
 								//$gen = $ins->selpar();
-								for ($i=0; $i < count($irupd); $i++){
+								for ($i=0; $i < count($ideal_rupd); $i++){
 								?>
 						
-								<option value="<?php echo $irupd[$i]['codval'] ?>" ><?php echo $irupd[$i]['nomval'] ?></option>
+								<option value="<?php echo $ideal_rupd[$i]['codval'] ?>" ><?php echo $ideal_rupd[$i]['nomval'] ?></option>
 						
 								<?php } ?>
 					</select>
@@ -307,7 +307,7 @@
 			</div> 
 			<div class="row">
 			<div class="form-group col-lg-6 col-md-6">
-				<label for="Razon de retorno">Razon de retorno</label>
+				<label for="Razon de retorno">Cuál ha sido la principal razón por la cual no se ha retornado o reubicado?</label>
 				<select name="razonderetorno" onchange="javascript:mostrar(this.value);" class="form-control">
 							<option value=0> Seleccione una opción </option>>
 								
@@ -315,15 +315,16 @@
 							<?php 
 							//Select
 							//$gen = $ins->selpar();
-							for ($i=0; $i < count($razre); $i++){
+							for ($i=0; $i < count($razon_retorno); $i++){
 							?>
 						
-							<option value="<?php echo $razre[$i]['codval'] ?>" ><?php echo $razre[$i]['nomval'] ?></option>
+							<option value="<?php echo $razon_retorno[$i]['codval'] ?>" ><?php echo $razon_retorno[$i]['nomval'] ?></option>
 						
 							<?php } ?>
 				</select>
 			</div>
 			<div class="form-group col-lg-6 col-md-6">
+			<br>
 				<label for="Medidas de proteccion">Han solicitado medidas de protección?</label>
 				<select name="medidasdeproteccion" onchange="javascript:mostrar(this.value);" class="form-control">
 							<option value=0> Seleccione una opción </option>>
@@ -343,6 +344,7 @@
 		</div>
 		<div class="row">
 			<div class="form-group col-lg-6 col-md-6">
+			<br>
 				<label for="Recibio medidas de proteccion">Recibio medidas de proteccion</label>
 				<select name="recibiomedidasdeproteccion" onchange="javascript:mostrar(this.value);" class="form-control">
 							<option value=0> Seleccione una opción </option>>
@@ -382,7 +384,7 @@
 				<label for="Observaciones">Observaciones</label>
 				<input name="observaciones" type="text" class="form-control">
             </div>
-			<div  class="row">
+			<div  class="row"><br>
 			<div class="form-group col-lg-6 col-md-6 center">
 				<input type="submit" class="btn btn-primary">
 			</div>	

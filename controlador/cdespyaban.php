@@ -37,6 +37,9 @@
 	$tipo_inmueble			= $ins -> get_tipo_inmueble();
 	$relacion_con_el_bien	= $ins -> get_relacion_con_el_bien(); 
 	$tipo_de_familia		= $ins -> get_tipo_de_familia();
+	$ideal_rupd				= $ins -> get_ideal_rupd();
+	$razon_retorno			= $ins -> get_razon_retorno();
+
 	
 	
 	if ($actu) {
