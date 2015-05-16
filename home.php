@@ -212,6 +212,9 @@
           if ($variable==50) {
               include("vista/usuario/vusuario.php");
           }
+          if ($variable==51) {
+              include("vista/usuario/vediusuario.php");
+          }
           if ($variable==55) {
               include("vista/vtbsalud.php");
           }
@@ -225,7 +228,7 @@
               include("vista/vverdatosvivienda.php");
           }
           if ($variable==85) {
-              //Luis Miguel
+              //Luis Miguel se cambio por el 50 al 55
           }
           if ($variable==90) {
               //Jorge

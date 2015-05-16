@@ -11,31 +11,31 @@
     <form name="form1" action="" method="post">
         <div class="row">
             <div class="form-group col-lg-6">
-                <label for="documento">Número de Cédula</label>
+                <label for="">Número de Cédula</label>
                 <input name="documento" type="text" class="form-control">
             </div>
             <div class="form-group col-lg-6">
-                <label for="usuario">Nombre Funcionario</label>
+                <label for="">Nombre Funcionario</label>
                 <input name="nombre" type="text" class="form-control">
             </div>
         </div>
         <div class="row">
             <div class="form-group col-lg-6">
-                <label for="dependencia">Dependencia</label>
+                <label for="">Dependencia</label>
                 <input name="dependencia" type="text" class="form-control">
             </div>
             <div class="form-group col-lg-6">
-                <label for="cargo">Cargo</label>
+                <label for="">Cargo</label>
                 <input name="cargo" type="text" class="form-control">
             </div>
         </div>
         <div class="row">
             <div class="form-group col-lg-6">
-                <label for="password">Contraseña</label>
+                <label for="">Contraseña</label>
                 <input name="password" type="password" class="form-control">
             </div>
             <div class="form-group col-lg-6">
-                <label for="telefono">Teléfono Oficina</label>
+                <label for="">Teléfono Oficina</label>
                 <input name="telefono" type="telefono" class="form-control">
             </div>
         </div>
@@ -78,7 +78,8 @@
             <td><?= $dato[$i]['depusu'] ?></td>
             <td><?= $dato[$i]['carusu'] ?></td>
             <td><?= $dato[$i]['telusu'] ?></td>
-            <td><?= $dato[$i]['actu'] ?></td>
+            <td><?= $dato[$i]['perfil'] ?></td>
+            <td> <a href="home.php?var=51&pr=<?= $dato[$i]["documento"]  ?>" class="btn btn-success">Editar</a> </td>
         </tr>
        <?php } ?>       
     </table>

@@ -10,7 +10,7 @@
 		$ins = new mtbusuario(); 
 		
 		$documento 	= isset($_POST["documento"]) ? $_POST["documento"]:null; 
-		$usuario	= isset($_POST["usuario"]) ? $_POST["usuario"]:null;
+		$usuario	= isset($_POST["nombre"]) ? $_POST["nombre"]:null;
 		$dependencia= isset($_POST["dependencia"]) ? $_POST["dependencia"]:null;
 		$cargo		= isset($_POST["cargo"]) ? $_POST["cargo"]:null;
 		$password   = isset($_POST["password"]) ? $_POST["password"]:null;
