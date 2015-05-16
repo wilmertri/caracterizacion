@@ -15,17 +15,18 @@
 		$cargo		= isset($_POST["cargo"]) ? $_POST["cargo"]:null;
 		$password   = isset($_POST["password"]) ? $_POST["password"]:null;
 		$telefono	= isset($_POST["telefono"]) ? $_POST["telefono"]:null;
+		$perfil		= isset($_POST["perfil"]) ? $_POST["perfil"]:null;
 		$actu= 	isset($_POST["actu"]) ? $_POST["actu"]:null; 
 		$pr= isset($_GET["pr"]) ? $_GET["pr"]:null;
 		
 		$datousuario = $ins->selusu1($pr);
 
-		if($documento && $usuario && $dependencia && $cargo && $password && $telefono && $cargo && $actu) 
+		if($documento && $usuario && $dependencia && $cargo && $password && $telefono && $perfil && $cargo && $actu) 
 		{
-			$ins->updusu($documento,$usuario,$dependencia,$cargo,$password,$telefono,$cargo);  // actualizar datos
+			$ins->updusu($documento,$usuario,$dependencia,$cargo,$password,$telefono,$perfil,$cargo);  // actualizar datos
 		}	
-			if($documento && $usuario && $dependencia && $cargo && $password && $telefono && $cargo && !$actu) // insertar datos // cuando es ! es para negar  
+			if($documento && $usuario && $dependencia && $cargo && $password && $telefono && $perfil && $cargo && !$actu) // insertar datos // cuando es ! es para negar  
 		{
-			$ins->insusu($documento,$usuario,$dependencia,$cargo,sha1($password),$telefono,$cargo); 
+			$ins->insusu($documento,$usuario,$dependencia,$cargo,sha1($password),$telefono,$perfil,$cargo); 
 		}
 ?>			
