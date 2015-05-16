@@ -2,29 +2,30 @@
 
 		/*  
         *   @author: Luis M Morales B
-        *   @Version: V2 12/05/15
-        pte de pruebas
-        */
+        *   @Version: V3 16/05/15
+        unificado         */
 
 	include("modelo/musuario.php");
 
-		$ins= new mtbusuario(); 
+		$ins = new mtbusuario(); 
 		
-		$documento 	= isset($_POST["Documento"]) ? $_POST["Documento"]:null; 
-		$Usuario		= isset($_POST["Usuario"]) ? $_POST["Usuario"]:null;
-		$password	= isset($_POST["Clave"]) ? $_POST["Clave"]:null;
-		$email		= isset($_POST["Email"]) ? $_POST["Email"]:null; // estase cambian nombres de doc, usua, pass y mail por los vigentes
-		$actu= 	isset($_POST["actu"]) ? $_POST["actu"]:null; // esta variable es para que me llame actualizar datos si no esta me llama insertar
+		$documento 	= isset($_POST["documento"]) ? $_POST["documento"]:null; 
+		$usuario	= isset($_POST["usuario"]) ? $_POST["usuario"]:null;
+		$dependencia= isset($_POST["dependencia"]) ? $_POST["dependencia"]:null;
+		$cargo		= isset($_POST["cargo"]) ? $_POST["cargo"]:null;
+		$password   = isset($_POST["password"]) ? $_POST["password"]:null;
+		$telefono	= isset($_POST["telefono"]) ? $_POST["telefono"]:null;
+		$actu= 	isset($_POST["actu"]) ? $_POST["actu"]:null; 
 		$pr= isset($_GET["pr"]) ? $_GET["pr"]:null;
 		
 		$datousuario = $ins->selusu1($pr);
 
-		if($documento && $Usuario && $password && $email && $actu) // && es un Y  
+		if($documento && $usuario && $dependencia && $cargo && $password && $telefono && $cargo && $actu) 
 		{
-			$ins->updusu($documento,$Usuario,$password,$email);  // actualizar datos
+			$ins->updusu($documento,$usuario,$dependencia,$cargo,$password,$telefono,$cargo);  // actualizar datos
 		}	
-		if($documento && $Usuario && $password && $email && !$actu) // insertar datos // cuando es ! es para negar  
+			if($documento && $usuario && $dependencia && $cargo && $password && $telefono && $cargo && !$actu) // insertar datos // cuando es ! es para negar  
 		{
-			$ins->insusu($documento, $Usuario,sha1($password),$email); 
+			$ins->insusu($documento,$usuario,$dependencia,$cargo,sha1($password),$telefono,$cargo); 
 		}
 ?>			

@@ -121,73 +121,8 @@ div.separate-rows div.row {
 {
   text-align: justify;
 }
-
-/*
-div.container {
-  max-width: 900px;
+.vistatabla
+{
   margin: 0 auto;
+  width: 800px;
 }
-ul.tabs {
-  position: relative;
-  top: 1px;
-  height: 40px;
-  margin: 20px 20px 0 0;
-}
-
-
-ul.tabs li {
-  display: block;
-  float: left;
-  padding: 0 15px;
-  height: 40px;
-  font-size: 1.2em;
-  margin: 0 5px;
-  cursor: pointer;
-  line-height: 40px;
-  color: #121e32;
-  border: 1px solid white;
-  border-bottom: none;
-  margin-top: -1px;
-}
-
-ul.tabs li.active {
-  border: 1px solid #ccc;
-  border-bottom: 1px solid white;
-  margin-top: 0;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-ul.tabs li:hover {
-  background-color: #fafafa;
-}
-
-ul.tabs li.active:hover {
-  background-color: white;
-}
-
-
-div.tabs {
-  clear: both;
-}
-
-div.tabs>div {
-  padding: 0 15px;
-  border: 1px solid #ccc;
-  margin-top: 1px;
-  display: none;
-  border-radius: 5px;
-  box-shadow: 2px 2px 2px #bbb;
-}
-
-div.tabs>div h1 {
-  border-bottom: none;
-  margin-top: 1em;
-}
-
-div.column_half {
-  float: left;
-  width: 49%;
-  padding-right: 1%;
-}
-*/

@@ -55,7 +55,9 @@
             </div>
         </div>
     </form>
-	<table class="table">
+</div>
+<div class="vistatabla">
+     <table class="table">
         <tr>
             <th>Cédula</th>
             <th>Funcionario</th>
@@ -63,21 +65,22 @@
             <th>Cargo</th>
             <th>Telefono</th>
             <th>Perfil</th>
+            <th>Edición</th>
         </tr>
-	    <?php
-		    $dato = $ins->selusu();
-		    for($i=0;$i<count($dato);$i++)
-			{
-	    ?>
-		<tr>
-			<td><?php echo $dato[$i]["documento"]; ?></td> 
-		    <td><?php echo $dato[$i]['nombre']?></td>
-            <td><?php echo $dato[$i]['depusu'] ?></td>
-            <td><?php echo $dato[$i]['carusu'] ?></td>
-            <td><?php echo $dato[$i]['telusu'] ?></td>
-            <td><?php echo $dato[$i]['perfil'] ?></td>
+        <?php
+            $dato = $ins->selusu();
+            for($i=0;$i<count($dato);$i++)
+            {
+        ?>
+        <tr>
+            <td><?= $dato[$i]["documento"]; ?></td> 
+            <td><?= $dato[$i]['nombre']?></td>
+            <td><?= $dato[$i]['depusu'] ?></td>
+            <td><?= $dato[$i]['carusu'] ?></td>
+            <td><?= $dato[$i]['telusu'] ?></td>
+            <td><?= $dato[$i]['actu'] ?></td>
         </tr>
-       <?php } ?>		
-	</table>
+       <?php } ?>       
+    </table>
 </div>    
-	<!--se cambian doc por num doc, usu por nom usua por y mail por corr elec
+    <!--se cambian doc por num doc, usu por nom usua por y mail por corr elec
