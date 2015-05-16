@@ -1,9 +1,8 @@
 <?php
         /*  
         *   @author: Luis M Morales B
-        *   @Version: V3 12/05/15
-        recuperada abruptamente
-        */
+        *   @Version: V4 16/05/15
+            unificada        */
 
 	include("controlador/cusuario.php");
 ?>
@@ -12,22 +11,32 @@
     <form name="form1" action="" method="post">
         <div class="row">
             <div class="form-group col-lg-6">
-                <label for="documento">documento</label>
+                <label for="documento">Número de Cédula</label>
                 <input name="documento" type="text" class="form-control">
             </div>
             <div class="form-group col-lg-6">
-                <label for="usuario">Nombre</label>
+                <label for="usuario">Nombre Funcionario</label>
                 <input name="nombre" type="text" class="form-control">
             </div>
         </div>
         <div class="row">
             <div class="form-group col-lg-6">
-                <label for="email">email</label>
-                <input name="email" type="text" class="form-control">
+                <label for="dependencia">Dependencia</label>
+                <input name="dependencia" type="text" class="form-control">
             </div>
             <div class="form-group col-lg-6">
-                <label for="password">password</label>
+                <label for="cargo">Cargo</label>
+                <input name="cargo" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-lg-6">
+                <label for="password">Contraseña</label>
                 <input name="password" type="password" class="form-control">
+            </div>
+            <div class="form-group col-lg-6">
+                <label for="telefono">Teléfono Oficina</label>
+                <input name="telefono" type="telefono" class="form-control">
             </div>
         </div>
         <div class="row">
@@ -48,9 +57,11 @@
     </form>
 	<table class="table">
         <tr>
-            <th>Documento de identificación</th>
-            <th>Nombre de usuario</th>
-            <th>Correo electronico</th>
+            <th>Cédula</th>
+            <th>Funcionario</th>
+            <th>Dependencia</th>
+            <th>Cargo</th>
+            <th>Telefono</th>
             <th>Perfil</th>
         </tr>
 	    <?php
@@ -59,9 +70,12 @@
 			{
 	    ?>
 		<tr>
-			<td><?php echo $dato[$i]["Numero de documento"]; ?></td> 
-		    <td><?php echo $dato[$i]['Nombre del usuario']?></td>
-            <td><?php echo $dato[$i]['Correo electronico'] ?></td>
+			<td><?php echo $dato[$i]["documento"]; ?></td> 
+		    <td><?php echo $dato[$i]['nombre']?></td>
+            <td><?php echo $dato[$i]['depusu'] ?></td>
+            <td><?php echo $dato[$i]['carusu'] ?></td>
+            <td><?php echo $dato[$i]['telusu'] ?></td>
+            <td><?php echo $dato[$i]['perfil'] ?></td>
         </tr>
        <?php } ?>		
 	</table>
