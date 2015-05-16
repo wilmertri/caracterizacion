@@ -2,7 +2,7 @@
 	include("modelo/mactividadeconomica.php"); 
 	$ins= new Mactividadeconomica();
 	
-	$id				= isset($_GET['id']) ? $_GET['id']:NULL;
+	$id	= isset($_GET['id']) ? $_GET['id']:NULL;
 
 	$datosactividad = $ins->ver_datos_actividad($id);
 	
