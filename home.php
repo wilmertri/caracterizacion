@@ -234,6 +234,12 @@
 		   if ($variable==91) {
 			  include("vista/actividadeconomica/vdatosactividadeconomica.php");
           }
+		  if ($variable==92) {
+			  include("vista/actividadeconomica/vingreso.php");
+          }
+		  if ($variable==93) {
+			  include("vista/actividadeconomica/vingreso1.php");
+          }
           if ($variable==95) 
   		    {
                 //Andrea

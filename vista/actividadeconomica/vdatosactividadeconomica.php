@@ -26,9 +26,9 @@
 		<tr>
 			<td><a href="home.php?pr=<?= $id ?>&var=70" class="btn btn-success">Volver</a></td>
 			<td><a href="home.php?var=14&id=<?php echo $id;?>" class="btn btn-success">Experiencia Laboral </a></td>
-			<td><a href="home.php?var=14&id=<?php echo $id;?>" class="btn btn-success">Negocio </a></td>
-			<td><a href="home.php?var=14&id=<?php echo $id;?>" class="btn btn-success">Ingresos </a></td>
-			<td><a href="home.php?var=14&id=<?php echo $id;?>" class="btn btn-success">Ingresos Externos </a></td>
+			<td><a href="home.php?var=18&id=<?php echo $id;?>" class="btn btn-success">Negocio </a></td>
+			<td><a href="home.php?var=92&id=<?php echo $id;?>" class="btn btn-success">Ingresos </a></td>
+			<td><a href="home.php?var=16&id=<?php echo $id;?>" class="btn btn-success">Ingresos Externos </a></td>
 		</tr>
 	</table>
 </div>

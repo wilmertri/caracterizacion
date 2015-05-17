@@ -32,16 +32,6 @@
 		}
 
 		/*
-		 *	Función para obtener los tipos de pisos	
-	     */
-		
-		/*function get_tipo_pisos()
-		{
-			return $this->seleccionar_valores_de_parametro(17);
-		}
-	    */
-
-		/*
 		 *	Función para la actualización de los datos de la actividad economica de la persona
 		 */
 		function actu_datos_actividad($numpercar, $ocuperact, $trabper, $ingmenper, $idpersona)
