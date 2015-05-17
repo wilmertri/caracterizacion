@@ -1,7 +1,7 @@
 <?php
 include ("controlador/conexion.php");
-class mtipoingreso
-{
+include ("functions.php");
+class mtipoingreso extends Funciones_generales{
 	var $arr;
 	function mtipoingreso(){}
 	
@@ -17,24 +17,13 @@ class mtipoingreso
 		$sql = "UPDATE tbtipoingreso SET tipoingreso='".$tiping."' WHERE idtipoingreso='".$idtip."';";
 		$this->cons($sql);
 	}
-	function cons($c){
-		$conexionBD = new conexion();
-		$conexionBD->conectarBD();
-		$conexionBD->ejeCon($c,1);
-	}
 	function seltip(){
 		$sql = "SELECT idtipoingreso, tipoingreso FROM tbtipoingreso;";
-		$conexionBD = new conexion();
-		$conexionBD->conectarBD();
-		$data = $conexionBD->ejeCon($sql,0);
-		return $data;
+		return $this->SeleccionDatos($sql);
 	}
 	function seltip1($idtip){
 		$sql = "SELECT idtipoingreso, tipoingreso FROM tbtipoingreso WHERE idtipoingreso='".$idtip."';";
-		$conexionBD = new conexion();
-		$conexionBD->conectarBD();
-		$data = $conexionBD->ejeCon($sql,0);
-		return $data;
+		return $this->SeleccionDatos($sql);
 	}
 }
 ?>

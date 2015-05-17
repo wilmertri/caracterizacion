@@ -1,7 +1,7 @@
 <?php
 	include ("controlador/cingresoext.php");
 ?>
-<h1> Insertar Ingreso Externo </h1>
+<h1> Ingresar Ingreso Externo </h1>
 <div class="forms">
 	<form name="form1" method="POST" action="">
 		<div class="row">
@@ -29,8 +29,9 @@
 		</div>
 		<div class="row">
 			<div class="form-group">
-				<input type="submit" class="btn btn-primary" value="Insertar">
-				<a href="home.php" class="btn btn-primary" >Salir</a>
+				<input type="submit" class="btn btn-success" value="Enviar">
+				<a href="home.php?var=91&id=<?php echo $dato1[0]['idpersona'] ?>" class="btn btn-success">Volver</a>
+				<a href="home.php" class="btn btn-success" >Salir</a>
 			</div>
 		</div>
 	</form>
@@ -46,7 +47,7 @@
 				<th align = "center">Editar</th>
 			</tr>
 			<?php
-				$dato = $ins->selingext2($pr);
+				$dato = $ins->selingext2($id);
 				for($i=0;$i<count($dato);$i++) {
 			?>
 			<tr>
@@ -54,7 +55,7 @@
 				<td align = "left"><?php echo $dato[$i]["tipingext"]; ?></td>
 				<td align = "left"><?php echo $dato[$i]["ingext"]; ?></td>
 				<td align = "left"><?php echo $dato[$i]["desingext"]; ?></td>
-				<td align = "center"><a href ="home.php?var=17&pr=<?php echo $dato1[0]['numdocper'] ?>&cod=<?php echo $dato[$i]["codingext"]; ?>" class="btn btn-primary">Editar</a></td>
+				<td align = "center"><a href ="home.php?var=17&id=<?php echo $dato1[0]['idpersona'] ?>&cod=<?php echo $dato[$i]["codingext"]; ?>" class="btn btn-success">Editar</a></td>
 			</tr>
 			<?php } ?>
 		</table>

@@ -19,8 +19,8 @@
                 <input name="tipoing" type="text" value="<?php echo $datotiping[0]['tipoingreso'] ?>" class="form-control">
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Actualizar">
-                <a href="home.php" class="btn btn-primary" >Salir</a>
+                <input type="submit" class="btn btn-success" value="Actualizar">
+                <a href="home.php" class="btn btn-success" >Salir</a>
             </div>
         </div>
     </form>
@@ -41,7 +41,7 @@
         <tr>
             <td><?php echo $datostiping[$i]['idtipoingreso']?></td>
             <td><?php echo $datostiping[$i]['tipoingreso'] ?></td>
-            <td><a href="home.php?pr=<?php echo $datostiping[$i]['idtipoingreso'] ?>&var=23" class="btn btn-primary">Editar</a></td>
+            <td><a href="home.php?id=<?php echo $datostiping[$i]['idtipoingreso'] ?>&var=23" class="btn btn-success">Editar</a></td>
         </tr>
         <?php  }  ?>
     </table>

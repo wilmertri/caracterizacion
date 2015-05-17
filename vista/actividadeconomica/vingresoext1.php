@@ -13,9 +13,15 @@
 			</div>
 			<div class="form-group">
 				<label for="Tipo de ingreso externo">Tipo de ingreso externo</label>
-                <input name="tipodeingreso" type="text" value = "<?php echo $dato2[0]['tipingext'] ?>" class="form-control" disabled>
-				<input type="hidden" name="actu" value="actu" />
-				<input type="hidden" name="tipodeingreso" value="<?php echo $dato2[0]['tipingext'] ?>" />
+				<option value= "<?php echo $dato2[0]['tipingext'] ?>"> Seleccione una opcion </option>
+					<?php 
+						for ($i=0; $i < count($tipoingreso); $i++){
+					?>
+					<option value ="<?php echo $tipoingreso[$i]['idtipoingreso'] ?>" ><?php echo $tipoingreso[$i]['tipoingreso'] ?></option>
+					<?php 
+						} 
+					?>
+				</select>
 			</div>
 			<div class="form-group">
 				<label for="Ingreso en dinero">Ingreso en dinero</label>
@@ -28,8 +34,9 @@
 		</div>
 		<div class="row">
 			<div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Actualizar">
-                <a href="home.php" class="btn btn-primary" >Salir</a>
+                <input type="submit" class="btn btn-success" value="Actualizar">
+				<a href="home.php?var=91&id=<?php echo $dato1[0]['idpersona'] ?>" class="btn btn-success">Volver</a>
+				<a href="home.php" class="btn btn-success" >Salir</a>
             </div>
 		</div>
 	</form>	
@@ -45,7 +52,7 @@
 				<th>Editar</th>
 			</tr>
 			<?php
-				$dato = $ins->selingext2($pr);
+				$dato = $ins->selingext2($id);
 				for($i=0;$i<count($dato);$i++) {
 			?>
 			<tr>
@@ -53,7 +60,7 @@
 				<td align = "left"><?php echo $dato[$i]["tipingext"]; ?></td>
 				<td align = "left"><?php echo $dato[$i]["ingext"]; ?></td>
 				<td align = "left"><?php echo $dato[$i]["desingext"]; ?></td>
-				<td align = "center"><a href ="home.php?var=17&pr=<?php echo $dato1[0]['numdocper'] ?>&cod=<?php echo $dato[$i]["codingext"]; ?>" class="btn btn-primary">Editar</a></td>
+				<td align = "center"><a href ="home.php?var=17&id=<?php echo $dato1[0]['idpersona'] ?>&cod=<?php echo $dato[$i]["codingext"]; ?>" class="btn btn-primary">Editar</a></td>
 			</tr>
 			<?php } ?>
 		</table>	
