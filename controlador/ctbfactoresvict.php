@@ -5,9 +5,9 @@
 	$nomfactor = isset($_POST["nomfactor"]) ? $_POST["nomfactor"]:NULL;
 	$desfactor = isset($_POST["desfactor"]) ? $_POST["desfactor"]:NULL;
 	$actu = isset($_POST["actu"]) ? $_POST["actu"]:NULL;
-	$pr =  isset($_GET["pr"]) ? $_GET["pr"]:NULL;
+	$id =  isset($_GET["id"]) ? $_GET["id"]:NULL;
 	
-	$dato1 = $ins -> selfac1($pr);
+	$dato1 = $ins -> selfac1($id);
 	
 	// Actualizar datos
 	if($codfac && $nomfactor && $desfactor && $actu) 

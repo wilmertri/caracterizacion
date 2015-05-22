@@ -89,7 +89,7 @@
 <div class="row">
     <div class="col-md-12">
             <a href="javascript:history.back();" class="btn btn-success">Volver</a>
-			<a href="home.php?pr=<?php echo $dato1[0]['idpersona'] ?>&var=5" class="btn btn-success">Editar</a>
+			<a href="home.php?id=<?php echo $dato1[0]['idpersona'] ?>&var=5" class="btn btn-success">Editar</a>
 			<a href="home.php" class="btn btn-success" >Salir</a>
 	</div>
 </div>

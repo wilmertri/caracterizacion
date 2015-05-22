@@ -4,8 +4,8 @@
 	$ins = new mdatospersona();
 
 
-	$pr = isset($_GET["pr"]) ? $_GET["pr"]:NULL; 
+	$id = isset($_GET["id"]) ? $_GET["id"]:NULL; 
 
-	$datos = $ins->selper1($pr);
+	$datos = $ins->selper1($id);
  
  ?>

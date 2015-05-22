@@ -24,7 +24,7 @@
 	$indemnizacion 	= isset($_POST["harecibidoindemnizacion"]) ? $_POST["harecibidoindemnizacion"]:NULL;
 	$observacion 	= isset($_POST["observaciones"]) ? $_POST["observaciones"]:NULL;
 	$actu 			= isset($_POST["actu"]) ? $_POST["actu"]:NULL;
-	$id 			= isset($_GET["pr"]) ? $_GET["pr"]:NULL;
+	$id 			= isset($_GET["id"]) ? $_GET["id"]:NULL;
 
 	
 	$factores_permanencia = $ins -> get_factores_permanencia();
@@ -91,8 +91,8 @@
 		$ins -> updper($lugexpul , $munucipio , $fechexpul , $actorarmado , $ingaliment , $tpermanencia , $fpermanencia , $solicitud , $rinclusion , $usopredio , $perbienes , $tipobi , $relabien , $tipofam , $ideal , $ubicacion , $retorno , $medproteccion , $reciproteccion , $indemnizacion , $observacion);
 	}
 	// Insertar datos
-	if($lugexpul && $munucipio && $fechexpul && $actorarmado && $ingaliment && $tpermanencia && $fpermanencia  && $solicitud && $rinclusion  && $usopredio && $perbienes && $tipobi && $relabien && $tipofam && $ideal && $ubicacion && $retorno && $medproteccion && $reciproteccion && $indemnizacion && $observacion && $pr && !$actu)
+	if($lugexpul && $munucipio && $fechexpul && $actorarmado && $ingaliment && $tpermanencia && $fpermanencia  && $solicitud && $rinclusion  && $usopredio && $perbienes && $tipobi && $relabien && $tipofam && $ideal && $ubicacion && $retorno && $medproteccion && $reciproteccion && $indemnizacion && $observacion && $id && !$actu)
 	{ 
-		$ins-> insper($lugexpul , $munucipio , $fechexpul , $actorarmado , $ingaliment , $tpermanencia , $fpermanencia , $solicitud , $rinclusion , $usopredio , $perbienes , $tipobi , $relabien , $tipofam , $ideal , $ubicacion , $retorno , $medproteccion , $reciproteccion , $indemnizacion , $observacion , $pr);
+		$ins-> insper($lugexpul , $munucipio , $fechexpul , $actorarmado , $ingaliment , $tpermanencia , $fpermanencia , $solicitud , $rinclusion , $usopredio , $perbienes , $tipobi , $relabien , $tipofam , $ideal , $ubicacion , $retorno , $medproteccion , $reciproteccion , $indemnizacion , $observacion , $id);
 	}
 ?>

@@ -5,10 +5,10 @@
 	$idtipodis = isset($_POST["idtipodis"]) ? $_POST["idtipodis"]:NULL;
 	$tipodis = isset($_POST["tipodis"]) ? $_POST["tipodis"]:NULL;
 	$actu = isset($_POST["actu"]) ? $_POST["actu"]:NULL;
-	$pr =  isset($_GET["pr"]) ? $_GET["pr"]:NULL;
+	$id =  isset($_GET["id"]) ? $_GET["id"]:NULL;
 
 	
-	$dato1 = $ins -> seldisper($pr);
+	$dato1 = $ins -> seldisper($id);
     //$tipo = $ins->valor(12);
 	//$clase = $ins->valor(13);
 	

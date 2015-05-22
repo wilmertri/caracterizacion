@@ -46,7 +46,7 @@
 				<td><?php echo $dato[$i]['idclase']?></td>
 				<td><?php echo $dato[$i]['idtipodis'] ?></td>
 				<td><?php echo $dato[$i]['nomclasedis']?></td>
-				<td><a href="home.php?pr=<?php echo $dato[$i]['idclase'] ?>&var=35" class="btn btn-primary">Editar</a></td>
+				<td><a href="home.php?id=<?php echo $dato[$i]['idclase'] ?>&var=35" class="btn btn-primary">Editar</a></td>
 			</tr>
 			<?php  }  ?>
 		</table>

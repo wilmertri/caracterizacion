@@ -3,7 +3,7 @@
 ?>
 <h1>Actualizar Datos Capacitación </h1>
 <div class="forms">
-    <form name="form1" action="home.php?var=10&pr=<?php echo $dato1[0]['numdocper'] ?>" method="post">
+    <form name="form1" action="home.php?var=10&id=<?php echo $dato1[0]['numdocper'] ?>" method="post">
         <div class="row">
 			<div class="form-group">
                 <label for="Codigo de la Capacitación ">Codigo</label>
@@ -41,7 +41,7 @@
 			<th>Editar</th>
         </tr>		
 	<?php
-		$dato= $ins->selcap1($pr);
+		$dato= $ins->selcap1($id);
 		for($i=0;$i<count($dato);$i++)
 			{
 	?>
@@ -50,7 +50,7 @@
 			<td><?php echo $dato[$i]['nomcap']?></td>
 		    <td><?php echo $dato[$i]['entcap']?></td>
             <td><?php echo $dato[$i]['titcap'] ?></td>
-            <td><a href="home.php?var=11&pr=<?php echo $dato1[0]['numdocper'] ?>&cod=<?php echo $dato[$i]["codcapper"]; ?>" class="btn btn-primary">Editar</a></td>
+            <td><a href="home.php?var=11&id=<?php echo $dato1[0]['numdocper'] ?>&cod=<?php echo $dato[$i]["codcapper"]; ?>" class="btn btn-primary">Editar</a></td>
         </tr>
 	<?php } ?>			
 		</table>

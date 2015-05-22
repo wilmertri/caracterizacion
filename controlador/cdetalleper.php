@@ -2,9 +2,9 @@
 	include ("modelo/mdatospersona.php");
 	$ins = new mdatospersona();
 	
-	$pr = isset($_GET["pr"]) ? $_GET["pr"]:NULL;
+	$id = isset($_GET["id"]) ? $_GET["id"]:NULL;
 
-	$dato1 				= $ins->selper1($pr);
+	$dato1 				= $ins->selper1($id);
 
 
 	if ($dato1[0]['numficha']) 

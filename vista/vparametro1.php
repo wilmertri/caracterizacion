@@ -38,7 +38,7 @@
 	<tr>
 			<td><?php echo $dato[$i]['codpar']?></td>
 		    <td><?php echo $dato[$i]['nompar']?></td>
-            <td><a href="home.php?pr=<?php echo $dato[$i]['codpar'] ?>&var=25" class="btn btn-primary">Editar</a></td>
+            <td><a href="home.php?id=<?php echo $dato[$i]['codpar'] ?>&var=25" class="btn btn-primary">Editar</a></td>
         </tr>
 		
 	

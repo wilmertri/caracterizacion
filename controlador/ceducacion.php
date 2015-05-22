@@ -11,9 +11,9 @@
 		
 		$numdoc	= isset($_POST["numdoc"]) ? $_POST["numdoc"]:NULL;
 		$actu= 	isset($_POST["actu"]) ? $_POST["actu"]:null; // esta variable es para que me llame actualizar datos si no esta me llama insertar
-		$pr= isset($_GET["pr"]) ? $_GET["pr"]:null;
+		$id= isset($_GET["id"]) ? $_GET["id"]:null;
 		$cod= isset($_GET["cod"]) ? $_GET["cod"]:null;
-		//"$dato1= $ins->seledu($pr)";
+		//"$dato1= $ins->seledu($id)";
 		//$dato2 = $ins -> selcap2($cod);
 
 		if($ultgra && $titobt && $mat && $razest && $terest &&$cap) // && es un Y  

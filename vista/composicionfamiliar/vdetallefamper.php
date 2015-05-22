@@ -72,8 +72,8 @@
 			<td> <?php echo $parent[0]['nomval'] ?></td>	
 		</tr>
 		<tr>
-			<td align = "center"><a href ="home.php?var=7&pr=<?php echo $dato1[0]["numdocfam"]; ?>" class="btn btn-primary">Editar</a></td>
-			<td align = "center"><a href ="home.php?var=36&famper=1&pr=<?php echo $dato1[0]["numdocfam"]; ?>" class="btn btn-primary">Discapacidad</a></td>
+			<td align = "center"><a href ="home.php?var=7&id=<?php echo $dato1[0]["numdocfam"]; ?>" class="btn btn-primary">Editar</a></td>
+			<td align = "center"><a href ="home.php?var=36&famper=1&id=<?php echo $dato1[0]["numdocfam"]; ?>" class="btn btn-primary">Discapacidad</a></td>
 		</tr>
 	</table>
 </div>	

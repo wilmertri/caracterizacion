@@ -66,13 +66,13 @@
 			<?php 
 			//Select
 			if ($datfam) {
-				$datos = $ins -> seldisper3($pr);
+				$datos = $ins -> seldisper3($id);
 				for ($i=0; $i < count($datos); $i++){
 			?>
 			<tr>
 				<td><?php echo $datos[$i]['nomclasedis'] ?></td>
 				<td><?php echo $datos[$i]['descripcion']?></td>
-				<td><a href="home.php?pr=<?php echo $datos[$i]['iddiscperfam'] ?>&var=35" class="btn btn-primary">Editar</a></td>
+				<td><a href="home.php?id=<?php echo $datos[$i]['iddiscperfam'] ?>&var=35" class="btn btn-primary">Editar</a></td>
 			</tr>
 			<?php  
 				}
@@ -80,14 +80,14 @@
 			else
 			{
 			//Select
-			$dato = $ins -> seldisper2($pr);
+			$dato = $ins -> seldisper2($id);
 				for ($i=0; $i < count($dato); $i++)
 				{
 			?>
 			<tr>
 				<td><?php echo $dato[$i]['nomclasedis'] ?></td>
 				<td><?php echo $dato[$i]['descripcion']?></td>
-				<td><a href="home.php?pr=<?php echo $dato[$i]['iddiscper'] ?>&var=35" class="btn btn-primary">Editar</a></td>
+				<td><a href="home.php?id=<?php echo $dato[$i]['iddiscper'] ?>&var=35" class="btn btn-primary">Editar</a></td>
 			</tr>
 			<?php  
 				} 

@@ -46,7 +46,7 @@
 			<td><?php echo $dato[$i]['codzona']?></td>
 		    <td><?php echo $dato[$i]['nomzona']?></td>
             <td><?php echo $dato[$i]['deszona'] ?></td>
-            <td><a href="home.php?pr=<?php echo $dato[$i]['codzona'] ?>&var=27" class="btn btn-primary">Editar</a></td>
+            <td><a href="home.php?id=<?php echo $dato[$i]['codzona'] ?>&var=27" class="btn btn-primary">Editar</a></td>
         </tr>
 		
 	

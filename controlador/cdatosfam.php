@@ -18,10 +18,10 @@
 	$parentesco 	= isset($_POST["parentesco"]) ? $_POST["parentesco"]:NULL;
 	$numdochogar 	= isset($_POST["numdochogar"]) ? $_POST["numdochogar"]:NULL;
 	$actu 			= isset($_POST["actu"]) ? $_POST["actu"]:NULL;
-	$pr 			= isset($_GET["pr"]) ? $_GET["pr"]:NULL;
+	$id 			= isset($_GET["id"]) ? $_GET["id"]:NULL;
 
 	$dato	= $ins	->selper();
-	$dato1 	= $ins	->selper1($pr);
+	$dato1 	= $ins	->selper1($id);
 	$gest 	= $ins	->valor	(11);
 	$gen 	= $ins	->valor	(2);
 	$nesc 	= $ins	->valor	(4);
@@ -52,9 +52,9 @@
 		$ins -> updper($documento , $pnombre , $snombre , $papellido , $sapellido , $fnacimiento , $genero , $gestolac, $nescolaridad , $ultgradocur , $ocupacion , $etniaper, $parentesco);
 	}
 	// Insertar datos
-	if($documento && $pnombre && $snombre && $papellido && $sapellido && $fnacimiento && $genero && $nescolaridad && $ultgradocur && $ocupacion && $etniaper && $parentesco && $pr && !$actu)
+	if($documento && $pnombre && $snombre && $papellido && $sapellido && $fnacimiento && $genero && $nescolaridad && $ultgradocur && $ocupacion && $etniaper && $parentesco && $id && !$actu)
 	{ 
-		$ins-> insper($documento, $pnombre, $snombre, $papellido, $sapellido, $fnacimiento, $genero, $gestolac, $nescolaridad, $ultgradocur, $ocupacion, $etniaper, $parentesco, $pr);
+		$ins-> insper($documento, $pnombre, $snombre, $papellido, $sapellido, $fnacimiento, $genero, $gestolac, $nescolaridad, $ultgradocur, $ocupacion, $etniaper, $parentesco, $id);
 	}
 ?>
 

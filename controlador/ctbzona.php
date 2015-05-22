@@ -5,8 +5,8 @@
 		$nomzona= isset($_POST["nomzona"]) ? $_POST["nomzona"]:null;
 		$deszona= isset($_POST["deszona"]) ? $_POST["deszona"]:null;
 		$actu= 	isset($_POST["actu"]) ? $_POST["actu"]:null; // esta variable es para que me llame actualizar datos si no esta me llama insertar
-		$pr= isset($_GET["pr"]) ? $_GET["pr"]:null;
-		$dato1= $ins->selzona1($pr);
+		$id= isset($_GET["id"]) ? $_GET["id"]:null;
+		$dato1= $ins->selzona1($id);
 
 		if($codzona && $nomzona && $deszona && $actu) // && es un Y  
 			{

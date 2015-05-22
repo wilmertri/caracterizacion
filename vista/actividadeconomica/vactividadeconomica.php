@@ -38,7 +38,7 @@
 		<div class="row">
             <div class="form-group col-lg-12 center">
                 <input type="submit" class="btn btn-success" value="Enviar">
-				<a href="home.php?pr=<?= $id ?>&var=70" class="btn btn-success">Volver</a>
+				<a href="home.php?id=<?= $id ?>&var=70" class="btn btn-success">Volver</a>
 				<a href="home.php" class="btn btn-success" >Salir</a>
             </div>
 		</div>

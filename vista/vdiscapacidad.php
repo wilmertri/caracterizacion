@@ -33,7 +33,7 @@
 			<tr>
 				<td><?php echo $dato[$i]['idtipodis']?></td>
 				<td><?php echo $dato[$i]['nomtipodis'] ?></td>
-				<td><a href="home.php?pr=<?php echo $dato[$i]['idtipodis'] ?>&var=33" class="btn btn-primary">Editar</a></td>
+				<td><a href="home.php?id=<?php echo $dato[$i]['idtipodis'] ?>&var=33" class="btn btn-primary">Editar</a></td>
 			</tr>
 			<?php  }  ?>
 		</table>

@@ -45,7 +45,7 @@
 				<td align = "left"><?php echo $dato[$i]["codfac"]; ?></td>
 				<td align = "left"><?php echo $dato[$i]["nomfactor"]; ?></td>
 				<td align = "left"><?php echo $dato[$i]["desfactor"]; ?></td>
-				<td align = "center"><a href ="home.php?pr=<?php echo $dato[$i]['codfac'] ?>&var=31" class="btn btn-primary">Editar</a></td>
+				<td align = "center"><a href ="home.php?id=<?php echo $dato[$i]['codfac'] ?>&var=31" class="btn btn-primary">Editar</a></td>
 			</tr>
 			<?php } ?>
 		</table>

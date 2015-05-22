@@ -14,7 +14,7 @@
 		$ins->delval($del2);
 	}
 	$ed = isset($_GET["ed"]) ? $_GET["ed"]:NULL;
-	$pr = isset($_GET["pr"]) ? $_GET["pr"]:NULL;
+	$id = isset($_GET["id"]) ? $_GET["id"]:NULL;
 	$prr = isset($_GET["prr"]) ? $_GET["prr"]:NULL;
 	$codpar = isset($_POST["codpar"]) ? $_POST["codpar"]:NULL;
 	$nompar = isset($_POST["nompar"]) ? $_POST["nompar"]:NULL;
@@ -22,9 +22,9 @@
 	$nomval = isset($_POST["nomval"]) ? $_POST["nomval"]:NULL;
 	$actu = isset($_POST["actu"]) ? $_POST["actu"]:NULL;
 	
-	$dat5 = $ins->selpar1($pr);
+	$dat5 = $ins->selpar1($id);
 	$dat3 = $ins->selpar1($prr);
-	$dat4 = $ins->selval2($pr);
+	$dat4 = $ins->selval2($id);
 	
 	//Actualizar Parametro
 	if ($codpar && $nompar && $actu)

@@ -11,17 +11,17 @@
 		
 		$numdoc	= isset($_POST["numdoc"]) ? $_POST["numdoc"]:NULL;
 		$actu= 	isset($_POST["actu"]) ? $_POST["actu"]:null; // esta variable es para que me llame actualizar datos si no esta me llama insertar
-		$pr= isset($_GET["pr"]) ? $_GET["pr"]:null;
+		$id= isset($_GET["id"]) ? $_GET["id"]:null;
 		$cod= isset($_GET["cod"]) ? $_GET["cod"]:null;
-		$dato1= $ins->selcap1($pr);
+		$dato1= $ins->selcap1($id);
 		$dato2 = $ins -> selcap2($cod);
 
 		if($codcapper && $nomcap && $entcap && $titcap && $opicaper && $newopicaper &&$actu) // && es un Y  
 			{
 				$ins->updcap($codcapper,$nomcap,$entcap,$titcap,$opicaper,$newopicaper);  // actualizar datos
 			}	
-		if($nomcap && $entcap && $titcap && $opicaper && $newopicaper  && $pr &&  !$actu) // insertar datos // cuando es ! es para negar  
+		if($nomcap && $entcap && $titcap && $opicaper && $newopicaper  && $id &&  !$actu) // insertar datos // cuando es ! es para negar  
 			{
-				$ins->inscap($nomcap,$entcap,$titcap,$opicaper,$newopicaper,$pr); 
+				$ins->inscap($nomcap,$entcap,$titcap,$opicaper,$newopicaper,$id); 
 			}
 ?>			

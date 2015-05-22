@@ -174,7 +174,7 @@
 				
 				<tbody>		
 					<?php
-						$dat = $ins->selper2($pr);
+						$dat = $ins->selper2($id);
 						for($i=0;$i<count($dat);$i++) {
 							$gene = $ins->valor2($dat[$i]["genfam"]);
 							$pare = $ins->valor2($dat[$i]["parperfam"]);
@@ -186,7 +186,7 @@
 						<td align = "left"><?php echo $dat[$i]["papefam"]; ?></td>
 						<td align = "left"><?php echo $gene[0]["nomval"]; ?></td>
 						<td align = "left"><?php echo $pare[0]["nomval"]; ?></td>
-						<td align = "center"><a href ="home.php?var=8&pr=<?php echo $dat[$i]["numdocfam"]; ?>" class="btn btn-success">Detalle</a></td>
+						<td align = "center"><a href ="home.php?var=8&id=<?php echo $dat[$i]["numdocfam"]; ?>" class="btn btn-success">Detalle</a></td>
 					</tr>
 					<?php } ?>
 				</tbody>

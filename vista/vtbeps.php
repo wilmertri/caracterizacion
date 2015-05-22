@@ -38,7 +38,7 @@
 			<td><?php echo $dato[$i]["codeps"]; ?></td>
 		    <td><?php echo $dato[$i]['nomeps']?></td>
             <td><?php echo $dato[$i]['teleps'] ?></td>
-            <td><a href="home.php?pr=<?php echo $dato[$i]['codeps'] ?>&var=13" class="btn btn-primary">Editar</a></td>
+            <td><a href="home.php?id=<?php echo $dato[$i]['codeps'] ?>&var=13" class="btn btn-primary">Editar</a></td>
         </tr>
 	<?php } ?>		
 		</table>

@@ -18,10 +18,10 @@
 </script>
 <h2>Editar datos del familiar</h2>
 <?php
-	$datoact = $ins	->selper1($pr);
+	$datoact = $ins	->selper1($id);
 ?>
 <div class="forms1">
-	<form name="form1" action="home.php?var=8&pr=<?php echo $datoact[0]['numdocfam'] ?>" method="post">
+	<form name="form1" action="home.php?var=8&id=<?php echo $datoact[0]['numdocfam'] ?>" method="post">
 		<div class="row">
 			<div class="form-group col-md-6">
 				<label for="Documento">Documento</label>

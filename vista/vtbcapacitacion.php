@@ -29,7 +29,7 @@
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Enviar">
 				<a href="home.php" class="btn btn-primary" >Salir</a>
-				<a href="home.php?var=56&pr=<?php echo $dato1[0]['numdocper'] ?>" class="btn btn-primary">Volver</a>
+				<a href="home.php?var=56&id=<?php echo $dato1[0]['numdocper'] ?>" class="btn btn-primary">Volver</a>
             </div>
         </div>
     </form>
@@ -47,7 +47,7 @@
 			<th>Editar</th>
         </tr>	
 	<?php
-		$dato= $ins->selcap1($pr);
+		$dato= $ins->selcap1($id);
 		for($i=0;$i<count($dato);$i++)
 			{
 	?>
@@ -58,7 +58,7 @@
             <td><?php echo $dato[$i]['titcap'] ?></td>
 			<td><?php echo $dato[$i]['opicaper'] ?></td>
 			<td><?php echo $dato[$i]['newopicaper'] ?></td>
-            <td><a href="home.php?var=11&pr=<?php echo $dato1[0]['numdocper'] ?>&cod=<?php echo $dato[$i]["codcapper"]; ?>" class="btn btn-primary">Editar</a></td>
+            <td><a href="home.php?var=11&id=<?php echo $dato1[0]['numdocper'] ?>&cod=<?php echo $dato[$i]["codcapper"]; ?>" class="btn btn-primary">Editar</a></td>
             
 		</tr>
 	<?php } ?>		

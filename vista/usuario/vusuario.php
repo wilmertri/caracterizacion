@@ -79,7 +79,7 @@
             <td><?= $dato[$i]['carusu'] ?></td>
             <td><?= $dato[$i]['telusu'] ?></td>
             <td><?= $dato[$i]['perfil'] ?></td>
-            <td> <a href="home.php?var=51&pr=<?= $dato[$i]["documento"]  ?>" class="btn btn-success">Editar</a> </td>
+            <td> <a href="home.php?var=51&id=<?= $dato[$i]["documento"]  ?>" class="btn btn-success">Editar</a> </td>
         </tr>
        <?php } ?>       
     </table>

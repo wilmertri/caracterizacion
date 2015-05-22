@@ -3,7 +3,7 @@
 ?>
 <h1> Actualizar Datos Ingreso Externo </h1>
 <div class="forms">
-	<form name="form1" method="POST" action="home.php?var=16&pr=<?php echo $dato1[0]['numdocper'] ?>">
+	<form name="form1" method="POST" action="home.php?var=16&id=<?php echo $dato1[0]['numdocper'] ?>">
 		<div class="row">
 			<div class="form-group">
 				<label for="Codigo de Ingreso Externo">Codigo</label>

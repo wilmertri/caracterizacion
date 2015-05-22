@@ -39,7 +39,7 @@
 				<td align = "left"><?php echo $dato[$i]["codhec"]; ?></td>
 				<td align = "left"><?php echo $dato[$i]["nomhec"]; ?></td>
 				<td align = "left"><?php echo $dato[$i]["deshec"]; ?></td>
-				<td align = "center"><a href ="home.php?pr=<?php echo $dato[$i]['codhec'] ?>&var=29" class="btn btn-primary">Editar</a></td>
+				<td align = "center"><a href ="home.php?id=<?php echo $dato[$i]['codhec'] ?>&var=29" class="btn btn-primary">Editar</a></td>
 			</tr>
 			<?php } ?>
 		</table>

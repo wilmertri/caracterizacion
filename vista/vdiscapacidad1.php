@@ -49,7 +49,7 @@
             <td><?php echo $dato[$i]['tipdis'] ?></td>
 			<td><?php echo $dato[$i]['cladis']?></td>
             <td><?php echo $dato[$i]['desdis'] ?></td>
-            <td><a href="home.php?pr=<?php echo $datostiping[$i]['coddisper'] ?>&var=9" class="btn btn-primary">Editar</a></td>
+            <td><a href="home.php?id=<?php echo $datostiping[$i]['coddisper'] ?>&var=9" class="btn btn-primary">Editar</a></td>
         </tr>
         <?php  }  ?>
     </table>

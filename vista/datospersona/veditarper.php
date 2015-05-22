@@ -100,7 +100,7 @@
 <h1>Editar Datos de la Persona</h1>
 
 <div class="forms1">
-    <form name="form1" action="home.php?pr=<?php echo $dato1[0]['idpersona'] ?>var=4" method="post">
+    <form name="form1" action="home.php?id=<?php echo $dato1[0]['idpersona'] ?>var=4" method="post">
         <div class="row">
 			<div class="form-group col-lg-6">
                 <label for="Required"><i>(<span style="color:red;">*</span>)Campos obligatorios</i></label>

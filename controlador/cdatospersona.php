@@ -29,10 +29,10 @@
 	$libretmil = isset($_POST["libretmil"]) ? $_POST["libretmil"]:NULL;
 	$tramlibretmil = isset($_POST["tramlibretmil"]) ? $_POST["tramlibretmil"]:NULL;
 	$actu = isset($_POST["actu"]) ? $_POST["actu"]:NULL;
-	$pr = isset($_GET["pr"]) ? $_GET["pr"]:NULL;
+	$id = isset($_GET["id"]) ? $_GET["id"]:NULL;
 	
 	$dato 		= $ins->selper();
-	$dato1 		= $ins->selper1($pr);
+	$dato1 		= $ins->selper1($id);
 
 
 	//echo "Tipdoc: " . $dato1[0]['tipdocper'];

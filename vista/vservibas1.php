@@ -40,7 +40,7 @@
         <tr>
             <td><?php echo $dato[$i]['codservbas']?></td>
             <td><?php echo $dato[$i]['desservbas'] ?></td>
-            <td><a href="home.php?pr=<?php echo $dato[$i]['codservbas'] ?>&var=21" class="btn btn-primary">Editar</a></td>
+            <td><a href="home.php?id=<?php echo $dato[$i]['codservbas'] ?>&var=21" class="btn btn-primary">Editar</a></td>
         </tr>
         <?php  }  ?>
     </table>

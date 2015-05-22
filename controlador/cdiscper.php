@@ -7,12 +7,12 @@
 	$numdoc		= isset($_POST["numdoc"]) ? $_POST["numdoc"]:NULL;
 	$desc		= isset($_POST["desc"]) ? $_POST["desc"]:NULL;
 	$actu 		= isset($_POST["actu"]) ? $_POST["actu"]:NULL;
-	$pr 		= isset($_GET["pr"]) ? $_GET["pr"]:NULL;
+	$id 		= isset($_GET["id"]) ? $_GET["id"]:NULL;
 	$datfam		= isset($_GET["famper"]) ? $_GET["famper"]:NULL;
 
 	//$dato = $ins->selcladis();
-	//$dato1 = $ins->selcladis1($pr);
-	$dato1 = $ins->seldisper2($pr);
+	//$dato1 = $ins->selcladis1($id);
+	$dato1 = $ins->seldisper2($id);
 	$tipodis = $ins->seltipdis();
 
 	//$tipo = $ins->valor(12);
@@ -23,12 +23,12 @@
 		$ins -> upddisper($iddisc,$disc,$numdoc,$desc);
 	}
 	// Insertar datos discapacidad persona
-	if($disc && $pr && $desc && !$actu && !$datfam) {
-		$ins -> insdiscper($disc,$pr,$desc);
+	if($disc && $id && $desc && !$actu && !$datfam) {
+		$ins -> insdiscper($disc,$id,$desc);
 	}
 
 	// Insertar datos discapacidad familiar de persona
-	if($disc && $pr && $desc && $datfam && !$actu) {
-		$ins -> insdiscper2($disc,$pr,$desc);
+	if($disc && $id && $desc && $datfam && !$actu) {
+		$ins -> insdiscper2($disc,$id,$desc);
 	}
 ?>

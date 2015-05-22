@@ -42,7 +42,7 @@
 			<td><?php echo $dato[$i]["dirper"]; ?></td>
 			<td><?php echo $dato[$i]["telper"]; ?></td>
             <?php //echo $est[$i]["nomval"]; ?>
-            <td><a href="home.php?pr=<?php echo $dato[$i]['idpersona'] ?>&var=70" class="btn btn-success">Información</a></td>     
+            <td><a href="home.php?id=<?php echo $dato[$i]['idpersona'] ?>&var=70" class="btn btn-success">Información</a></td>     
 		</tr>
         <?php 
             }
