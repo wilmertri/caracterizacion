@@ -222,10 +222,10 @@
               include("vista/vmenudatosper.php");
           }
           if ($variable==75) {
-              include("vista/vdatosvivienda.php");
+              include("vista/datosvivienda/vdatosvivienda.php");
           }
           if ($variable==76) {
-              include("vista/vverdatosvivienda.php");
+              include("vista/datosvivienda/vverdatosvivienda.php");
           }
           if ($variable==85) {
               //Luis Miguel se cambio por el 50 al 55

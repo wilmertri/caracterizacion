@@ -155,9 +155,15 @@
 		</div>
 		<div class="row">
 			<div class="form-group col-lg-6">
-				<input type="submit" class="btn btn-primary">
+				<input type="submit" class="btn btn-success"> <a href="home.php?id=<?= $id ?>&var=70" class="btn btn-success">Volver</a>
 			</div>	
 		</div>
 		
 	</form>
 </div>
+<?php
+	if ($valid == 1) 
+	{
+		$ins->validar_ingreso();
+  	}  
+?>

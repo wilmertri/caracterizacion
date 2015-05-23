@@ -64,4 +64,14 @@
                     $datos = $conexionBD -> ejeCon($consulta, 0);
                     return $datos;
             }
+
+            /*
+             * Función de utilidad para los correctos registros
+             */
+            public function validar_ingreso()
+            {
+                echo "<script>alert('Los datos se han registrado correctamente!');</script>";
+            }
+
+
         }
