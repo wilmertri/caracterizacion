@@ -17,9 +17,9 @@
 		$telefono	= isset($_POST["telefono"]) ? $_POST["telefono"]:null;
 		$perfil		= isset($_POST["perfil"]) ? $_POST["perfil"]:null;
 		$actu       = isset($_POST["actu"]) ? $_POST["actu"]:null; 
-		$pr         = isset($_GET["pr"]) ? $_GET["pr"]:null;
+		$id         = isset($_GET["id"]) ? $_GET["id"]:null;
 		
-		$datousuario = $ins->selusu1($pr);
+		$datousuario = $ins->selusu1($id);
 
 		if($documento && $usuario && $dependencia && $cargo && $password && $telefono && $perfil && $cargo && $actu) 
 		{
