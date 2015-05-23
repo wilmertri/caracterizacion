@@ -13,6 +13,8 @@
             <div class="form-group col-lg-6">
                 <label for="">Número de Cédula</label>
                 <input name="documento" type="text" class="form-control" value="<?= $datousuario[0]['documento']?>" disabled>
+                <input name="actu" type="hidden" value="actu">
+                <input name="documento" type="hidden" value="<?= $datousuario[0]['documento']?>">
             </div>
             <div class="form-group col-lg-6">
                 <label for="">Nombre Funcionario</label>

@@ -16,8 +16,8 @@
 		$password   = isset($_POST["password"]) ? $_POST["password"]:null;
 		$telefono	= isset($_POST["telefono"]) ? $_POST["telefono"]:null;
 		$perfil		= isset($_POST["perfil"]) ? $_POST["perfil"]:null;
-		$actu= 	isset($_POST["actu"]) ? $_POST["actu"]:null; 
-		$pr= isset($_GET["pr"]) ? $_GET["pr"]:null;
+		$actu       = isset($_POST["actu"]) ? $_POST["actu"]:null; 
+		$pr         = isset($_GET["pr"]) ? $_GET["pr"]:null;
 		
 		$datousuario = $ins->selusu1($pr);
 
